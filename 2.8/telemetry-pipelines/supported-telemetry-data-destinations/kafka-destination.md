@@ -10,6 +10,7 @@ keywords:
 tags: 
 ---
 
+
 ## [Description](https://docs.mezmo.com/docs/kafka-pipeline-destination#description)
 
 You can send Mezmo Pipeline data to Kafka.
@@ -17,6 +18,8 @@ You can send Mezmo Pipeline data to Kafka.
 ## [Configuration Options](https://docs.mezmo.com/docs/kafka-pipeline-destination#configuration-options)
 
 {% table widths="150" %}
+
+{% table %}
 | Option | Description | 
 | ---- | ---- | 
 | End-to-End Acknowledgement | Enable this option to receive verification that log data is being received by Kafka. | 
@@ -33,4 +36,6 @@ You can send Mezmo Pipeline data to Kafka.
 | SASL | The SASL/SCRAM mechanism | 
 | Username | The SASL/SCRAM Username | 
 | Password | The SASL/SCRAM Password | 
+{% /table %}
+
 {% /table %}

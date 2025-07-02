@@ -10,6 +10,7 @@ keywords:
 tags: 
 ---
 
+
 ## Create Alerts
 
 1. Go the [Settings &gt; Organization &gt; Usage &gt; Index Rate Alerts](https://app.mezmo.com/manage/index-rate-alerts).

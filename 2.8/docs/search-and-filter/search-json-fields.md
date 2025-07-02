@@ -10,6 +10,7 @@ keywords:
 tags: 
 ---
 
+
 Mezmo provides several capabilities for searching fields in your logs. In this topic you'll find information on nested field searches, searching by field comparison, searching for the existence of fields, and general and exact term field searches.
 
 ## Access Search
@@ -25,9 +26,9 @@ Mezmo provides several capabilities for searching fields in your logs. In this t
 
 ## JSON Field Search
 
-To search for a field with a particular value, use a colon to separate the field and value. 
+To search for a field with a particular value, use a colon to separate the field and value.
 
-This example will return all parsed log lines with the field `response` with a value of `404`. 
+This example will return all parsed log lines with the field `response` with a value of `404`.
 
 {% code %}
 {% tab language="bash" %}
@@ -37,7 +38,7 @@ response:404
 
 ### Nested Field Search
 
-To search for a nested field, use periods to separate each nested field. 
+To search for a nested field, use periods to separate each nested field.
 
 This example will return all log lines containing the key:value structure `{ "user": { "id": 12345 }}.`
 
@@ -49,7 +50,7 @@ user.id:12345
 
 ## Filters
 
-Using the same field search syntax, you can also set filters directly in the search bar. 
+Using the same field search syntax, you can also set filters directly in the search bar.
 
 This example will return all log lines that originate from the source `myawesomehost` and not from the app `mycoolapp`.
 
@@ -78,18 +79,18 @@ For parsed fields with a numeric value, we support the following operators:
 {% code %}
 {% tab language="bash" %}
 * =
-* <
-* >
-* <=
-* >=
+* &lt;
+* &gt;
+* &lt;=
+* &gt;=
 {% /tab %}
 {% /code %}
 
-To search for parsed fields matching comparison operators, use a colon followed by the comparison operator. 
+To search for parsed fields matching comparison operators, use a colon followed by the comparison operator.
 
 {% code %}
 {% tab language="bash" %}
-response:>=400
+response:&gt;=400
 {% /tab %}
 {% /code %}
 
@@ -101,13 +102,13 @@ This example will return all log lines with the field `response` with values gre
 
 {% code %}
 {% tab language="bash" %}
-response:(>=400 <500 -404)
+response:(&gt;=400 &lt;500 -404)
 {% /tab %}
 {% /code %}
 
 ## Case-Sensitive Field Search
 
-To search for a case-sensitive parsed field, use a colon followed by an equal sign `=`. 
+To search for a case-sensitive parsed field, use a colon followed by an equal sign `=`.
 
 This example will return all log lines with the field `name` with the case-sensitive string value `camelCasedName`.
 
@@ -131,7 +132,7 @@ user:*
 
 ## Term Match Field Search
 
-To search for a term match for a field value, use `==`. 
+To search for a term match for a field value, use `==`.
 
 This example will return all lines with the exact name field value of `bob`, and will not match `bobby`.
 
@@ -143,7 +144,7 @@ name:==bob
 
 ## Term Match Case-Sensitive Field Search
 
-Prefix search is set by default for all string fields. To search for an **exact** match for a field value, use `===`. 
+Prefix search is set by default for all string fields. To search for an **exact** match for a field value, use `===`.
 
 This example will return all lines with the exact name field value of `Bob`, and will not match `bob` or `Bobby`.
 
@@ -159,7 +160,7 @@ You can search for log lines by size by using the `mezmo_line_size` field annota
 
 {% code %}
 {% tab language="bash" %}
-_mezmo_line_size:>4000
+_mezmo_line_size:&gt;4000
 {% /tab %}
 {% /code %}
 
@@ -172,7 +173,7 @@ You can also create graphs based on `mezmo_line_size` as described in [auto$](/d
 
 ## Colons
 
-Since the colon is a reserved character for field search, quotes are required when searching for strings with colons in them. 
+Since the colon is a reserved character for field search, quotes are required when searching for strings with colons in them.
 
 This example will return all log lines with the string `response:` in them.
 
@@ -196,7 +197,7 @@ This searches logs where the value stored in the status field is greater than 10
 
 {% code %}
 {% tab language="bash" %}
-status:(>100 AND <= 503)
+status:(&gt;100 AND &lt;= 503)
 {% /tab %}
 {% /code %}
 
@@ -204,6 +205,6 @@ status:(>100 AND <= 503)
 
 Any whitespace between search terms is automatically interpreted as AND. For example, searching warning error returns logs containing both warning and error. The only exception is when using lists, which treat whitespace as a part of the search term. For example, searching `message:[file, exists]` will only search for instances of exists that are preceded by a space. Some other examples:
 
-- `level:[warning,error]` will return as normal.  
+- `level:[warning,error]` will return as normal.
 - `level:[warning, error]`with a space between warning and error, will search for entries of the field level which have "warning" or " error" with space included.
 - `level:[warning,(error)]` will search for entries of the field level which have "warning" or "(error)" with parenthesis included.

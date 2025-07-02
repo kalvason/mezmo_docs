@@ -13,6 +13,7 @@ tags:
 
 
 
+
 ## Summary
 This hotfix (patch release versions 2.2.4 and 3.0.4) resolves a known issue with the LogDNA Agent for Kubernetes and OpenShift.
 

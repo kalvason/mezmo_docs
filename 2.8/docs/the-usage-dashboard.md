@@ -10,6 +10,7 @@ keywords:
 tags: 
 ---
 
+
 The Enterprise Dashboard provides an overview of how much data your organization is ingesting. It shows:
 
 - Retention of log lines per day in a stacked graph with categories for retention periods
@@ -26,11 +27,11 @@ The **Retained Data** graph displays the volume and count of retained log lines 
 
 ## Restored Data
 
-The Restored Data graph displays the volume of data restored per day for the selected time period 
+The Restored Data graph displays the volume of data restored per day for the selected time period
 
 ## Ingested v. Retained Data
 
-The Ingested v. Retained Data graph displays the volume of ingested data v. retained data per day for the selected time period. 
+The Ingested v. Retained Data graph displays the volume of ingested data v. retained data per day for the selected time period.
 
 {% image url="https://uploads.developerhub.io/prod/2KW7/kytfrv4hjttu1bsvqryn8qfu9sfbalaqr9kes65z3025dnkdj0fjqfmzfcqs7t1x.png" caption="The Ingested v. Retained Data graph. The marker indicates the end and beginning of the billing cycle." mode="responsive" height="384" width="579" %}
 {% /image %}

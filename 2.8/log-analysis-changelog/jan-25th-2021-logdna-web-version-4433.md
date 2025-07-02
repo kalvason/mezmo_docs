@@ -12,6 +12,7 @@ tags:
 
 
 
+
 ## Features and Enhancements
 
 - Usage Quotas is a major new feature that allows users to control how much data their teams are storing in order to create predictable spend month-over-month, while still viewing, alerting on, and retaining the critical data. For more information, read the [Usage Quota documentation](https://docs.logdna.com/docs/usage-quotas).

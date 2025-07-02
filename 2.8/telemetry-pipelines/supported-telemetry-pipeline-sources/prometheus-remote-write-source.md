@@ -10,6 +10,7 @@ keywords:
 tags: 
 ---
 
+
 ## Description
 
 You can send your metrics to a Mezmo Pipeline to be received as Prometheus Remote Write data.
@@ -21,10 +22,14 @@ The Mezmo Prometheus Remote Write source provides a unique endpoint URL that use
 ### Configuration Options
 
 {% table %}
+
+{% table %}
 | Option | Description | 
 | ---- | ---- | 
 | url | unique URL for your remote_write source | 
 | bearer_token | token used in sending data to your remote_write source | 
+{% /table %}
+
 {% /table %}
 
 ### Prometheus Configuration File
@@ -33,8 +38,8 @@ To configure a Prometheus instance add a section like this to its configuration 
 
 {% code %}
 {% tab language="yaml" %}
-     - url: https://pipeline.mezmo.com/v1/<YOUR ROUTE ID>
-       bearer_token: <YOUR_PIPELINE_INGEST_KEY>
+     - url: https://pipeline.mezmo.com/v1/&lt;YOUR ROUTE ID&gt;
+       bearer_token: &lt;YOUR_PIPELINE_INGEST_KEY&gt;
 {% /tab %}
 {% /code %}
 
@@ -44,20 +49,20 @@ If you are running Prometheus within Kubernetes using the Kubernetes operator yo
 
 {% code %}
 {% tab language="bash" %}
-kubectl -n monitoring create secret generic mz-prom-rw-token --from-literal=value=<TOKEN FROM APP>
+kubectl -n monitoring create secret generic mz-prom-rw-token --from-literal=value=&lt;TOKEN FROM APP&gt;
 {% /tab %}
 {% /code %}
 
 {% code %}
 {% tab language="bash" %}
-cat <<'EOF' | kubectl patch prometheus -n <PROMETHEUS NAMESPACE> <YOUR PROMETHEUS CRD INSTANCE> -f -
+cat &lt;&lt;'EOF' | kubectl patch prometheus -n &lt;PROMETHEUS NAMESPACE&gt; &lt;YOUR PROMETHEUS CRD INSTANCE&gt; -f -
 spec:
   remoteWrite:
   - authorization:
       credentials:
         key: value
         name: mz-prom-rw-token
-    url: <ENDPOINT FROM APP>
+    url: &lt;ENDPOINT FROM APP&gt;
 EOF
 {% /tab %}
 {% /code %}

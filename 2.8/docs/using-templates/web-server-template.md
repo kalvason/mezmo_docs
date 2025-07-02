@@ -10,7 +10,8 @@ keywords:
 tags: 
 ---
 
-The Mezmo Web Server Template enables you to immediately receive valuable data from HTTP web servers via pre-configured Views, Boards, and Screens. 
+
+The Mezmo Web Server Template enables you to immediately receive valuable data from HTTP web servers via pre-configured Views, Boards, and Screens.
 
 Browse the[ full library of Mezmo Templates](https://app.Mezmo.com/manage/template-library).
 
@@ -27,7 +28,7 @@ To set up alerting, we recommend attaching presence alerts to the "HTTP Server E
 
 ## Boards
 
-Boards are collections of graphs. Using boards, you can track trends with response codes and understand how they fluctuate over time at a glance. Drill down using subplots to see which host or path is generating the most errors. Check out the topic [](/docs/visualize-log-data-with-graphs) for more information. 
+Boards are collections of graphs. Using boards, you can track trends with response codes and understand how they fluctuate over time at a glance. Drill down using subplots to see which host or path is generating the most errors. Check out the topic [](/docs/visualize-log-data-with-graphs) for more information.
 
 - HTTP Response Codes and Errors
 - Breakdown by App, Host, Request (Path), Client IP, and Referrer
@@ -35,7 +36,7 @@ Boards are collections of graphs. Using boards, you can track trends with respon
 
 ## Screens
 
-Screens are collections of customized dashboards that can display data in various forms. Using screens, you can see top 401 and 403 requests by IP address in the last hour, day, and week. See the topics [auto$](/docs/use-screens-and-widgets-to-monitor-log-data) and [](/docs/web-analytics-screen) for more information. 
+Screens are collections of customized dashboards that can display data in various forms. Using screens, you can see top 401 and 403 requests by IP address in the last hour, day, and week. See the topics [auto$](/docs/use-screens-and-widgets-to-monitor-log-data) and [](/docs/web-analytics-screen) for more information.
 
 - Web Analytics, such as traffic trends, most popular pages, and referrers
 - Server Health, such as count of 200 and 500's on time shifted graphs

@@ -10,7 +10,8 @@ keywords:
 tags: 
 ---
 
-Mezmo Edge is designed to run from within a Kubernetes cluster, but can also be alternatively be run within Docker Desktop. 
+
+Mezmo Edge is designed to run from within a Kubernetes cluster, but can also be alternatively be run within Docker Desktop.
 
 ## Requirements
 
@@ -75,7 +76,7 @@ Once Mezmo Edge has been installed and the ports are configured, you can create 
 
 {% code %}
 {% tab language="none" %}
-edge.default.svc.cluster.local:<source_port>
+edge.default.svc.cluster.local:&lt;source_port&gt;
 {% /tab %}
 {% /code %}
 

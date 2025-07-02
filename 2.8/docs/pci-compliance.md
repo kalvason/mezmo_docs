@@ -13,6 +13,7 @@ tags:
 
 
 
+
 The Payment Card Industry Data Security Standard (PCI DSS) establishes protections for credit cardholder data, including how it’s stored and accessed. This means that a significant portion of the standard—specifically, Requirement 10—governs auditing and logging your applications and systems.
 
 Complying with these regulations may seem daunting, but we’re here to help. As a PCI Level 1 Service Provider, we take compliance very seriously. We developed this guide to summarize your requirements for creating and managing log data.

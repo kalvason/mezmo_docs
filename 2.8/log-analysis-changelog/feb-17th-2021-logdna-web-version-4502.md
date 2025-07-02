@@ -12,6 +12,7 @@ tags:
 
 
 
+
 ## Features and Enhancements
 
 - New users who are administrators of the organization are automatically subscribed to the monthly and weekly usage digest emails. Admins can opt-out of the digests. [LOG-8727]

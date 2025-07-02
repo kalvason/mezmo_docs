@@ -10,9 +10,12 @@ keywords:
 tags: 
 ---
 
-This alert is triggered when the [auto$](/telemetry-pipelines/redact-processor) has the option `Mask PII Presence `set to `On` and a social security number, email address, or custom-defined pattern of PII is detected in the telemetry data. 
+
+This alert is triggered when the [auto$](/telemetry-pipelines/redact-processor) has the option `Mask PII Presence `set to `On` and a social security number, email address, or custom-defined pattern of PII is detected in the telemetry data.
 
 ## General Configuration
+
+{% table %}
 
 {% table %}
 | Field | Value | 
@@ -21,7 +24,11 @@ This alert is triggered when the [auto$](/telemetry-pipelines/redact-processor) 
 | Description | Triggers when the metadata field `pii_presence` contains a `yes` value for any of the pre-set or custom PII types. | 
 {% /table %}
 
+{% /table %}
+
 ## Evaluation and Condition Configuration
+
+{% table %}
 
 {% table %}
 | Field | Value | 
@@ -35,4 +42,6 @@ This alert is triggered when the [auto$](/telemetry-pipelines/redact-processor) 
 | Window Duration |  | 
 | Conditional Statement |  | 
 | Event Timestamp |  | 
+{% /table %}
+
 {% /table %}

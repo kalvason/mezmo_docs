@@ -13,6 +13,7 @@ tags:
 
 
 
+
 ##  Bugs
 Our [alerts](https://docs.logdna.com/docs/views) link to the timestamp of the alert that triggered it.  However, many logs share the same timestamp, therefore, causing the alert to implicitly link to the first timestamped logline instead of the actual triggering line.  This bug has been solved.
 

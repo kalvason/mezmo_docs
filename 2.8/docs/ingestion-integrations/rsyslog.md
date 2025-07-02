@@ -10,6 +10,7 @@ keywords:
 tags: 
 ---
 
+
 You can stream RSyslog logs using TCP+TLS, TCP, and UDP, as well as through custom syslog ports. Mezmo accepts the Rsyslog default format, [RFC 5424](https://datatracker.ietf.org/doc/html/rfc5424) and [RFC 3164](https://datatracker.ietf.org/doc/html/rfc3164) for auto parsing.
 
 ## Set Up RSyslog Log Ingestion
@@ -18,7 +19,7 @@ Follow the instructions in the Mezmo Web App to set up RSyslog log ingestion usi
 
 1. Log in to the [Mezmo Web App](https://app.mezmo.com).
 2. In the bottom section of the left-hand navigation, click **Help**.
-3. Select **Add Log Sources**. 
+3. Select **Add Log Sources**.
 4. Under **Via syslog**, click **rsyslog**.
 5. Follow the instructions to set up RSyslog log ingestion.
 
@@ -30,7 +31,7 @@ Host tags follow the [syslog RFC-defined STRUCTURED-DATA format](https://tools.i
 
 {% code %}
 {% tab language="none" %}
-$template LogDNAFormat,"<%PRI%>%protocol-version% %timestamp:::date-rfc3339% %HOSTNAME% %app-name% %procid% %msgid% [logdna@48950 key=\"YOUR-INGESTION-KEY-HERE\" tags=\"tag1,tag2\"] %msg%"
+$template LogDNAFormat,"&lt;%PRI%&gt;%protocol-version% %timestamp:::date-rfc3339% %HOSTNAME% %app-name% %procid% %msgid% [logdna@48950 key=\"YOUR-INGESTION-KEY-HERE\" tags=\"tag1,tag2\"] %msg%"
 {% /tab %}
 {% /code %}
 

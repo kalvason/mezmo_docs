@@ -10,6 +10,7 @@ keywords:
 tags: 
 ---
 
+
 Mezmo uses a microservice-based architecture to split different tasks into discrete and scalable units. These microservices can be organized into two roles: log ingestion, and log retrieval.
 
 {% image url="https://uploads.developerhub.io/prod/2KW7/la72vtord56enossw5ovbkt24jgvc3ky666mvug6kr1rdp6ildt1x85wwhhgi704.png" mode="full" height="220" width="512" %}

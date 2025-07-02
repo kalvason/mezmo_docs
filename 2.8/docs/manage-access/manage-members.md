@@ -10,6 +10,7 @@ keywords:
 tags: 
 ---
 
+
 Each Mezmo Organization allows for a certain number of users determined by your [plan](https://www.mezmo.com/pricing). Users who join your Mezmo Organization are called Members. Members of a Mezmo Organization are also called a Team.
 
 Organization administrators can:

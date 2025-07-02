@@ -10,6 +10,7 @@ keywords:
 tags: 
 ---
 
+
 ## [Description](https://docs.mezmo.com/docs/compact-fields-pipeline-processor#description)
 
 Removes all nested fields recursively that contain empty arrays or objects from a specified field. This processor includes options to remove values from Arrays, and from Objects.
@@ -23,10 +24,14 @@ This processor is particularly useful in cleaning up null values and other empty
 There are two options to configure for this processor.
 
 {% table %}
+
+{% table %}
 | **Option** | **Description** | Example | 
 | ---- | ---- | ---- | 
 | **Fields** | The field or fields to remove empty values from | . | 
 | **Compact Options** | Select to enable Compact for Arrays in the field, Objects in the field, or both | On / Off | 
+{% /table %}
+
 {% /table %}
 
 ## [Example](https://docs.mezmo.com/docs/compact-fields-pipeline-processor#example)
@@ -36,18 +41,20 @@ There are two options to configure for this processor.
 {% code %}
 {% tab language="json" %}
 {
-  "baz": [],
-  "foo": "bar",
-  "quux": {
-    "corge": {},
-    "grault": 1
-  },
-  "qux": {}
+"baz": [],
+"foo": "bar",
+"quux": {
+"corge": {},
+"grault": 1
+},
+"qux": {}
 }
 {% /tab %}
 {% /code %}
 
 ### Compact Options
+
+{% table %}
 
 {% table %}
 | **Option** | **Value** | 
@@ -57,15 +64,17 @@ There are two options to configure for this processor.
 | Compact Object | On | 
 {% /table %}
 
+{% /table %}
+
 ### After
 
 {% code %}
 {% tab language="json" %}
 {
-  "foo": "bar",
-  "quux": {
-    "grault": 1
-  }
+"foo": "bar",
+"quux": {
+"grault": 1
+}
 }
 {% /tab %}
 {% /code %}

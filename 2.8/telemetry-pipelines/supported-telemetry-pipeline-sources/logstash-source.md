@@ -10,6 +10,7 @@ keywords:
 tags: 
 ---
 
+
 ## [Description](https://docs.mezmo.com/docs/logstash-pipeline-source#description)
 
 You can send data from your Logstash instance to Mezmo Pipelines.
@@ -23,7 +24,11 @@ Form encoding is not supported at this time, so use string or json methods for o
 ### [Mezmo Configuration Options](https://docs.mezmo.com/docs/logstash-pipeline-source#mezmo-configuration-options)
 
 {% table %}
+
+{% table %}
 | Option | Description | 
 | ---- | ---- | 
 | Data Format | The format of the log data. | 
+{% /table %}
+
 {% /table %}

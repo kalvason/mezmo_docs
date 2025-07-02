@@ -10,6 +10,7 @@ keywords:
 tags: 
 ---
 
+
 Mezmo Edge lets you run a telemetry data pipeline within your environment that has the same functionality available within your Mezmo Telemetry Pipeline cloud environment, but adds its own capabilities for processing your data locally. You can run any Pipeline as a satellite node within an Edge instance. All of the metrics and management of the Pipeline are still handled by the SaaS infrastructure, making it easy to build, test, and deploy without requiring any additional coding or configuration management.
 
 Mezmo Edge can be deployed to any Kubernetes cluster using [a Helm chart](https://helm.sh/docs/intro/quickstart/), as explained in the topic [auto$](/mezmo-edge/set-up-mezmo-edge-in-kubernetes). Mezmo Edge uses **Horizontal Pod Autoscaling (HPA)** to scale to your workloads, which means you can take advantage of the scalability Kubernetes offers without having to invest substantial time and effort to manage the scaling.

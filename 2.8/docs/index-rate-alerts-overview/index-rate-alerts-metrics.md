@@ -10,6 +10,7 @@ keywords:
 tags: 
 ---
 
+
 Several metrics are used to calculate the index rate of your log lines, which you can then use to set the thresholds for your Index Rate Alerts.
 
 ## Index Rate

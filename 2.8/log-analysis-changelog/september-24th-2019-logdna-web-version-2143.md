@@ -12,6 +12,7 @@ tags:
 
 
 
+
 ## Added
 
 Updated syslog ingestion instructions.

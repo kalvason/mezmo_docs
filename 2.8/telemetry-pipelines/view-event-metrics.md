@@ -10,6 +10,7 @@ keywords:
 tags: 
 ---
 
+
 ### Event Metrics
 
 The **Event Metrics** view for a Pipeline shows historic event volume and trends per `app`, `host`, `level` and `label` for a selected time window. This data is continuously updated based on the volume of telemetry streaming through the pipeline. There are two key components in this data:
@@ -17,7 +18,7 @@ The **Event Metrics** view for a Pipeline shows historic event volume and trends
 - Line graph of log volume
 - Trends such as:
 
-    - % change (increase or decrease) of total volume in the selected time window 
+    - % change (increase or decrease) of total volume in the selected time window
     - Top 5 `app`, `host`, `level` and `label` with biggest change
 
 {% callout type="info" title="Limits on Data Data Displayed" %}

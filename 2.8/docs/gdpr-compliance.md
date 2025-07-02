@@ -13,6 +13,7 @@ tags:
 
 
 
+
 The General Data Protection Regulation (GDPR) is a European Union regulation that grants extensive data privacy protections to EU citizens. It describes the rights of individuals concerning the collection, transmission, and processing of their data. It also describes the obligations of organizations handling this data, including organizations not based in the EU.
 
 Although the GDPR is an EU regulation, the scope and restrictiveness of its laws have made it the de-facto standard under which organizations operate. Organizations that handle EU citizen data without following GDPR can be subject to fines of up to [€20 million or 4% of their annual global turnover](https://www.itgovernance.co.uk/dpa-and-gdpr-penalties), investigations, and even a ban on serving EU citizens in the future.

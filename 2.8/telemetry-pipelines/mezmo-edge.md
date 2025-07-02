@@ -10,11 +10,14 @@ keywords:
 tags: 
 ---
 
+
 ## Description
 
 This Destination enables you to send log events to Google's Cloud Monitoring product. This Destination only supports log events. If you want to send metrics events, you should use the [Google Cloud Monitoring](/telemetry-pipelines/gcp-cloud-monitoring-destination) destination.
 
 ### Configuration Options
+
+{% table %}
 
 {% table %}
 | Option | Description | 
@@ -24,4 +27,6 @@ This Destination enables you to send log events to Google's Cloud Monitoring pro
 | Resource Type | The resource type to which these events are related. | 
 | Resource Labels | An array of key/val objects describing labels of the Monitoring resource. | 
 | JSON Credentials | The Google Cloud [Service Account Key](https://cloud.google.com/iam/docs/keys-create-delete#creating). | 
+{% /table %}
+
 {% /table %}

@@ -10,6 +10,7 @@ keywords:
 tags: 
 ---
 
+
 Exclusion rules let you control what logs are stored. You can access Exclusion Rules by going to **[Usage &gt; Exclusion Rules](https://app.mezmo.com/manage/exclusion-rules).**
 
 There are three parts to a rule.

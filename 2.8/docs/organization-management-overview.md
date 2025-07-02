@@ -10,6 +10,7 @@ keywords:
 tags: 
 ---
 
+
 When you create your Mezmo account, Mezmo automatically creates and assigns you to a new Organization. This Organization comes with a 30-day trial and an auto-generated [ingestion key](https://docs.mezmo.com/docs/ingestion-key) which you can use to send logs to Mezmo for storage and analysis.
 
 You can be a member of many Organizations, but can only view one organization at a time. Your current active organization is shown at the bottom of the left-hand navigation pane in the web app. Click the name of the organization to open the **Manage Organizations** menu.

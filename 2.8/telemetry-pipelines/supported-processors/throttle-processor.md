@@ -10,6 +10,7 @@ keywords:
 tags: 
 ---
 
+
 {% synced id="beta-banner" %}
 {% /synced %}
 
@@ -24,6 +25,8 @@ This processor is used for cases where a high-throughput of low-value events may
 ## Configuration
 
 {% table widths="0,462" %}
+
+{% table %}
 | Option | Description | Example | 
 | ---- | ---- | ---- | 
 | Limit | The number of events to allow during the time window. If you specify a **Key Field** , the limit will be applied to events for each unique value of that field. | 100 | 
@@ -32,28 +35,34 @@ This processor is used for cases where a high-throughput of low-value events may
 | Exclude | A conditional statement that will be applied to exclude events from throttling. | `if (.host equal 'host-4')` | 
 {% /table %}
 
+{% /table %}
+
 ## Examples
 
 ### Limit Events by Field
 
 This example shows a configuration that allows only 1 event every 1 second, for each unique value of the `.app`  field. Events produced by `host-4`  are excluded from throttling.
 
+
 #### Before
 
 {% code %}
 {% tab language="json" title="json" %}
 [
-  {"host": "host-1", "app": "app-1", "message": "GET /server HTTP/1.1"},
-  {"host": "host-1", "app": "app-1", "message": "POST /widgets/152 HTTP/1.1"},
-  {"host": "host-2", "app": "app-1", "message": "GET /widgets HTTP/2"},
-  {"host": "host-3", "app": "app-2", "message": "GET /widgets HTTP/2"},
-  {"host": "host-3", "app": "app-2", "message": "PUT /widgets/5593 HTTP/1.1"},
-  {"host": "host-4", "app": "app-2", "message": "GET /server/status HTTP/1.1"},  
+{"host": "host-1", "app": "app-1", "message": "GET /server HTTP/1.1"},
+{"host": "host-1", "app": "app-1", "message": "POST /widgets/152 HTTP/1.1"},
+{"host": "host-2", "app": "app-1", "message": "GET /widgets HTTP/2"},
+{"host": "host-3", "app": "app-2", "message": "GET /widgets HTTP/2"},
+{"host": "host-3", "app": "app-2", "message": "PUT /widgets/5593 HTTP/1.1"},
+{"host": "host-4", "app": "app-2", "message": "GET /server/status HTTP/1.1"},
 ]
 {% /tab %}
 {% /code %}
 
+
 #### Options
+
+{% table %}
 
 {% table %}
 | Option | Value | 
@@ -61,8 +70,11 @@ This example shows a configuration that allows only 1 event every 1 second, for 
 | Limit | 1 | 
 | Window | 1s | 
 | Key Field | `.app` | 
-| Exclude | Field: `.host` \n\nOperator: `equal` \n\nValue: `host-4` | 
+| Exclude | Field: `.host` \n\n\n\nOperator: `equal` \n\n\n\nValue: `host-4` | 
 {% /table %}
+
+{% /table %}
+
 
 #### After
 

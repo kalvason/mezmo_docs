@@ -12,6 +12,7 @@ tags:
 
 
 
+
 ## Fixed Issues
 
 - Usage Quota feature improvements: Email notification clarified about whether the quota is daily or monthly; callout disappears immediately when usage quota rules are turned off. [LOG-8530] [LOG-8672]

@@ -10,7 +10,8 @@ keywords:
 tags: 
 ---
 
-These topics include examples of configurations for in-stream telemetry data alerts. 
+
+These topics include examples of configurations for in-stream telemetry data alerts.
 
 {% index-list %}
 {% /index-list %}

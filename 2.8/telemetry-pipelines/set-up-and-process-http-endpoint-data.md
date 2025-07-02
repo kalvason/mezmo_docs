@@ -10,6 +10,7 @@ keywords:
 tags: 
 ---
 
+
 This topic describes how to set up an HTTP endpoint as a Pipeline Source, and then process and inspect the endpoint data before sending it to a destination, such as [Mezmo Log Analysis](/docs/about-mezmo-log-analysis), or [auto$](/telemetry-pipelines/s3-destination).
 
 ## [Source](https://docs.mezmo.com/docs/pipeline-architecture-HTTP-endpoint#source)
@@ -22,9 +23,12 @@ This topic describes how to set up an HTTP endpoint as a Pipeline Source, and th
 4. For the Pipeline **Name**, enter `HTTP Inspect`, then click **Save**.
 5. At the bottom of the Pipeline map, click the **Add** **Source** button, then select **HTTP Source**.
 
+
 #### HTTP Source Configuration Settings
 
 After you add the HTTP Source to your Pipeline Map, click the node to open the configuration settings:
+
+{% table %}
 
 {% table %}
 | Setting | Value | 
@@ -32,7 +36,9 @@ After you add the HTTP Source to your Pipeline Map, click the node to open the c
 | **Title** | A name for your source. | 
 | **Description** | A short description of the source. | 
 | **Decoding Method** | `.json` | 
-| **Access Key Management** | 1. Click **Create new key** to generate an access key.\n2. Enter a **Title** for the key.\n3. Click **Create**.\n\n\nMake sure to copy the Access Key and note the Ingestion URL, which should resemble `https://pipeline.mezmo.com/v1/%YOUR PIPELINE ID%.`You will need to provide this information in the next step. | 
+| **Access Key Management** | 1. Click **Create new key** to generate an access key.\n2. Enter a **Title** for the key.\n3. Click **Create**.\n\n\n\n\nMake sure to copy the Access Key and note the Ingestion URL, which should resemble `https://pipeline.mezmo.com/v1/%YOUR PIPELINE ID%.`You will need to provide this information in the next step. | 
+{% /table %}
+
 {% /table %}
 
 Click **Update** to finish configuring the HTTP endpoint, and then click **Deploy Pipeline**.
@@ -54,10 +60,10 @@ Before you send the data, you should use a [Pipeline Tap](/telemetry-pipelines/v
 {% code %}
 {% tab language="bash" %}
 $ curl -H "Content-Type: application/json" \
-       -H "Authorization: %YOUR TOKEN HERE%" \
-       -X POST \
-       -d '{"Hello":"World"}' \
-       https://pipeline.mezmo.com/v1/%YOUR PIPELINE ID%
+-H "Authorization: %YOUR TOKEN HERE%" \
+-X POST \
+-d '{"Hello":"World"}' \
+https://pipeline.mezmo.com/v1/%YOUR PIPELINE ID%
 {% /tab %}
 {% /code %}
 
@@ -81,10 +87,10 @@ Now that you've got your pipeline accepting data, the next step is to start addi
 {% code %}
 {% tab language="bash" %}
 $ curl -H "Content-Type: application/json" \
-       -H "Authorization: %YOUR TOKEN HERE%" \
-       -X POST \
-       -d '{"Hello": "World", "sensitive": "data","was": "here"}' \
-       https://pipeline.mezmo.com/v1/%YOUR PIPELINE ID%
+-H "Authorization: %YOUR TOKEN HERE%" \
+-X POST \
+-d '{"Hello": "World", "sensitive": "data","was": "here"}' \
+https://pipeline.mezmo.com/v1/%YOUR PIPELINE ID%
 {% /tab %}
 {% /code %}
 

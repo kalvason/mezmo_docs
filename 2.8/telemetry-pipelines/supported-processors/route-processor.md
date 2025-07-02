@@ -10,6 +10,7 @@ keywords:
 tags: 
 ---
 
+
 ## [Description](https://docs.mezmo.com/docs/route-pipeline-processor#description)
 
 With the Route processor, you can separate events from a single stream into multiple streams. This allows you to choose the next processor or destination to which an event is sent.
@@ -28,7 +29,7 @@ The filter terms you enter for **Value** are treated as case-insensitive by defa
 
 ## Interactive Demo
 
-The topic [auto$](/practioner-guide-data-optimization/pipeline-module--route) contains an interactive demo for using the Route Processor to combine data from multiple sources and send it along specific Pipeline branches for processing, along with a tutorial for experimenting with demo data. 
+The topic [auto$](/practioner-guide-data-optimization/pipeline-module--route) contains an interactive demo for using the Route Processor to combine data from multiple sources and send it along specific Pipeline branches for processing, along with a tutorial for experimenting with demo data.
 
 ## Exclusivity
 
@@ -43,17 +44,23 @@ Logical conditions are used to determine when a specific event qualifies for sen
 ### Comparison Operators
 
 {% table %}
+
+{% table %}
 | Operator | Description | 
 | ---- | ---- | 
-| Equals | Compares the values for equivalency. \n\n\n\nThe specified value can be a number or a string. | 
-| Not Equals | Compares the values for non-equivalency. \n\n\nThe specified value can be a number \n\nor a string. | 
-| Greater Than | If the specified field value is greater, this returns true. \n\n\n\nThis comparison only works for numeric values. | 
-| Greater Than or Equal | If the specified field value is greater or equivalent, this returns true. \n\n\n\nThis comparison only works for numeric values. | 
-| Less Than | If the specified field value is less than, this returns true. \n\n\n\nThis comparison only works for numeric values. | 
-| Less Than or Equal | If the specified field value is less than or equivalent, this returns true. \n\n\n\nThis comparison only works for numeric values. | 
+| Equals | Compares the values for equivalency. \n\n\n\n\n\n\n\nThe specified value can be a number or a string. | 
+| Not Equals | Compares the values for non-equivalency. \n\n\n\n\nThe specified value can be a number \n\n\n\nor a string. | 
+| Greater Than | If the specified field value is greater, this returns true. \n\n\n\n\n\n\n\nThis comparison only works for numeric values. | 
+| Greater Than or Equal | If the specified field value is greater or equivalent, this returns true. \n\n\n\n\n\n\n\nThis comparison only works for numeric values. | 
+| Less Than | If the specified field value is less than, this returns true. \n\n\n\n\n\n\n\nThis comparison only works for numeric values. | 
+| Less Than or Equal | If the specified field value is less than or equivalent, this returns true. \n\n\n\n\n\n\n\nThis comparison only works for numeric values. | 
+{% /table %}
+
 {% /table %}
 
 ### Contents Operators
+
+{% table %}
 
 {% table %}
 | Operator | Description | 
@@ -65,7 +72,11 @@ Logical conditions are used to determine when a specific event qualifies for sen
 | Is IP in CIDR Range | Route events based on their IPv4 or IPv6 range | 
 {% /table %}
 
+{% /table %}
+
 ### [Type Operators](https://docs.mezmo.com/docs/route-pipeline-processor#type-operators)
+
+{% table %}
 
 {% table %}
 | **Operator** | Description | 
@@ -79,20 +90,30 @@ Logical conditions are used to determine when a specific event qualifies for sen
 | Is String | Checks if the field value is a string | 
 {% /table %}
 
+{% /table %}
+
 ### [String Operators](https://docs.mezmo.com/docs/route-pipeline-processor#string-operators)
 
 {% table widths="485,0,0" %}
+
+{% table %}
 | **Operator** |  |  |  | 
 | ---- | ---- | ---- | ---- | 
 | Ends with |  |  |  | 
 | Starts with |  |  |  | 
 {% /table %}
 
+{% /table %}
+
 ## [Example](https://docs.mezmo.com/docs/route-pipeline-processor#examples)
+
+{% table %}
 
 {% table %}
 | Conditional Statement | Result | 
 | ---- | ---- | 
-| `IF transaction.result equal success`\n\n\n\n`AND transaction.total_price is_greater_or_equal_to 0` | Checks the fields `transaction.result`and `transaction.total_price`for the values shown, and if a match is found, sends that data to the Encryption Processor chain. | 
-| `IF transaction.result equal fail`\n\n\n\n`AND transaction.total_price not 0` | Checks the fields `transaction.result`and `transaction.total_price`for the values shown, and if a match is found, sends that data to the Encryption Processor chain. | 
+| `IF transaction.result equal success`\n\n\n\n\n\n\n\n`AND transaction.total_price is_greater_or_equal_to 0` | Checks the fields `transaction.result`and `transaction.total_price`for the values shown, and if a match is found, sends that data to the Encryption Processor chain. | 
+| `IF transaction.result equal fail`\n\n\n\n\n\n\n\n`AND transaction.total_price not 0` | Checks the fields `transaction.result`and `transaction.total_price`for the values shown, and if a match is found, sends that data to the Encryption Processor chain. | 
+{% /table %}
+
 {% /table %}

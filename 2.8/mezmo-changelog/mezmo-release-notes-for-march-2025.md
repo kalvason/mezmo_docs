@@ -10,13 +10,14 @@ keywords:
 tags: 
 ---
 
+
 Mezmo is pleased to announce new features and updates for the Mezmo Platform.
 
 ## Features
 
 ### Trace Sampling Processsor (Experimental)
 
-With the Trace Sampling Processor, you can sample both head and trail traces at a specified  rate using the Trace ID as the unique identifier. If a trace is rate selected, all spans of the trace are output. You can find more information in [the Trace Sampling Processor topic in our documentation](https://docs.mezmo.com/telemetry-pipelines/trace-sampling-processor). 
+With the Trace Sampling Processor, you can sample both head and trail traces at a specified  rate using the Trace ID as the unique identifier. If a trace is rate selected, all spans of the trace are output. You can find more information in [the Trace Sampling Processor topic in our documentation](https://docs.mezmo.com/telemetry-pipelines/trace-sampling-processor).
 
 ## Bug Fixes
 

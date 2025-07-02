@@ -10,6 +10,7 @@ keywords:
 tags: 
 ---
 
+
 Adding users to your Mezmo Organization allows you to share access to logs, views, alerts, and other Mezmo resources with other members of your team. This page will show you how to manage users as a Mezmo administrator, including how to add new users, assign permissions, and set global sign-in policies. To see available security features, go to [**Settings &gt; Organization &gt; Security**](https://app.mezmo.com/manage/team-settings).
 
 ## Access Control
@@ -40,7 +41,12 @@ You can also control what logs members see by using [Role Based Access Control](
 You can set two-factor authentication for your own profile through the **User Preferences** menu.
 
 {% callout type="info" title="Mezmo Logins Only" %}
-> We support two-factor authentication only for Mezmo logins. For Google, GitHub, or Heroku, please set up two-factor authentication via their platform.
+
+{% callout type="info" title="Info" %}
+We support two-factor authentication only for Mezmo logins. For Google, GitHub, or Heroku, please set up two-factor authentication via their platform.
+{% /callout %}
+
+
 {% /callout %}
 
 1. Log in to [the Mezmo web app](https://app.mezmo.com/).

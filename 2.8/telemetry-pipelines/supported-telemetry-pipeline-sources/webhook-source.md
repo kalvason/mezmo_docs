@@ -10,6 +10,7 @@ keywords:
 tags: 
 ---
 
+
 ## Description
 
 This source provides a way to accept RESTful Webhook messages using the WebSub protocol for verification.
@@ -21,7 +22,11 @@ This source corresponds to the [WebSub specification](https://www.w3.org/TR/webs
 ### Configuration Options
 
 {% table %}
+
+{% table %}
 | Option | Description | 
 | ---- | ---- | 
 | Signing key | This is the key used for the HMAC signature to verify the sender. | 
+{% /table %}
+
 {% /table %}

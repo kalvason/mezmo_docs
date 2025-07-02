@@ -12,6 +12,7 @@ tags:
 
 
 
+
 ## Bugs
 * Fixed a bug where filters triggered from a log line token would not filter correctly.
 * Fixed a bug where the export API would return no results when using apps/hosts filters.

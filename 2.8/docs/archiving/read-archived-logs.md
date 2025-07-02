@@ -10,11 +10,12 @@ keywords:
 tags: 
 ---
 
-Mezmo log files are exported and stored in zipped JSON Log files format. There are several tools you can use to re-ingest and parse the historical data in your archived logs, including the Mezmo Data Restoration feature, Amazon Athena, Google BigQuery, IBM SQL Query, and jq. 
+
+Mezmo log files are exported and stored in zipped JSON Log files format. There are several tools you can use to re-ingest and parse the historical data in your archived logs, including the Mezmo Data Restoration feature, Amazon Athena, Google BigQuery, IBM SQL Query, and jq.
 
 ## Mezmo Log Data Restoration
 
-Log Data Restoration let you re-ingest, or restore, archived logs from cold storage so you can search the log data in the Mezmo user interface. Restoration is useful for troubleshooting older bug tickets, as well as bringing up additional context from older logs beyond your retention period. You can find more detailed information in the [Restore Log Data](/docs/data-restoration) topic. 
+Log Data Restoration let you re-ingest, or restore, archived logs from cold storage so you can search the log data in the Mezmo user interface. Restoration is useful for troubleshooting older bug tickets, as well as bringing up additional context from older logs beyond your retention period. You can find more detailed information in the [Restore Log Data](/docs/data-restoration) topic.
 
 ## Amazon Athena
 
@@ -22,7 +23,7 @@ Amazon Athena is a serverless interactive query service that can analyze large d
 
 ## Google BigQuery
 
-Google BigQuery is a serverless enterprise data warehouse that can analyze large datasets. You can find more information about Google Big Query in [the official documentation](https://cloud.google.com/bigquery/). 
+Google BigQuery is a serverless enterprise data warehouse that can analyze large datasets. You can find more information about Google Big Query in [the official documentation](https://cloud.google.com/bigquery/).
 
 ## IBM SQL Query
 

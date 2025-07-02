@@ -10,6 +10,7 @@ keywords:
 tags: 
 ---
 
+
 These are the IP addresses for use with Mezmo ingestion.
 
 Services are driven by a domain name system (DNS), and does not require you to update your agent configuration. The IP addresses are important only if you have configured outbound IP-based filtering in firewalls.

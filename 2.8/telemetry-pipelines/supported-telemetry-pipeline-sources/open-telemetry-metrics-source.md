@@ -10,6 +10,7 @@ keywords:
 tags: 
 ---
 
+
 ## Description
 
 You can send your metrics to a Mezmo Pipeline via any OTLP compliant sender.
@@ -20,15 +21,19 @@ Mezmo currently requires that you use the HTTP transport for your payload, not t
 
 ## Configuration
 
-The OTLP Metrics source provides a unique endpoint URL that uses **Bearer Token** authentication. You can obtain the unique endpoint and Bearer Token from the Mezmo pipeline app when you create a new OTLP Metrics source. When you [add the source to your Pipeline](/telemetry-pipelines/set-up-pipeline-sources), click on it and select Edit config. In the configuration settings, you will see the URL for the endpoint, and an option to generate a token. 
+The OTLP Metrics source provides a unique endpoint URL that uses **Bearer Token** authentication. You can obtain the unique endpoint and Bearer Token from the Mezmo pipeline app when you create a new OTLP Metrics source. When you [add the source to your Pipeline](/telemetry-pipelines/set-up-pipeline-sources), click on it and select Edit config. In the configuration settings, you will see the URL for the endpoint, and an option to generate a token.
 
 ### Configuration Options
+
+{% table %}
 
 {% table %}
 | Option | Description | 
 | ---- | ---- | 
 | `url / endpoint` | unique URL for your OTLP source | 
 | `token` | token used for authorization for your OTLP source | 
+{% /table %}
+
 {% /table %}
 
 ### OpenTelemetry Collector Configuration
@@ -38,10 +43,10 @@ To configure an OTel collector to export to Mezmo, you can add the following to 
 {% code %}
 {% tab language="yaml" %}
 exporters:
-  otlphttp/mezmo-metrics:
-    endpoint: "https://pipeline.mezmo.com/v1/<YOUR ROUTE ID>"
-    headers:
-      Authorization: "<YOUR_PIPELINE_INGEST_KEY>"
+otlphttp/mezmo-metrics:
+endpoint: "https://pipeline.mezmo.com/v1/&lt;YOUR ROUTE ID&gt;"
+headers:
+Authorization: "&lt;YOUR_PIPELINE_INGEST_KEY&gt;"
 {% /tab %}
 {% /code %}
 

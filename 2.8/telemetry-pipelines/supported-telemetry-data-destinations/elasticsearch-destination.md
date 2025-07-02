@@ -10,6 +10,7 @@ keywords:
 tags: 
 ---
 
+
 ## [Description](https://docs.mezmo.com/docs/elasticsearch-pipeline-destination#description)
 
 Typically you would use ElasticSearch to store and analyze large amounts of data which are of different structures and formats. An ElasticSearch cluster is composed of **Clusters**, **Indices**, **Nodes**, and **Shards** that help organize and manage how your data is stored. The data can then be efficiently and powerfully searched and analyzed.
@@ -19,6 +20,8 @@ ElasticSearch is usually used as a Pipeline destination when your log data needs
 ## [Configuration Options](https://docs.mezmo.com/docs/elasticsearch-pipeline-destination#configuration-options)
 
 {% table widths="233" %}
+
+{% table %}
 | Option | Description | 
 | ---- | ---- | 
 | End-to-End Acknowledgement | Enable this option to receive verification that log data is being received by ElasticSearch. | 
@@ -27,4 +30,6 @@ ElasticSearch is usually used as a Pipeline destination when your log data needs
 | Endpoints | The full URL(s) of the ElasticSearch destination(s). | 
 | Pipeline | The name of the ElasticSearch ingest pipeline to use. | 
 | Custom Index | The index name or pattern of the ElasticSearch destination. | 
+{% /table %}
+
 {% /table %}

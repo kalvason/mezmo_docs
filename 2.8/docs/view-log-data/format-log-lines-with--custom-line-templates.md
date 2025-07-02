@@ -10,7 +10,8 @@ keywords:
 tags: 
 ---
 
-You can use custom line templates to format the lines in the log viewer to make it easier for you to identify specific information that is of interest to you. 
+
+You can use custom line templates to format the lines in the log viewer to make it easier for you to identify specific information that is of interest to you.
 
 1. Select an existing View or [auto$](/docs/create-and-edit-views).
 2. Select **Edit View Properties.**
@@ -34,9 +35,9 @@ Aug 8 11:29:03 samir-Debian-10 daemon.log PID: 468 | Program: logdna-agent | Log
 
 ## Use Reserved Fields
 
-[Reserved fields](/docs/log-parsing) are marked by an underscore. 
+[Reserved fields](/docs/log-parsing) are marked by an underscore.
 
-If your data resembles: 
+If your data resembles:
 
 {% code %}
 {% tab language="bash" %}
@@ -49,10 +50,10 @@ And contains this field metadata:
 {% code %}
 {% tab language="json" title="JSON" %}
 {
-	meta: {
-		first_name: Jane,
-		last_name: Doe
-	}
+meta: {
+first_name: Jane,
+last_name: Doe
+}
 }
 {% /tab %}
 {% /code %}
@@ -82,40 +83,40 @@ You can format your data to return as JSON.
 {% code %}
 {% tab language="json" %}
 Aug 8 12:49:20  xxxx-xxxx-xxxxxxxxx-xxxx  apiinternal info  {"index": ["*:logline.*"], "size": 0, "ignore_unavailable": true, "track_total_hits": true, "body": {"query": {
-  "bool": {
-    "must": [
-      {
-        "range": {
-          "_ts": {
-            "gte": 1659976890001,
-            "lte": 1659977360647
-          }
-        }
-      },
-      {
-        "bool": {
-          "should": [
-            {
-              "term": {
-                "_app": "localhost"
-              }
-            }
-          ]
-        }
-      }
-    ]
-  }
+"bool": {
+"must": [
+{
+"range": {
+"_ts": {
+"gte": 1659976890001,
+"lte": 1659977360647
+}
+}
+},
+{
+"bool": {
+"should": [
+{
+"term": {
+"_app": "localhost"
+}
+}
+]
+}
+}
+]
+}
 }, "sort": {
-  "_lid": {
-    "order": "desc"
-  }
+"_lid": {
+"order": "desc"
+}
 }, "aggs":{
-  "metrics": {
-    "date_histogram": {
-      "field": "_ts",
-      "interval": "30s"
-    }
-  }
+"metrics": {
+"date_histogram": {
+"field": "_ts",
+"interval": "30s"
+}
+}
 }}}
 {% /tab %}
 {% /code %}

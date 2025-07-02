@@ -10,13 +10,14 @@ keywords:
 tags: 
 ---
 
+
 ## About PagerDuty Alert Integration
 
 Mezmo’s alert integration with PagerDuty interfaces with  [PagerDuty Event API](https://developer.pagerduty.com/docs/events-api-v2/overview/) and allows alerts sent from Mezmo to trigger events in PagerDuty.
 
 ## Integrating with PagerDuty
 
-On the alerts creation page, select the PagerDuty logo. 
+On the alerts creation page, select the PagerDuty logo.
 
 {% image url="https://uploads.developerhub.io/prod/2KW7/fscusmyp87hri934qjtuu3tj62d1uvlnbdw9czuk2l6of5fr2icet5n5s0snkbjk.png" mode="responsive" height="524" width="716" %}
 {% /image %}

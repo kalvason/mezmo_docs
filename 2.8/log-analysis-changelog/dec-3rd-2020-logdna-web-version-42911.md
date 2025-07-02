@@ -12,6 +12,7 @@ tags:
 
 
 
+
 ## Bugs:
 - Fixed a bug where custom parsing with a user-inputted log line would lead to bouncing cursor and content.
 - Fixed a bug where attaching a Preset Alert while creating a View would not save successfully.

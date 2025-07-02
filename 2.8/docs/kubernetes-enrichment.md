@@ -10,11 +10,12 @@ keywords:
 tags: 
 ---
 
+
 Mezmo Kubernetes Enrichment centralizes Kubernetes events, resource metrics, and logs behind a single pane of glass to enable end-to-end visibility into your Kubernetes cluster. With Kubernetes Enrichment, you can troubleshoot deployment issues from within the Log Viewer, and view and set alerts for events like crashing pods or failing health checks in your production environments.
 
 ## Kubernetes Events
 
-Knowing what is happening in your cluster alongside of your application log lines can be a valuable tool in debugging problems in your deployments.  With the Mezmo Agent, you can now do this.  
+Knowing what is happening in your cluster alongside of your application log lines can be a valuable tool in debugging problems in your deployments.  With the Mezmo Agent, you can now do this.
 
 {% image url="https://uploads.developerhub.io/prod/2KW7/bjge4x9ig7imaygpjkrq6px4ezk6gx4m7oxuh0yd9w4j0dw444smb5xe1adynwq3.png" mode="full" height="365" width="821" %}
 {% /image %}
@@ -53,7 +54,7 @@ Other information you can view includes:
 
 ## Cluster Tag to Distinguish between Multiple Clusters
 
-When you are sending log lines to Mezmo from multiple similarly named namespaces and pods you will need to add a value to the `MZ_TAGS` environment variable. 
+When you are sending log lines to Mezmo from multiple similarly named namespaces and pods you will need to add a value to the `MZ_TAGS` environment variable.
 
 Please add a tag that is prefixed `k8sclusterkey` (for example `k8sclusterkey_prod-clstr` where `prod-clstr `is a unique cluster name). This will allow enrichment to distinguish between the clusters when the nodes are similarly named.
 

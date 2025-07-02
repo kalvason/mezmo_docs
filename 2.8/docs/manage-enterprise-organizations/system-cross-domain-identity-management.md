@@ -10,6 +10,7 @@ keywords:
 tags: 
 ---
 
+
 {% synced id="enteprisebanner" %}
 {% /synced %}
 
@@ -52,7 +53,7 @@ Please note that while we support group sync, we do not support creation and del
 4. Under **Supported provisioning actions,**  select all options.
 5. For **Authentication Mode,**  choose **HTTP Header.**
 6. In the field labeled **Bearer,**  enter your enterprise token.
-7. Click **Test Connector Configuration**. 
+7. Click **Test Connector Configuration**.
 8. Assuming everything succeeds, click **Save.**
 
 ### Configure **To App** settings
@@ -64,12 +65,12 @@ Please note that while we support group sync, we do not support creation and del
 ### Set Up Initial Connection of Users/Groups
 
 1. In the **Import** tab, click **Import Now.**
-2. If required, choose a method to reconcile users. 
+2. If required, choose a method to reconcile users.
 
 ### Set Up Links between Okta and Mezmo Groups
 
 1. Create a group and assign **App Mezmo** to this group (you may have already done this if you are using Mezmo SAML).
-2. In the Mezmo Application, click**Push Groups**, then click the gear configuration icon. 
+2. In the Mezmo Application, click**Push Groups**, then click the gear configuration icon.
 3. Clear the option **Rename app groups to match group name in Okta.**
 4. Choose **Push Groups**, then **By Name**.
 5. Find the group you created.
@@ -89,23 +90,23 @@ For additional information please consult [Okta Documentation](https://help.okta
 
 ## Microsoft Azure Entra ID (formerly Active Directory)
 
-In Azure Portal, go to your **Entra ID** instance.  
+In Azure Portal, go to your **Entra ID** instance.
 
 ### Set Up SCIM as a New Enterprise Application
 
 1. Click **Enterprise applications** and then **New application**.
 2. Click **Create your own application**.
 3. Enter **Mezmo SCIM**, then click **Create**.
-4. Once this application is created, click **Provisioning**. 
-5. Click  **Get Started**. 
+4. Once this application is created, click **Provisioning**.
+5. Click  **Get Started**.
 6. Click **Connect Your Application** under **Create Configuration** section
 7. Under section **Admin Credentials** enter:
 
-- 
+-
     - For **Tenant URL**, enter: `https://api.mezmo.com/v1/enterprise/scim?aadOptscim062020`
     - For **Secret token** enter your enterprise token.
 
-- Click **Test Connection** and then **Create**. 
+- Click **Test Connection** and then **Create**.
 
 ### Configure Group Mappings
 
@@ -114,7 +115,7 @@ In Azure Portal, go to your **Entra ID** instance.
 3. Under **Target Object Actions,** clear the **Create** and **Delete** options and click **Save.**
 
 {% callout type="info" title="Groups provisioning" %}
-In order to make groups provisioning work properly, Microsoft Entra group names must match Mezmo account (Child orgs) names. For example, if your Mezmo child org name is "Department", then your Microsoft Entra group name should be "Department". 
+In order to make groups provisioning work properly, Microsoft Entra group names must match Mezmo account (Child orgs) names. For example, if your Mezmo child org name is "Department", then your Microsoft Entra group name should be "Department".
 
 Any users assigned to this group on the Entra side will be synced with the corresponding account (Child org) on the Mezmo side.
 {% /callout %}

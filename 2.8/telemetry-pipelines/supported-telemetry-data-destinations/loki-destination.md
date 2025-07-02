@@ -10,6 +10,7 @@ keywords:
 tags: 
 ---
 
+
 ## Description
 
 You can send your logs to any Loki destination (like Grafana Logs).
@@ -17,6 +18,8 @@ You can send your logs to any Loki destination (like Grafana Logs).
 ## Configuration
 
 ### Configuration Options
+
+{% table %}
 
 {% table %}
 | Option | Description | 
@@ -27,4 +30,6 @@ You can send your logs to any Loki destination (like Grafana Logs).
 | Endpoint | The base URL for your Loki instance. | 
 | Path | The path to use to your Loki instance. The default is `/loki/api/v1/push`. | 
 | Loki Labels | The key:value pairs to use in identifying the data you are sending to Loki. | 
+{% /table %}
+
 {% /table %}

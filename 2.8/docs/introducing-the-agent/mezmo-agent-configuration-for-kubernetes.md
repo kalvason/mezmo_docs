@@ -10,9 +10,10 @@ keywords:
 tags: 
 ---
 
+
 When using the Mezmo Logging Agent within a Kubernetes cluster, the configuration is a bit different than the standard v2 agent configuration.
 
-The only editable file is the `environmental variables `section of the `daemonset` configurations. 
+The only editable file is the `environmental variables `section of the `daemonset` configurations.
 
 ## To configure the agent
 
@@ -21,32 +22,32 @@ Find the effective config at beginning of agent pod log. It should look like thi
 {% code %}
 {% tab language="json" %}
 http:
-  host: logs.logdna.com
-  endpoint: /logs/agent
-  use_ssl: true
-  timeout: 10000
-  use_compression: true
-  gzip_level: 2
-  params:
-    hostname: main-mac-ubuntu
-    mac: ~
-    ip: ~
-    tags: ~
-  body_size: 2097152
+host: logs.logdna.com
+endpoint: /logs/agent
+use_ssl: true
+timeout: 10000
+use_compression: true
+gzip_level: 2
+params:
+hostname: main-mac-ubuntu
+mac: ~
+ip: ~
+tags: ~
+body_size: 2097152
 log:
-  dirs:
+dirs:
     - /home/dmitri/SOURCE/TMP/root/subdir_missing
-  include:
-    glob:
-      - "*.log"
-    regex: []
-  exclude:
-    glob: []
-    regex: []
-  lookback: start
-  log_metric_server_stats: ~
+include:
+glob:
+- "*.log"
+regex: []
+exclude:
+glob: []
+regex: []
+lookback: start
+log_metric_server_stats: ~
 journald:
-  systemd_journal_tailer: ~
+systemd_journal_tailer: ~
 startup: {}
 {% /tab %}
 {% /code %}
@@ -55,10 +56,10 @@ Copy this config file and put it in a new text file, use vim `<name of file>` fo
 
 {% code %}
 {% tab language="json" %}
-http: 
-	params: 
-		retrybase delay_ms: 100000 
-		retry_step_delay_ms: 10000
+http:
+params:
+retrybase delay_ms: 100000
+retry_step_delay_ms: 10000
 {% /tab %}
 {% /code %}
 

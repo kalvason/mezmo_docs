@@ -10,6 +10,7 @@ keywords:
 tags: 
 ---
 
+
 ## Description
 
 You can configure any source to send data via a RESTful POST to a Mezmo Edge Pipeline.
@@ -31,9 +32,13 @@ The default Edge port range is 8000-8010, unless you modified it during set up.
 ### Configuration Options
 
 {% table %}
+
+{% table %}
 | **Setting** | **Description** | 
 | ---- | ---- | 
 | **Title** | A name for your source. | 
 | **Description** | A short description of the source. | 
 | **Port** | The port number to listen on within the Edge instance. | 
+{% /table %}
+
 {% /table %}

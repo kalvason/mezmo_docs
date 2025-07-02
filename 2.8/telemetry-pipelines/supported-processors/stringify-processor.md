@@ -10,6 +10,7 @@ keywords:
 tags: 
 ---
 
+
 ## [Description](https://docs.mezmo.com/docs/string-pipeline-processor#description)
 
 This processor renders any JSON object into a single string. You can only apply this processor to the entire event rather than fields within the event.
@@ -23,8 +24,12 @@ The output of this processor takes any structured input event and outputs it as 
 ## Example
 
 {% table widths="434" %}
+
+{% table %}
 | Before | After | 
 | ---- | ---- | 
-| `{\n\n\n\n  "host": "localhost", \n\n`\n\n\n\n`"port": 3030,`\n\n\n\n`"public": "../public/",`\n\n\n\n`"paginate": {`\n\n\n\n`"default": 10,`\n\n\n\n`"max": 50`\n\n\n\n`},`\n\n\n\n`"mongodb": "mongodb://localhost:27017/api"`\n\n\n\n`}` | `{\n\n  "host": "localhost",\n\n  "port": 3030,\n\n  "public": "../public/",\n\n  "paginate": {\n\n    "default": 10,\n\n    "max": 50\n\n  },\n\n  "mongodb": "mongodb://localhost:27017/api"\n\n}` | 
+| `{\n\n\n\n\n\n\n\n  "host": "localhost", \n\n\n\n`\n\n\n\n\n\n\n\n`"port": 3030,`\n\n\n\n\n\n\n\n`"public": "../public/",`\n\n\n\n\n\n\n\n`"paginate": {`\n\n\n\n\n\n\n\n`"default": 10,`\n\n\n\n\n\n\n\n`"max": 50`\n\n\n\n\n\n\n\n`},`\n\n\n\n\n\n\n\n`"mongodb": "mongodb://localhost:27017/api"`\n\n\n\n\n\n\n\n`}` | `{\n\n\n\n  "host": "localhost",\n\n\n\n  "port": 3030,\n\n\n\n  "public": "../public/",\n\n\n\n  "paginate": {\n\n\n\n    "default": 10,\n\n\n\n    "max": 50\n\n\n\n  },\n\n\n\n  "mongodb": "mongodb://localhost:27017/api"\n\n\n\n}` | 
 |  |  | 
+{% /table %}
+
 {% /table %}

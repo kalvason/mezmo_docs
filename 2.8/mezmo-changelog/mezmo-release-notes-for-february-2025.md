@@ -10,13 +10,15 @@ keywords:
 tags: 
 ---
 
+
 Mezmo is pleased to announce new features and updates for the Mezmo Platform.
 
 ## Features
 
+
 #### Data Profile Field Summaries
 
-Field summaries provide the analysis of telemetry data from the perspective of field values. The **Field Summaries** section of the Data Profile  provides a tabular view of all the Fields discovered from the events that are streaming through a pipeline during a Data Profile analysis of your source data. For more information, check out [the Field Summaries section of the Data Profile topic](https://docs.mezmo.com/telemetry-pipelines/data-profiling#field-summaries)  in our documentation. 
+Field summaries provide the analysis of telemetry data from the perspective of field values. The **Field Summaries** section of the Data Profile  provides a tabular view of all the Fields discovered from the events that are streaming through a pipeline during a Data Profile analysis of your source data. For more information, check out [the Field Summaries section of the Data Profile topic](https://docs.mezmo.com/telemetry-pipelines/data-profiling#field-summaries)  in our documentation.
 
 ## Bug Fixes
 

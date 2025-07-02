@@ -10,7 +10,8 @@ keywords:
 tags: 
 ---
 
-The Slack alert integration enables users to easily integrate Slack alerts on log data with their Slack workspace. 
+
+The Slack alert integration enables users to easily integrate Slack alerts on log data with their Slack workspace.
 
 After attaching an alert and selecting view-specific alerts- Mezmo provides you with several options for third-party integrations and one of these is Slack:
 

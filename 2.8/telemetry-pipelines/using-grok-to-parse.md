@@ -10,6 +10,7 @@ keywords:
 tags: 
 ---
 
+
 Grok is a powerful tool for extracting structured data from unstructured text. Grok syntax is composed of reusable elements called G**rok patterns** that enable parsing for data such as timestamps, IP addresses, hostnames, log levels, and more.The prebuilt patterns make Grok easier to use than defining new regular expressions to extract structured data, especially for long text strings.
 
 {% callout type="warning" title="Unique Mezmo Patterns for Grok" %}
@@ -23,7 +24,7 @@ Grok patterns follow the syntax: `%{PATTERN TO MATCH:output label}`
 - `PATTERN TO MATCH`: this is the pattern to match on
     - Many patterns are predefined and available for review within the [Logstash repository](https://github.com/hpcugent/logstash-patterns/blob/master/files/grok-patterns).
     - **Example**: `%{TIMESTAMP_ISO8601}` extracts an ISO 8601 timestamp
-    - **Example**: `%{IP}` extracts any IPv4 or IPv6 value 
+    - **Example**: `%{IP}` extracts any IPv4 or IPv6 value
 
 - `output label`: the name of the key to use for the parsed data (optional)
     - While the `output label` is optional, if you don't specify a label, the extracted data is dropped and will not be included in the output
@@ -38,13 +39,19 @@ Standard Grok usage allows for characters between the pattern syntax. These can 
 Instead, Mezmo recommends using one or more of the the patterns described here to aid in jumping over interstitial data. When you use these patterns  between recognized patterns, you will usually automatically span the appropriate characters.
 
 {% table widths="163" %}
+
+{% table %}
 | Pattern | Usage | 
 | ---- | ---- | 
-| `%{GREEDYDATA}` | This pattern serves as an excellent starting point for building any Grok expression. This will match an entire line of data, or until you specify another expression to buffer it.\n\n\n\nThis pattern is often used for the remainder of any line not parsed. | 
-| `%{DATA}` | This pattern uses a lazy loading with any character count from zero to many, until it is succeeded by another expression, or it reaches the end of the line.\n\n\n\nThis means you can use this pattern with other patterns to "bookend" a larger set of interstitial data. | 
+| `%{GREEDYDATA}` | This pattern serves as an excellent starting point for building any Grok expression. This will match an entire line of data, or until you specify another expression to buffer it.\n\n\n\n\n\n\n\nThis pattern is often used for the remainder of any line not parsed. | 
+| `%{DATA}` | This pattern uses a lazy loading with any character count from zero to many, until it is succeeded by another expression, or it reaches the end of the line.\n\n\n\n\n\n\n\nThis means you can use this pattern with other patterns to "bookend" a larger set of interstitial data. | 
+{% /table %}
+
 {% /table %}
 
 Sometimes you will be unable to span the appropriate characters using these patterns. You can also employ the following patterns to aid in more specific advancement:
+
+{% table %}
 
 {% table %}
 | Pattern | Usage | 
@@ -53,6 +60,8 @@ Sometimes you will be unable to span the appropriate characters using these patt
 | `%{NOTSPACE}` | This pattern is useful for skipping sets of characters between whitespaces. | 
 | `%{WORD}` | This will match whole words within text. | 
 | `%{QS}` or `%{QUOTEDSTRING}` | Use this pattern to extract sets of characters between quotes. | 
+{% /table %}
+
 {% /table %}
 
 ## Usage Examples
@@ -67,6 +76,7 @@ This example includes a timestamp, a log level, and a log message. We will tackl
 
 We can start with a `%{GREEDYDATA:message}` to get the whole line. Subsequent iterations add to the patterns to extract the individual values.
 
+
 #### **Iteration 1**
 
 **Pattern:** `%{GREEDYDATA:message}`
@@ -76,14 +86,15 @@ We can start with a `%{GREEDYDATA:message}` to get the whole line. Subsequent it
 {% code %}
 {% tab language="json" %}
 {
-	"message":"2022-12-23T18:33:21Z | WARN | User object with the id ’420’ was not found"
+"message":"2022-12-23T18:33:21Z | WARN | User object with the id ’420’ was not found"
 }
 {% /tab %}
 {% /code %}
 
+
 #### **Iteration 2**
 
-Extract the timestamp from the beginning of the line, which is a standard ISO timestamp. 
+Extract the timestamp from the beginning of the line, which is a standard ISO timestamp.
 
 Note that we added a space between the timestamp pattern and greedy data. Spaces between patterns are treated as literals in Grok.
 
@@ -96,8 +107,8 @@ This yields the `timestamp` as a separate field and the remainder of the message
 {% code %}
 {% tab language="json" %}
 {
-	"message":"| WARN | User object with the id ’420’ was not found"
-	"timestamp":"2022-12-23T18:33:21Z"
+"message":"| WARN | User object with the id ’420’ was not found"
+"timestamp":"2022-12-23T18:33:21Z"
 }
 {% /tab %}
 {% /code %}
@@ -115,8 +126,8 @@ Unfortunately, because `%{DATA}` is a lazy pattern, the spaces between the pipes
 {% code %}
 {% tab language="json" %}
 {
-	"message":"| WARN | User object with the id ’420’ was not found"
-	"timestamp":"2022-12-23T18:33:21Z"
+"message":"| WARN | User object with the id ’420’ was not found"
+"timestamp":"2022-12-23T18:33:21Z"
 }
 {% /tab %}
 {% /code %}
@@ -134,9 +145,9 @@ Now we've got the full object and the pipes are dropped because they had no asso
 {% code %}
 {% tab language="json" %}
 {
-  "level":"WARN"
-  "message":"User object with the id ’420’ was not found"
-  "timestamp":"2022-12-23T18:33:21Z"
+"level":"WARN"
+"message":"User object with the id ’420’ was not found"
+"timestamp":"2022-12-23T18:33:21Z"
 }
 {% /tab %}
 {% /code %}
@@ -168,13 +179,13 @@ Note that the JSON view does not show escape characters that are present in the 
 {% code %}
 {% tab language="json" %}
 {
-  "host":"api-gateway-23",
-  "level":"info",
-  "method":"GET",
-  "message":"/api/transactions?offset=0&limit=999 18.580795ms",
-  "response":"200",
-  "service":"apigateway",
-  "timestamp":"Mar 23 14:46:29"
+"host":"api-gateway-23",
+"level":"info",
+"method":"GET",
+"message":"/api/transactions?offset=0&limit=999 18.580795ms",
+"response":"200",
+"service":"apigateway",
+"timestamp":"Mar 23 14:46:29"
 }
 {% /tab %}
 {% /code %}
@@ -187,23 +198,23 @@ Note that the JSON view does not show escape characters that are present in the 
 
 We need to remove the path of the URI and the parameters separately as those are both within the string. That leaves only the value with the unit of milliseconds (ms) left.
 
-The value is not an integer, but a floating point. The pattern for `NUMBER`  can be used to get the numeric values with the trailing decimals. This ensures we don't grab the `ms`  at the end. If we want to preserve the `ms`  as the units, we can use the `NOTSPACE`  option as it will grab alphanumeric characters. 
+The value is not an integer, but a floating point. The pattern for `NUMBER`  can be used to get the numeric values with the trailing decimals. This ensures we don't grab the `ms`  at the end. If we want to preserve the `ms`  as the units, we can use the `NOTSPACE`  option as it will grab alphanumeric characters.
 
 **Note that we did not leave a space between the URI options or the NUMBER and NOTSPACE patterns because no space exists within the line.**
 
 {% code %}
 {% tab language="json" %}
 {
-  "host":"api-gateway-23",
-  "level":"info",
-  "method":"GET",
-  "params":"?offset=0&limit=999",
-  "path":"/api/transactions",
-  "response":"200",
-  "service":"apigateway",
-  "timestamp":"Mar 23 14:46:29",
-  "unit":"ms",
-  "value":"18.580795"
+"host":"api-gateway-23",
+"level":"info",
+"method":"GET",
+"params":"?offset=0&limit=999",
+"path":"/api/transactions",
+"response":"200",
+"service":"apigateway",
+"timestamp":"Mar 23 14:46:29",
+"unit":"ms",
+"value":"18.580795"
 }
 {% /tab %}
 {% /code %}
@@ -227,36 +238,42 @@ For example, if you have multiple JSON objects in a string, you would return bot
 {% /callout %}
 
 {% table %}
+
+{% table %}
 | Pattern | Expression | Usage | 
 | ---- | ---- | ---- | 
 | **ANY_CHAR** | `r#"."#` | Matches any **single** valid character. Useful for advancing by just one character until the next pattern. | 
 | **CURLY_BRACKET** | `r#"{&#124;}"#` | Matches any single `{`  open or }  closed curly bracket. | 
 | **DOUBLE_QUOTE** | `r#"""#` | Matches any single " double quote. | 
-| **JSON_ARRAY** | `r#"\[.*\]"#` | Matches any embedded JSON array between square brackets.\n\n\n\nNote that this will match all arrays, not just one. If multiple arrays are present, separate them in a prior parse first. | 
-| **JSON_OBJECT** | `r#"{.*}"#` | Matches any embedded JSON object between curly braces.\n\n\n\nNote that this will match all objects, not just one. If multiple objects are present, separate them in a prior parse first. | 
+| **JSON_ARRAY** | `r#"\[.*\]"#` | Matches any embedded JSON array between square brackets.\n\n\n\n\n\n\n\nNote that this will match all arrays, not just one. If multiple arrays are present, separate them in a prior parse first. | 
+| **JSON_OBJECT** | `r#"{.*}"#` | Matches any embedded JSON object between curly braces.\n\n\n\n\n\n\n\nNote that this will match all objects, not just one. If multiple objects are present, separate them in a prior parse first. | 
 | **OPTIONAL_SENTENCE** | `r#"[\p{L},":;\s\-]*"#` | Matches any human readable sentence with UTF-8 characters that includes words, spaces, and punctuation, but is greedy | 
 | **PERIOD_CHAR** | `r#"\."#` | Matches any single `.`  period character. | 
 | **SENTENCE** | `r#"[\p{L},":;\s\-]+"#` | Matches any human readable sentence with UTF-8 characters that includes words, spaces, and punctation. | 
 | **SINGLE_QUOTE** | `r#"'"#` | Matches any `'` single quote character. | 
-| **SINGLE_SPACE** | `r#"\s"#` | Matches a single space.\n\n\n\nNote that this is different than the standard SPACE pattern, which is greedy and will return multiple spaces or tabs if they are present. | 
+| **SINGLE_SPACE** | `r#"\s"#` | Matches a single space.\n\n\n\n\n\n\n\nNote that this is different than the standard SPACE pattern, which is greedy and will return multiple spaces or tabs if they are present. | 
 | **TAB** | `r#"\t"#` | Matches any tab character, which may be present in the form `\t` . | 
 | **UTF8_WORD** | `r#"\p{L}+"#` |  | 
-| **XML** | `r#"<[\w"=\s]+>.*<\/[\w\s]+>"#` | Matches any embedded XML object between .\n\n\n\nNote that this will match all objects, not just one. If multiple objects are present, separate them in a prior parse first. | 
+| **XML** | `r#"<[\w"=\s]+>.*<\/[\w\s]+>"#` | Matches any embedded XML object between .\n\n\n\n\n\n\n\nNote that this will match all objects, not just one. If multiple objects are present, separate them in a prior parse first. | 
+{% /table %}
+
 {% /table %}
 
 ### Common Patterns
 
-These patterns are frequently used within Grok expressions. 
+These patterns are frequently used within Grok expressions.
 
 {% callout type="info" title="Aliased and Combined Patterns" %}
 Note that certain Grok patterns are aliases or a combination of other patterns. They can be used as shortcuts however for extracting more
 {% /callout %}
 
 {% table widths="0,296" %}
+
+{% table %}
 | Pattern | Expression | Usage | 
 | ---- | ---- | ---- | 
 | **USERNAME or USER** | `[a-zA-Z0-9._-]+` | Matches content that contains letters, digits, plus the characters `. _-.` | 
-| **EMAILLOCALPART** | `[a-zA-Z][a-zA-Z0-9_.+-=:]+` | Matches the characters before the `@`sign in an email address. \n\n\n\nFor example, in the email address `user@mezmo.com` , the matched content is `user` . | 
+| **EMAILLOCALPART** | `[a-zA-Z][a-zA-Z0-9_.+-=:]+` | Matches the characters before the `@`sign in an email address. \n\n\n\n\n\n\n\nFor example, in the email address `user@mezmo.com` , the matched content is `user` . | 
 | **EMAILADDRESS** | `%{EMAILLOCALPART}@%{HOSTNAME}` | Matches email addresses formats where the pattern is `<account_name>@<domain.com>`. | 
 | **HTTPDUSER** | `%{EMAILADDRESS}&#124;%{USER}` | Matches either an email address or username. Especially useful for cases where usernames may be a mix of either type. | 
 | **INT** | `(?:[+-]?(?:[0-9]+))` | Matches integer (whole) numbers. | 
@@ -271,8 +288,10 @@ Note that certain Grok patterns are aliases or a combination of other patterns. 
 | **SPACE** | `\s*` | Matches one or more of any whitespace character (spaces, tabs, line breaks) | 
 | **DATA** | .`*?` | Matches between zero and unlimited times, as few times as possible, expanding as needed | 
 | **GREEDYDATA** | .`*` | Matches zero or multiple characters until the end of the line | 
-| **QS** or **QUOTEDSTRING** | ``(?&gt;(?&lt;!)(?&gt;"(?&gt;.&#124;[^"]+)+"&#124;""&#124;(?&gt;'(?&gt;.&#124;[^']+)+')&#124;''&#124;(?&gt;(?&gt;\\.&#124;[^\\ ]+)+`)&#124;``))`` | Matches content between quotes.\n\n\n\nNote that this pattern can return double quotes in the output, so `%{DATA}` is typically better to use. | 
+| **QS** or **QUOTEDSTRING** | ``(?&gt;(?&lt;!)(?&gt;"(?&gt;.&#124;[^"]+)+"&#124;""&#124;(?&gt;'(?&gt;.&#124;[^']+)+')&#124;''&#124;(?&gt;(?&gt;\\.&#124;[^\\ ]+)+`)&#124;``))`` | Matches content between quotes.\n\n\n\n\n\n\n\nNote that this pattern can return double quotes in the output, so `%{DATA}` is typically better to use. | 
 | **UUID** | `[A-Fa-f0-9]{8}-(?:[A-Fa-f0-9]{4}-){3}[A-Fa-f0-9]{12}` | Matches any standard set of characters in a universally unique identifier () | 
+{% /table %}
+
 {% /table %}
 
 ## Other Resources

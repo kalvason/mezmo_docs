@@ -10,11 +10,14 @@ keywords:
 tags: 
 ---
 
+
 ## [Description](https://docs.mezmo.com/docs/google-cloud-storage-pipeline-destination#description)
 
 This destination enables you to send your Mezmo Pipeline log data to Google Cloud Storage.
 
 ## [Configuration Options](https://docs.mezmo.com/docs/google-cloud-storage-pipeline-destination#configuration-options)
+
+{% table %}
 
 {% table %}
 | Option | Description | 
@@ -26,6 +29,8 @@ This destination enables you to send your Mezmo Pipeline log data to Google Clou
 | Compression | The type of compression to apply to the log data before sending it to storage. | 
 | Bucket Prefix | The prefix to apply to the bucket name to set a directory for the stored data. | 
 | JSON Credentials | The Google Cloud [Service Account Key](https://cloud.google.com/iam/docs/keys-create-delete#creating) | 
+{% /table %}
+
 {% /table %}
 
 {% callout type="info" title="Message Stored Only" %}

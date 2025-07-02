@@ -10,6 +10,7 @@ keywords:
 tags: 
 ---
 
+
 ## Screens
 
 Screens display Widgets that display metrics about logs over a period. These are useful are to analyze and present log data. In topics in this section you'll learn how to create Screens for specific use cases, while Mezmo also provides pre-defined [auto$](/docs/using-templates) for a variety of log data types.
@@ -22,7 +23,7 @@ To access Screens and Widgets in the Mezmo Web App, go to [Screen](https://app.l
 
 ## Widgets
 
-Widgets are added to Screens to display log metrics. 
+Widgets are added to Screens to display log metrics.
 
 There are four different widget types:
 

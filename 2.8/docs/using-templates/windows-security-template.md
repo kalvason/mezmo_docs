@@ -10,6 +10,7 @@ keywords:
 tags: 
 ---
 
+
 The Windows Security Template enables you to quickly gain insights into excessive login attempts, audits on cleared logs, or anomalous access patterns. Set up alerts to monitor when unexpected events happen. or use our dashboards to get constant visibility into the access patterns of your servers.
 
 Browse the[ full library of Mezmo Templates](https://app.mezmo.com/manage/template-library).

@@ -10,6 +10,7 @@ keywords:
 tags: 
 ---
 
+
 The Log Viewer is where you can view all your logs, filter data, and create custom views.
 
 When opening the [Log Viewer](https://app.logdna.com/logs/view) for the first time, you'll see all your logs for any apps or hosts added.
@@ -19,7 +20,7 @@ When opening the [Log Viewer](https://app.logdna.com/logs/view) for the first ti
 
 ## Views
 
-Any Views you create will appear here. Use Views to narrow down the data you want to see. Learn more in [auto$](/docs/create-and-edit-views). 
+Any Views you create will appear here. Use Views to narrow down the data you want to see. Learn more in [auto$](/docs/create-and-edit-views).
 
 {% image url="https://uploads.developerhub.io/prod/2KW7/xteomlckb74vb1hcu8t2p1ksjd1mqy60m50idjm1041gd8yqsphb2dwjhbmgiqi7.png" caption="A list of created views" mode="300" height="1205" width="397" %}
 {% /image %}
@@ -33,7 +34,7 @@ Further narrow down logs by filtering on Tags, Sources, Apps, and Levels. Use th
 
 ## Search and Custom Templates
 
-Check out [auto$](/docs/search-and-filter) for more information about using the search field, and [auto$](/docs/parse-logs-with-custom-templates) to learn how to create search templates based on your parameters. 
+Check out [auto$](/docs/search-and-filter) for more information about using the search field, and [auto$](/docs/parse-logs-with-custom-templates) to learn how to create search templates based on your parameters.
 
 {% image url="https://uploads.developerhub.io/prod/2KW7/f1v0x5svbj9kqyklsddq6oxj1ksnqteorunq2y0thrdloy3v5zpb8hs4g7f5nbrj.png" caption="Log viewer search bar" mode="responsive" height="222" width="1814" %}
 {% /image %}

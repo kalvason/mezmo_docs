@@ -10,6 +10,7 @@ keywords:
 tags: 
 ---
 
+
 {% callout type="info" title="Permission Level" %}
 Must be an [admin or owner](https://docs.mezmo.com/docs/role-based-access-control) to use this feature.
 {% /callout %}
@@ -38,7 +39,7 @@ You are going to parse `111.00.11.10` from the log line.
 1. Go to [Parsing Templates](https://app.mezmo.com/manage/custom-parsing/templates) and click **Create a Template**.
 2. In Choose a Log Line, select **Add my own log line**. You'll be using the log line from the introduction.
 3. Click **Build a Parsing Template**. You will see the line you entered as a Reference Line.
-4. First, you are going to break the text down into smaller parts to so you can use the part you want. In Choose an Extractor, select **Extract Value By Delimiter**. 
+4. First, you are going to break the text down into smaller parts to so you can use the part you want. In Choose an Extractor, select **Extract Value By Delimiter**.
 5. Enter a space and then a dash.
 6. Now you should see `111.00.11.10` and `*[111.00.111.10]` as part of the lines parsed.
 7. Select `111.00.11.10` and choose the operator,**Capture in Field.** Give a label `ip_address`.
@@ -54,14 +55,14 @@ You'll parse `14/Nov/2018:10:35:00 +0000` from the log line.
 1. Select the circle with the plus sign to create a **Sibling Operator.** When you create a sibling operator, the mini map updates to show the relationship between operators and the template screen updates to have a new Choose an Operator. Learn more in [auto$](/docs/edit-parsing-operations-with-the-mini-map).
 2. Check the longer output that includes the timestamp.
 3. Choose an operator &gt; **Extract by Delimiter.**
-4. Enter a space into the delimiter. 
+4. Enter a space into the delimiter.
 5. Notice the output has split everything by space, including part of timestamp. To fix the timestamp, you need to preserve some of the spaces.
-6. Click **Preserve delimiters between.** 
+6. Click **Preserve delimiters between.**
 7. Start use a left square bracket `[` and end use a right square bracket, `]` .
 8. Click **Preserve delimiters between** again**.** Use double quotes `"` for both start and end. You'll notice that the timestamp is now cleaned up, along with some of other output.
-9. Now we need to remove the brackets from the timestamp, so it's easier to run diagnosis against. Select the timestamp. `[14/Nov/2018:10:35:00 +0000]` , choose operator, T**rim Value**. 
+9. Now we need to remove the brackets from the timestamp, so it's easier to run diagnosis against. Select the timestamp. `[14/Nov/2018:10:35:00 +0000]` , choose operator, T**rim Value**.
 10. Trim Value is 0 based counting. Start, enter `1` , for end enter  `-1`.
-11. Your output should be the timestamp. 
+11. Your output should be the timestamp.
 12. Choose operator &gt; **Capture in Field** and label it `timestamp` .
 13. So far, you've captured two fields from the log line.
 
@@ -76,7 +77,7 @@ You are going to parse `200` from the log line.
 2. Click **Add a Sibling Operator**.
 3. Select 200.
 4. Choose an operator &gt; **Convert to Number.**
-5. Choose an operator &gt; **Capture in Field**. Field name is `response.` 
+5. Choose an operator &gt; **Capture in Field**. Field name is `response.`
 
 {% image url="https://uploads.developerhub.io/prod/2KW7/6l3zqc7w0hjmhz1ido6fbiv3bg7fwvlrpfko2jd3q42w1j9cubv9lxn29jbc3goj.png" caption="Results of parsing the 200 response" mode="300" height="3068" width="1422" %}
 {% /image %}
@@ -85,7 +86,7 @@ You are going to parse `200` from the log line.
 
 You are going to parse `49` and `0.008` from the log line.
 
-1. Create a sibling operator to either Trim Value or Convert to Number in the mini map. 
+1. Create a sibling operator to either Trim Value or Convert to Number in the mini map.
 2. Select `49` and `0.08` from the output.
 3. Choose an operator &gt; **Concatenate Values by Delimiter**.
 4. Enter a forward slash `\` as the value.
@@ -97,11 +98,11 @@ You are going to parse `49` and `0.008` from the log line.
 
 ## Validate Template
 
-Before you can make a template active, you must check that the log lines you want are working. 
+Before you can make a template active, you must check that the log lines you want are working.
 
-1. Add a log line to test against in **Add a Line**. You can use the example line. When testing you want to be sure to test multiple lines by adding lines. 
+1. Add a log line to test against in **Add a Line**. You can use the example line. When testing you want to be sure to test multiple lines by adding lines.
 2. You can also test by adding a query to `Apply this parsing template to sample lines matching this query:`. This step is required and is the scope of the parsing template.
-3. Mark the log lines as valid or invalid. 
+3. Mark the log lines as valid or invalid.
     1. If a line is marked as invalid you'll be taken back to the Parsing Template step.
 
 4. Activate changes to apply your changes.

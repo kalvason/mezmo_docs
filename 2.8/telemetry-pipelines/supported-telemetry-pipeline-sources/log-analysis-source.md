@@ -10,6 +10,7 @@ keywords:
 tags: 
 ---
 
+
 {% callout type="error" title="Deprecated (Jan 30, 2025)" %}
 This source is deprecated and will be removed in a future release (TBD). You can use the [auto$](/telemetry-pipelines/log-analysis-ingestion-source)  source as an alternative long-term supported source.
 
@@ -35,6 +36,8 @@ Log lines that are preserved for Live Tail and Alerting will be included, but fu
 By default, the Mezmo Log Analysis Source sends these fields in the metadata query object (e.g. `metadata.query.account` ):
 
 {% table widths="273,0" %}
+
+{% table %}
 | Field | Type | Description | 
 | ---- | ---- | ---- | 
 | `account` | String | The Log Analysis account id the log came from | 
@@ -52,36 +55,39 @@ By default, the Mezmo Log Analysis Source sends these fields in the metadata que
 | `tags` | Array | Tags added to the request query parameters that contained the event | 
 {% /table %}
 
+{% /table %}
+
 ### Examples
+
 
 #### Ingested log from a Linux OS
 
 {% code %}
 {% tab language="json" %}
 {
-  "message": {
-    "_file": "/var/log/syslog",
-    "_ipremote": "10.10.129.13",
-    "_line": "Oct 20 19:34:48 ubuntu-s-1vcpu-1gb-intel-nyc1-01 systemd[1]: run-docker-runtime\\x2drunc-moby-8cba3a6e51cd96204c067eb66db06d6eac8b77fefad75a7dd60f4c028fd5072d-runc.tMXKDH.mount: Succeeded.",
-    "_ts": 1697830488462,
-    "logsource": "ubuntu-nyc1-01",
-    "message": "run-docker-runtime\\x2drunc-moby-8cba3a6e51cd96204c067eb66db06d6eac8b77fefad75a7dd60f4c028fd5072d-runc.tMXKDH.mount: Succeeded.",
-    "pid": 1,
-    "program": "systemd"
-  },
-  "metadata": {
-    "query": {
-      "account": "8705fc1d41",
-      "app": "syslog",
-      "host": "ubuntu-nyc1-01",
-      "id": "1668622013281333248",
-      "ingester": "logdna-agent/2.2.1 (Ubuntu/20.04)",
-      "ip": "10.10.0.5",
-      "logtype": "syslogline",
-      "mac": "7e:2c:e7:c9:7d:c8",
-      "mezmo_line_size": 392
-    }
-  }
+"message": {
+"_file": "/var/log/syslog",
+"_ipremote": "10.10.129.13",
+"_line": "Oct 20 19:34:48 ubuntu-s-1vcpu-1gb-intel-nyc1-01 systemd[1]: run-docker-runtime\\x2drunc-moby-8cba3a6e51cd96204c067eb66db06d6eac8b77fefad75a7dd60f4c028fd5072d-runc.tMXKDH.mount: Succeeded.",
+"_ts": 1697830488462,
+"logsource": "ubuntu-nyc1-01",
+"message": "run-docker-runtime\\x2drunc-moby-8cba3a6e51cd96204c067eb66db06d6eac8b77fefad75a7dd60f4c028fd5072d-runc.tMXKDH.mount: Succeeded.",
+"pid": 1,
+"program": "systemd"
+},
+"metadata": {
+"query": {
+"account": "8705fc1d41",
+"app": "syslog",
+"host": "ubuntu-nyc1-01",
+"id": "1668622013281333248",
+"ingester": "logdna-agent/2.2.1 (Ubuntu/20.04)",
+"ip": "10.10.0.5",
+"logtype": "syslogline",
+"mac": "7e:2c:e7:c9:7d:c8",
+"mezmo_line_size": 392
+}
+}
 }
 {% /tab %}
 {% /code %}

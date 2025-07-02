@@ -12,6 +12,7 @@ tags:
 
 
 
+
 ## Bugs
 * Fixed a bug where log viewer results would occasionally not show partial results until a search is complete.
 * Fixed a bug where filters show behind a timeline

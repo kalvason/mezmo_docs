@@ -10,6 +10,7 @@ keywords:
 tags: 
 ---
 
+
 More and more industries are turning towards cloud computing services as a way to process more data at lower costs. However, organizations that handle sensitive data need assurance from service providers that their data will be strongly protected. While regulations like [HIPAA](/docs/hipaa-compliance) and [the GDPR](/docs/gdpr-compliance) create strict rules for specific industries and regions, there is no single federal law enforcing data protection in the U.S. To fill this gap, many service providers including Mezmo offer Service Organization Controls (SOC) 2 compliance, which describes the policies and practices that a provider has in place for protecting customer data.
 
 In this guide, we’ll explain how you can use Mezmo to become and remain compliant with SOC 2. This document does not provide legal advice, but is a general purpose guide to help you identify and understand your potential obligations. Always check with your legal team before making any changes to your operations.

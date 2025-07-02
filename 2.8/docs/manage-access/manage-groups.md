@@ -10,6 +10,7 @@ keywords:
 tags: 
 ---
 
+
 Groups let you determine which logs users have access to using a search query. For example, you could create a group that only shows logs originating from Node.js applications, then assign your company's Node.js developers to that group. When those users sign into Mezmo, the only logs they will see are Node.js logs. This affects all logs including those that appear in the event feed, when creating alerts, and when displaying graphs.
 
 ## Create a Group

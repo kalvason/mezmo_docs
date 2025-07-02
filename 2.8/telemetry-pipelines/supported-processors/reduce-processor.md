@@ -10,6 +10,7 @@ keywords:
 tags: 
 ---
 
+
 ## [Description](https://docs.mezmo.com/docs/reduce-pipeline-processor#description)
 
 The Reduce processor takes multiple log input events and combines them into a single log event based on specified criteria.
@@ -34,6 +35,8 @@ The Reduce processor has a maximum window of 2 hrs or 7200000 milliseconds.
 {% /callout %}
 
 {% table %}
+
+{% table %}
 | Option | Description | Example | 
 | ---- | ---- | ---- | 
 | **Duration** | The total window of time over which to run the reduction | `3000ms (default)` | 
@@ -42,9 +45,13 @@ The Reduce processor has a maximum window of 2 hrs or 7200000 milliseconds.
 | **Merge Strategy** | Determines how the contents of a specified field will be treated when added to the combined event. |  | 
 {% /table %}
 
+{% /table %}
+
 ### [Merge Strategy Options](https://docs.mezmo.com/docs/reduce-pipeline-processor#merge-options)
 
 The merge options define how the fields will be combined. Note that certain strategies require numeric values in order to function.
+
+{% table %}
 
 {% table %}
 | Option | Description | Required Input Type | 
@@ -63,15 +70,21 @@ The merge options define how the fields will be combined. Note that certain stra
 | **Sum** | Add all values together into a single summed value. | Numeric | 
 {% /table %}
 
+{% /table %}
+
 ### Flush conditions
 
 Flush conditions define the logical parameters to determine the start or stop of the Reducing behavior. Flush conditions work on the event context, so the conditions apply to the latest event received, not to the merged event.
+
+{% table %}
 
 {% table %}
 | Option | Description | 
 | ---- | ---- | 
 | starts_when | Define the logical conditions on when to start reducing. Reduce will not start summarizing events until the conditions are achieved, and thereafter reduce based on the defined grouping conditions until the time window has been achieved. | 
 | ends_when | Define the logical conditions on when to stop reducing and flush the buffer, egressing the summarized event so far. Reduce will stop summarizing the events for a specific group when the latest event matches the defined conditions. The reduce operation will stop before the maximum window time is reached. | 
+{% /table %}
+
 {% /table %}
 
 ## Examples
@@ -83,36 +96,36 @@ Given a typical AWS firewall TCP event, we want to summarize multiple event mess
 {% code %}
 {% tab language="json" %}
 {
-  "az":"us-east-1b"
-  "bytes":44
-  "dest_ip":"10.1.3.81"
-  "event_dest_port":17778
-  "event_src_port":50813
-  "name":"AWS-Network-Firewall-Multi-AZ-firewall"
-  "pkts":1
-  "proto":"TCP"
-  "src_ip":"205.210.31.133"
-  "tcp":{
-  "flags":"02"
-  "syn":true
- }
- "ts":"2023-06-13T22:31:41.163906+0000"
+"az":"us-east-1b"
+"bytes":44
+"dest_ip":"10.1.3.81"
+"event_dest_port":17778
+"event_src_port":50813
+"name":"AWS-Network-Firewall-Multi-AZ-firewall"
+"pkts":1
+"proto":"TCP"
+"src_ip":"205.210.31.133"
+"tcp":{
+"flags":"02"
+"syn":true
+}
+"ts":"2023-06-13T22:31:41.163906+0000"
 }
 {
-  "az":"us-east-1b"
-  "bytes":44
-  "dest_ip":"10.1.3.81"
-  "event_dest_port":17778
-  "event_src_port":50813
-  "name":"AWS-Network-Firewall-Multi-AZ-firewall"
-  "pkts":1
-  "proto":"TCP"
-  "src_ip":"205.210.31.133"
-  "tcp":{
-   "flags":"02"
-   "syn":true
-  }
- "ts":"2023-06-13T22:31:42.280321+0000"
+"az":"us-east-1b"
+"bytes":44
+"dest_ip":"10.1.3.81"
+"event_dest_port":17778
+"event_src_port":50813
+"name":"AWS-Network-Firewall-Multi-AZ-firewall"
+"pkts":1
+"proto":"TCP"
+"src_ip":"205.210.31.133"
+"tcp":{
+"flags":"02"
+"syn":true
+}
+"ts":"2023-06-13T22:31:42.280321+0000"
 }
 {% /tab %}
 {% /code %}
@@ -135,21 +148,21 @@ In this case the 2 events will be combined as follows with the default merge:
 {% code %}
 {% tab language="json" %}
 {
-  "az":"us-east-1b",
-  "bytes":88,
-  "dest_ip":"10.1.3.81",
-  "event_dest_port":17778,
-  "event_src_port":50813,
-  "name":"AWS-Network-Firewall-Multi-AZ-firewall",
-  "pkts": 2,
-  "proto":"TCP",
-  "src_ip":"205.210.31.133",
-  "tcp":[
-   {
-    "flags":"02"
-    "syn":true
-   }]
- "ts":"2023-06-13T22:31:42.280321+0000"
+"az":"us-east-1b",
+"bytes":88,
+"dest_ip":"10.1.3.81",
+"event_dest_port":17778,
+"event_src_port":50813,
+"name":"AWS-Network-Firewall-Multi-AZ-firewall",
+"pkts": 2,
+"proto":"TCP",
+"src_ip":"205.210.31.133",
+"tcp":[
+{
+"flags":"02"
+"syn":true
+}]
+"ts":"2023-06-13T22:31:42.280321+0000"
 }
 {% /tab %}
 {% /code %}

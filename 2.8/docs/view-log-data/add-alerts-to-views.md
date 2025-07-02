@@ -10,6 +10,7 @@ keywords:
 tags: 
 ---
 
+
 You can add an alert to a single view, or create an alert template that you can apply to multiple views.
 
 ## Add an Alert to a Single View
@@ -41,15 +42,15 @@ Preset alerts are templates that can be used on multiple Views. In this example,
 
 ### Create the Preset
 
-1. Go to [Settings &gt; Alerts](https://app.mezmo.com/manage/alerts). 
-2. Click **Add a Preset**. 
+1. Go to [Settings &gt; Alerts](https://app.mezmo.com/manage/alerts).
+2. Click **Add a Preset**.
 3. Select **Email**.
 4. Give the preset a name.
 5. Set Presence and when 5 log lines appear within 15 minutes.
 6. Send the alert at the end of 15 minutes.
 7. Toggle Custom Schedule. When you set a custom schedule, alerts will only be send during that time. If your app alerts outside of that time, you will not receive an alert.
 8. Select Monday, Wednesday, and Friday as the active days.
-9. Restrict the time to 8:00 AM - 5:00 PM. 
+9. Restrict the time to 8:00 AM - 5:00 PM.
 
 {% callout type="info" title="Reading the Graph" %}
 As you update the days and time, you'll notice the graph updating. Areas shaded gray will not send alerts during that time.
@@ -60,9 +61,9 @@ As you update the days and time, you'll notice the graph updating. Areas shaded 
 
 ### Assign Preset to a View
 
-1. Go to Views. 
-2. Select the View you want to add the alert to. 
-3. Click the View name in the Viewer, then attach alert. 
+1. Go to Views.
+2. Select the View you want to add the alert to.
+3. Click the View name in the Viewer, then attach alert.
 4. Search for the alert name.
 
 ## Tips and Troubleshooting

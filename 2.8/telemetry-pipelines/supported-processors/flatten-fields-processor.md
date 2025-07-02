@@ -10,6 +10,7 @@ keywords:
 tags: 
 ---
 
+
 ## [Description](https://docs.mezmo.com/docs/flatten-field-pipeline-processor#description)
 
 This processor recursively reduces the level of a set of objects and appends the prior level to the keys of each.
@@ -23,10 +24,14 @@ The flatten processor is useful when you need all nested fields of a JSON object
 There are two options for configuring this processor.
 
 {% table %}
+
+{% table %}
 | **Option** | **Description** | **Example** | 
 | ---- | ---- | ---- | 
 | **Fields** | The field or fields to flatten. | `.foo` | 
 | **Flatten Options** | Specify the delimiter to use for combining field names with the flattened data. | _ | 
+{% /table %}
+
 {% /table %}
 
 ## [Example](https://docs.mezmo.com/docs/flatten-field-pipeline-processor#examples)
@@ -36,22 +41,24 @@ There are two options for configuring this processor.
 {% code %}
 {% tab language="json" %}
 {
-  "foo": {
-    "bar": {
-      "baz": 1,
-      "qux": "quux"
-    },
-    "corge": [
-      1,
-      2,
-      3
-    ]
-  }
+"foo": {
+"bar": {
+"baz": 1,
+"qux": "quux"
+},
+"corge": [
+1,
+2,
+3
+]
+}
 }
 {% /tab %}
 {% /code %}
 
 ### Flatten Options
+
+{% table %}
 
 {% table %}
 | Option | Value | 
@@ -60,16 +67,18 @@ There are two options for configuring this processor.
 | **Delimiter** | _ | 
 {% /table %}
 
+{% /table %}
+
 {% code %}
 {% tab language="json" %}
 {
-  "foo_bar_baz": 1,
-  "foo_bar_qux": "quux",
-  "foo_corge": [
-    1,
-    2,
-    3
-  ]
+"foo_bar_baz": 1,
+"foo_bar_qux": "quux",
+"foo_corge": [
+1,
+2,
+3
+]
 }
 {% /tab %}
 {% /code %}

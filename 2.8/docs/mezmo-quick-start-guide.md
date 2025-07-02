@@ -10,6 +10,7 @@ keywords:
 tags: 
 ---
 
+
 ## Welcome New Mezmozians!
 
 Welcome to Mezmo! Mezmo’s log management platform lets you collect, monitor, parse, live tail, graph, and analyze logs with clear visualizations and smart alerting all within minutes.
@@ -19,11 +20,11 @@ In this quick start guide, we will walk you through the steps to get you managin
 ## Set up Your Account and Create an Organization
 
 1. Click **Sign Up** on the [Mezmo website](https://mezmo.com/sign-up/). You will be automatically enrolled into a 30 day free trial.
-2. Your organization is an independent workspace where you can access and configure your logs, add members, change billing plan, and manage other aspects of your account. Once you create an organization, you will be given an auto-generated ingestion key, which you can use to send in logs. You can find more detail about setting up an organization in [the Mezmo Organization Management guide](https://docs.mezmo.com/mezmo-organization-management) and in the topic Mezmo Organization Basics. 
+2. Your organization is an independent workspace where you can access and configure your logs, add members, change billing plan, and manage other aspects of your account. Once you create an organization, you will be given an auto-generated ingestion key, which you can use to send in logs. You can find more detail about setting up an organization in [the Mezmo Organization Management guide](https://docs.mezmo.com/mezmo-organization-management) and in the topic Mezmo Organization Basics.
 
 ## Add A Log Source
 
-1. Next, choose the ingestion logging source. Mezmo offers a variety of [auto$](/docs/ingestion) including the [auto$](/docs/introducing-the-agent) and the [auto$](/2.8/log-analysis-api/ref). You can install the Mezmo Agent on Kubernetes, Openshift, Linux, Windows, and MacOS, and you can take a look at our source code on [GitHub](https://github.com/logdna/logdna-agent-v2). 
+1. Next, choose the ingestion logging source. Mezmo offers a variety of [auto$](/docs/ingestion) including the [auto$](/docs/introducing-the-agent) and the [auto$](/2.8/log-analysis-api/ref). You can install the Mezmo Agent on Kubernetes, Openshift, Linux, Windows, and MacOS, and you can take a look at our source code on [GitHub](https://github.com/logdna/logdna-agent-v2).
 2. Each organization can have multiple ingestion sources. To add an ingestion source, [log in to the Mezmo Web App](app.mezmo.com).
 3. In the left-hand navigation of the Web App, just below your user profile avatar, click **Add Log Sources.**
 4. Select the log source you want to use, and follow the setup instructions. Note that your ingestion key is automatically added to the code examples.

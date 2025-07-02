@@ -10,6 +10,7 @@ keywords:
 tags: 
 ---
 
+
 ## Description
 
 This Processor enables you to use a subset of JavaScript to transform your data, which can significantly simplify your Pipeline map.You can combine multiple actions like filtering, dropping, mapping, and casting inside of a single script.
@@ -21,19 +22,23 @@ This processor has specific limitations on command execution, as described in th
 ## Configuration
 
 {% table %}
+
+{% table %}
 | Option | Description | 
 | ---- | ---- | 
 | `Script` | The JavaScript code to transform your data | 
 {% /table %}
 
+{% /table %}
+
 {% code %}
 {% tab language="javascript" title="Example" %}
 function processEvent(message, metadata, timestamp, annotations) {
-  if (message.total_users > 5) {
-    return message
-  }
-  
-  return null // Drop it
+if (message.total_users &gt; 5) {
+return message
+}
+
+return null // Drop it
 }
 {% /tab %}
 {% /code %}
@@ -43,12 +48,16 @@ function processEvent(message, metadata, timestamp, annotations) {
 With the JavaScript processor you can define a single function to encapsulate the logic for processing an event. This function can be named whatever you want, but  by default is called `processEvent`. This function has up to three arguments that you can declare positionally, by any name.
 
 {% table widths="145" %}
+
+{% table %}
 | Parameter | Description | 
 | ---- | ---- | 
 | `message` | This is a reference to the actual message that flows through this processor | 
 | `metadata` (optional) | The metadata associated with the event | 
-| `timestamp`\n\n(optional) | The timestamp associated with this event.  In some automated parsing sources we will try and extract the timestamp from the incoming event, but for the most part this timestamp will be set to the time we received the event. | 
+| `timestamp`\n\n\n\n(optional) | The timestamp associated with this event.  In some automated parsing sources we will try and extract the timestamp from the incoming event, but for the most part this timestamp will be set to the time we received the event. | 
 | `annotations` (optional) | The annotations object for the event. In scenarios where you have created a [Data Profile](/telemetry-pipelines/data-profiling), classification information such as event type, message type, and total bytes will be present. | 
+{% /table %}
+
 {% /table %}
 
 The function must return a value on all paths. The returned object (modified, replaced, or otherwise) becomes the message downstream. Returning `null` causes the message to be dropped (no event is propagated). Modified metadata is propagated with the message.
@@ -58,12 +67,14 @@ The function must return a value on all paths. The returned object (modified, re
 These functions are available to use on any respective value. At this time, these are the only supported global operations. There is no support for global objects like `Math`, `Array`, `Map`, or `Set`, except for `Object`, `JSON` and `Date` objects.
 
 {% table widths="252" %}
+
+{% table %}
 | Function | Description | 
 | ---- | ---- | 
 | `Date.now()` | Returns the number of milliseconds elapsed since the [epoch](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date#the_epoch_timestamps_and_invalid_date), which is defined as the midnight at the beginning of January 1, 1970, UTC. | 
-| `Date.parse(date_string, unit)` | Parses a string representation of a date, and returns and returns the number of milliseconds elapsed since the [epoch](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date#the_epoch_timestamps_and_invalid_date). It defaults to `null` when parsing fails.\n\n\nUnit indicates the scale of units to return (`seconds`, `milliseconds` or `nanoseconds`) and defaults to `milliseconds`. | 
+| `Date.parse(date_string, unit)` | Parses a string representation of a date, and returns and returns the number of milliseconds elapsed since the [epoch](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date#the_epoch_timestamps_and_invalid_date). It defaults to `null` when parsing fails.\n\n\n\n\nUnit indicates the scale of units to return (`seconds`, `milliseconds` or `nanoseconds`) and defaults to `milliseconds`. | 
 | `new Date()` | Returns a timestamp representing the time of processing of this script. | 
-| `new Date(date_string)` | Parses `date_string` to produce a timestamp.  The following formats are supported - ISO8601, W3C, Apache, nginx:\n\n\n`%+`\n\n\n\n`%Y-%m-%d %T%.f%#z`\n\n\n`%Y-%m-%d %T%.f`\n\n\n`%d/%b/%Y:%T%.f %z`\n\n\n\n`%Y/%m/%d %T%.f`\n\n\n\n`%Y/%m/%d %T%.f#z` | 
+| `new Date(date_string)` | Parses `date_string` to produce a timestamp.  The following formats are supported - ISO8601, W3C, Apache, nginx:\n\n\n\n\n`%+`\n\n\n\n\n\n\n\n`%Y-%m-%d %T%.f%#z`\n\n\n\n\n`%Y-%m-%d %T%.f`\n\n\n\n\n`%d/%b/%Y:%T%.f %z`\n\n\n\n\n\n\n\n`%Y/%m/%d %T%.f`\n\n\n\n\n\n\n\n`%Y/%m/%d %T%.f#z` | 
 | `JSON.parse(json_string)` | Parses a JSON string into a JS type. It defaults to `null` when parsing fails. | 
 | `JSON.stringify(value)` | Converts a JavaScript value to a JSON string. You should use this for converting any JSON object, instead of the `toString()` method. | 
 | `Object.entries(value)` | Returns an array of property key-value pairs of the spedified object. It returns an empty array when the provided value is not an object, or `null`. | 
@@ -74,12 +85,14 @@ These functions are available to use on any respective value. At this time, thes
 | `toString()` | Casts an object to a string. Returns an empty string for null values. | 
 {% /table %}
 
+{% /table %}
+
 {% code %}
 {% tab language="javascript" %}
 function processEvent(event) {
-  if (parseInt(event.myProperty) == 1 || parseFloat(event.myProperty2) == 2.1) {
-  	return event.myProperty.toString()
-  }
+if (parseInt(event.myProperty) == 1 || parseFloat(event.myProperty2) == 2.1) {
+return event.myProperty.toString()
+}
 }
 {% /tab %}
 {% /code %}
@@ -87,6 +100,8 @@ function processEvent(event) {
 ### Comparison Operators
 
 This processor supports all basic comparison operators that are defined in JavaScript.
+
+{% table %}
 
 {% table %}
 | Operator | Description | 
@@ -99,11 +114,15 @@ This processor supports all basic comparison operators that are defined in JavaS
 | != or !== | Not Equal. **Note**: This has strict type checking whether it's defined as `==` or `===` | 
 {% /table %}
 
+{% /table %}
+
 ### Arithmetic Operators
 
 An arithmetic operator takes numerical values as their operands and returns a single numerical value.
 
 {% table widths="279" %}
+
+{% table %}
 | Operator | Description | 
 | ---- | ---- | 
 | + | Addition | 
@@ -112,9 +131,13 @@ An arithmetic operator takes numerical values as their operands and returns a si
 | / | Division | 
 {% /table %}
 
+{% /table %}
+
 ### String Operations
 
 String operations supported follow the standard Javascript conventions.
+
+{% table %}
 
 {% table %}
 | Operator | Description | 
@@ -126,7 +149,7 @@ String operations supported follow the standard Javascript conventions.
 | .charAt() | Retrieve an character at the specific index from a string | 
 | .indexOf() | Return the first index of a value in a string | 
 | .lastIndexOf() | Return the last index of a value in a string | 
-| .length | Returns the number of characters in a string\n\n\n\n_Note that to avoid collisions with a field name of_ `.length`_the function checks to ensure that field does not exist first. If it does, it will return the value of the field, not the computed length._ | 
+| .length | Returns the number of characters in a string\n\n\n\n\n\n\n\n_Note that to avoid collisions with a field name of_ `.length`_the function checks to ensure that field does not exist first. If it does, it will return the value of the field, not the computed length._ | 
 | .padEnd() | Adds additional specified characters to the end of a string | 
 | .padStart() | Adds additional specified characters to the beginning of a string | 
 | .repeat() | Returns a new string with a number of copies of the original string | 
@@ -137,6 +160,8 @@ String operations supported follow the standard Javascript conventions.
 | .trim() | Removes whitespaces from both sides of the string | 
 | .trimEnd() | Removes whitespaces from the end of the string | 
 | .trimStart() | Removes whitespaces from the beginning of the string | 
+{% /table %}
+
 {% /table %}
 
 ### Function-Scoped Variables
@@ -165,13 +190,13 @@ message.attr = undefined
 
 {% code %}
 {% tab language="javascript" title="Filter Event" %}
-// Fitering an event	
+// Fitering an event
 function processEvent(message, metadata, timestamp, annotations) {
-  if (message.code == 102) {
-    return message // Pass the event through
-  }
+if (message.code == 102) {
+return message // Pass the event through
+}
 
-  return null // Drop it
+return null // Drop it
 }
 {% /tab %}
 {% /code %}
@@ -182,10 +207,10 @@ function processEvent(message, metadata, timestamp, annotations) {
 {% tab language="javascript" title="Add property to event" %}
 // Simple assignment
 function processEvent(message, metadata, timestamp, annotations) {
-  if (message.sample === 'something') {
-    message.newProperty = 'ITS_SOMETHING'
-  }
-  return message
+if (message.sample === 'something') {
+message.newProperty = 'ITS_SOMETHING'
+}
+return message
 }
 {% /tab %}
 {% /code %}
@@ -197,9 +222,9 @@ function processEvent(message, metadata, timestamp, annotations) {
 // Remove property from event
 // Set the value to null on a property or subset of properties to remove it from the message
 function processEvent(message, metadata, timestamp, annotations) {
-  message.total = null
-  message.summary.description = null
-  return message
+message.total = null
+message.summary.description = null
+return message
 }
 {% /tab %}
 {% /code %}
@@ -210,8 +235,8 @@ function processEvent(message, metadata, timestamp, annotations) {
 {% tab language="javascript" title="Parsing" %}
 // Using parseInt and parseFloat
 function processEvent(message, metadata, timestamp, annotations) {
-  message.total = parseInt(message.dollars) + parseFloat(message.change)
-  return message
+message.total = parseInt(message.dollars) + parseFloat(message.change)
+return message
 }
 {% /tab %}
 {% /code %}
@@ -222,8 +247,8 @@ function processEvent(message, metadata, timestamp, annotations) {
 {% tab language="javascript" title="Convert to String" %}
 // Using toString()
 function processEvent(message, metadata, timestamp, annotations) {
-  message.total = message.total.toString()
-  return message
+message.total = message.total.toString()
+return message
 }
 {% /tab %}
 {% /code %}
@@ -236,9 +261,9 @@ This example shows how you can compute the size of the event payload using combi
 {% tab language="json" %}
 // Count the number of characters to determine payload size
 function processEvent(message, metadata, timestamp, annotations) {
-	const my_string = JSON.stringify(message) // convert the payload to a string
-  message.size = message.length // return the number of characters
-  return message
+const my_string = JSON.stringify(message) // convert the payload to a string
+message.size = message.length // return the number of characters
+return message
 }
 {% /tab %}
 {% /code %}
@@ -249,15 +274,15 @@ function processEvent(message, metadata, timestamp, annotations) {
 {% tab language="javascript" title="Convert to String" %}
 // Using toString()
 function processEvent(message, metadata, timestamp, annotations) {
-  message.total = message.total.toString()
-  if (message.total.endsWith('88')) {
-      message.tags.clearance = 1
-  } 
-  if (message.total.startsWith('9')) {
-      message.tags.premium = 1
-  }
-  message.displayTotal = '$' + message.total + ' USD'
-  return message
+message.total = message.total.toString()
+if (message.total.endsWith('88')) {
+message.tags.clearance = 1
+}
+if (message.total.startsWith('9')) {
+message.tags.premium = 1
+}
+message.displayTotal = '$' + message.total + ' USD'
+return message
 }
 {% /tab %}
 {% /code %}
@@ -267,16 +292,16 @@ function processEvent(message, metadata, timestamp, annotations) {
 {% code %}
 {% tab language="javascript" title="Array manipulation" %}
 function processEvent(message, metadata, timestamp, annotations) {
-  const filtered_tags = []
-  // Iterate using for...of
-  for (const tag of message.tags) {
-    if (tag.startsWith('my-tag-')) {
-      	// Add elements to an existing array with push()
-        filtered_tags.push(tag)
-    } 
-  }
-  message.tags = filtered_tags
-  return message
+const filtered_tags = []
+// Iterate using for...of
+for (const tag of message.tags) {
+if (tag.startsWith('my-tag-')) {
+// Add elements to an existing array with push()
+filtered_tags.push(tag)
+}
+}
+message.tags = filtered_tags
+return message
 }
 {% /tab %}
 {% /code %}

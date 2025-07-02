@@ -10,6 +10,7 @@ keywords:
 tags: 
 ---
 
+
 You'll create a screen that monitors:
 
 - Week over week traffic
@@ -17,7 +18,7 @@ You'll create a screen that monitors:
 
 ## Week Over Week Traffic
 
-1. Create a **Time Shifted Graph** Widget. 
+1. Create a **Time Shifted Graph** Widget.
 2. Under Data:
 
     1. Set Field to **All Lines**.

@@ -10,13 +10,14 @@ keywords:
 tags: 
 ---
 
+
 Mezmo is pleased to announce new features and updates for the Mezmo Platform.
 
 ## Features
 
 ### Pipeline Sources and Destinations for Checkly
 
-With the new [Source](https://docs.mezmo.com/telemetry-pipelines/checkly) and[ Destination ](https://docs.mezmo.com/telemetry-pipelines/checkly-destination)components for [Checkly](https://www.checklyhq.com/), you can both receive and send telemetry traces based on the OpenTelemetry standard for you Checkly instances. [Check out this blog post](https://www.checklyhq.com/blog/streamlining-telemetry-mezmo/) for more information about using Checkly with a Mezmo Telemetry Pipeline. 
+With the new [Source](https://docs.mezmo.com/telemetry-pipelines/checkly) and[ Destination ](https://docs.mezmo.com/telemetry-pipelines/checkly-destination)components for [Checkly](https://www.checklyhq.com/), you can both receive and send telemetry traces based on the OpenTelemetry standard for you Checkly instances. [Check out this blog post](https://www.checklyhq.com/blog/streamlining-telemetry-mezmo/) for more information about using Checkly with a Mezmo Telemetry Pipeline.
 
 ### Bug Fixes
 

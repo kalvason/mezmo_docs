@@ -10,11 +10,12 @@ keywords:
 tags: 
 ---
 
+
 Mezmo’s alert integration with AppOptics interfaces with the [App Optics Measurement API](https://docs.appoptics.com/api/#measurements) and allows alerts set in Mezmo to create measurements in AppOptics.
 
 ## Integrating with AppOptics
 
-On the alerts creation page, select the AppOptics logo. 
+On the alerts creation page, select the AppOptics logo.
 
 To find an API token, in your AppOptics dashboard, go to [Settings → API Tokens ](https://my.appoptics.com/organization/tokens)page to copy an existing or create a new API token with “Record Only” permission.
 

@@ -10,6 +10,7 @@ keywords:
 tags: 
 ---
 
+
 ## Introduction
 
 The Mezmo Telemetry Pipeline platform enables you to quickly and easily process metrics within your pipeline using out-of-the-box functionality. This includes support for use cases such as:
@@ -28,9 +29,11 @@ If you have metrics that are not properly formatted, you can use the [auto$](/te
 
 Metric data within the Pipeline must follow a standard format in order to be used in any processors or destinations that require a metric value.
 
-This table describes the data model for various fields, including the data type for the field, and whether it is required for the data model. 
+This table describes the data model for various fields, including the data type for the field, and whether it is required for the data model.
 
 {% table widths="108,0,0" %}
+
+{% table %}
 | Field | Data type | Required | Description | 
 | ---- | ---- | ---- | ---- | 
 | `name` | String | Yes | The name for the metric | 
@@ -40,130 +43,132 @@ This table describes the data model for various fields, including the data type 
 | `tags` | Object | No | An optional set of tag keys and values | 
 {% /table %}
 
+{% /table %}
+
 This code block is a JSON representation of the metric model with example values:
 
 {% code %}
 {% tab language="json" title="counter" %}
 {
-  "name": "go_goroutines",
-  "namespace": "myspace",
-  "tags": {
-    "instance": "host-address:443"
-  },
-  "kind": "absolute",
-  "value": {
-    "type": "counter",
-    "value": 36
-  }
+"name": "go_goroutines",
+"namespace": "myspace",
+"tags": {
+"instance": "host-address:443"
+},
+"kind": "absolute",
+"value": {
+"type": "counter",
+"value": 36
+}
 }
 {% /tab %}
 {% tab language="json" title="gauge" %}
 {
-  "name": "go_goroutines",
-  "namespace": "myspace",
-  "tags": {
-    "instance": "host-address:443"
-  },
-  "kind": "absolute",
-  "value": {
-    "type": "gauge",
-    "value": 55.3
-  }
+"name": "go_goroutines",
+"namespace": "myspace",
+"tags": {
+"instance": "host-address:443"
+},
+"kind": "absolute",
+"value": {
+"type": "gauge",
+"value": 55.3
+}
 }
 {% /tab %}
 {% tab language="json" title="set" %}
 {
-  "name": "my_set",
-  "namespace": "myspace",
-  "tags": {
-    "instance": "host-address:443"
-  },
-  "kind": "absolute",
-  "value": {
-    "type": "set",
-    "value" : {
-        "values": ["apple", "orange", "pear"]
-    }
-  }
+"name": "my_set",
+"namespace": "myspace",
+"tags": {
+"instance": "host-address:443"
+},
+"kind": "absolute",
+"value": {
+"type": "set",
+"value" : {
+"values": ["apple", "orange", "pear"]
+}
+}
 }
 {% /tab %}
 {% tab language="json" title="histogram" %}
 {
-  "name": "my_histogram",
-  "namespace": "myspace",
-  "tags": {
-    "instance": "host-address:443"
-  },
-  "kind": "absolute",
-  "value": {
-    "type": "histogram",
-    "value": {
-        "buckets" : [
-            {
-                "upper_limit": 5000,
-                "count": 70
-            },
-            {
-                "upper_limit": 1000,
-                "count": 30
-            }
-        ],
-        "count": 100,
-        "sum": 4500
-    }
-  }
+"name": "my_histogram",
+"namespace": "myspace",
+"tags": {
+"instance": "host-address:443"
+},
+"kind": "absolute",
+"value": {
+"type": "histogram",
+"value": {
+"buckets" : [
+{
+"upper_limit": 5000,
+"count": 70
+},
+{
+"upper_limit": 1000,
+"count": 30
+}
+],
+"count": 100,
+"sum": 4500
+}
+}
 {% /tab %}
 {% tab language="json" title="distribution" %}
 {
-  "name": "my_dist",
-  "namespace": "myspace",
-  "tags": {
-    "instance": "host-address:443"
-  },
-  "kind": "absolute",
-  "value": {
-    "type": "distribution",
-    "value": {
-        "samples" : [
-            {
-                "value": 5000,
-                "rate": 90
-            },
-            {
-                "value": 1000,
-                "rate": 40
-            }
-        ],
-        "statistic": "histogram"
-    }
-  }
+"name": "my_dist",
+"namespace": "myspace",
+"tags": {
+"instance": "host-address:443"
+},
+"kind": "absolute",
+"value": {
+"type": "distribution",
+"value": {
+"samples" : [
+{
+"value": 5000,
+"rate": 90
+},
+{
+"value": 1000,
+"rate": 40
+}
+],
+"statistic": "histogram"
+}
+}
 }
 {% /tab %}
 {% tab language="json" title="summary" %}
 {
-  "name": "my_summary",
-  "namespace": "myspace",
-  "tags": {
-    "instance": "host-address:443"
-  },
-  "kind": "absolute",
-  "value": {
-    "type": "summary",
-    "value": {
-        "quantiles" : [
-            {
-                "quantile": 0.5,
-                "value": 70
-            },
-            {
-                "quantile": 0.73,
-                "value": 90
-            }
-        ],
-        "count": 90,
-        "sum": 4500
-    }
-  }
+"name": "my_summary",
+"namespace": "myspace",
+"tags": {
+"instance": "host-address:443"
+},
+"kind": "absolute",
+"value": {
+"type": "summary",
+"value": {
+"quantiles" : [
+{
+"quantile": 0.5,
+"value": 70
+},
+{
+"quantile": 0.73,
+"value": 90
+}
+],
+"count": 90,
+"sum": 4500
+}
+}
 }
 {% /tab %}
 {% /code %}

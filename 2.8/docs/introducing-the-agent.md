@@ -10,6 +10,7 @@ keywords:
 tags: 
 ---
 
+
 The Mezmo Agent reads log files from the host where it is installed, and uploads the log data to Mezmo via a secure HTTPS connection, where it is parsed and processed according to the parameters set in the Mezmo Agent configuration file. The Mezmo Agent runs on Kubernetes, Openshift, Linux, and Windows.
 
 The Mezmo Agent is written in Rust, and uses the Linux kernel to monitor the log files and directories for changes, rather than having to poll these files constantly. This implementation frees up CPU utilization and improves stability.
@@ -25,17 +26,17 @@ For complete information about installing and configuring the Mezmo Agent, check
 
 ### Default Configuration File
 
-You can find the default configuration `yaml` file in the Agent directory at `/etc/logdna/config.yaml`. You can find more information in [the Configuration section](https://github.com/logdna/logdna-agent-v2#configuration) of the GitHub documentation. 
+You can find the default configuration `yaml` file in the Agent directory at `/etc/logdna/config.yaml`. You can find more information in [the Configuration section](https://github.com/logdna/logdna-agent-v2#configuration) of the GitHub documentation.
 
 ## Release Notes
 
 - [Mezmo Agent 3.9 (GA)](https://announcements.mezmo.com/37768-mezmo-agent-3-9-now-available)
-- [auto$](/log-analysis-changelog/mezmo-agent-3-8--ga-) 
-- [auto$](/log-analysis-changelog/mezmo-agent-3-7-ga) 
-- [auto$](/log-analysis-changelog/mezmo-agent-3-6--ga-) 
-- [auto$](/log-analysis-changelog/mezmo-agent-3-6--beta-) 
-- [auto$](/log-analysis-changelog/mezmo-agent-35-ga) 
-- [auto$](/log-analysis-changelog/mezmo-agent-3-5--beta-) 
+- [auto$](/log-analysis-changelog/mezmo-agent-3-8--ga-)
+- [auto$](/log-analysis-changelog/mezmo-agent-3-7-ga)
+- [auto$](/log-analysis-changelog/mezmo-agent-3-6--ga-)
+- [auto$](/log-analysis-changelog/mezmo-agent-3-6--beta-)
+- [auto$](/log-analysis-changelog/mezmo-agent-35-ga)
+- [auto$](/log-analysis-changelog/mezmo-agent-3-5--beta-)
 - [Mezmo Agent 3.4 (GA)](https://docs.mezmo.com/log-analysis-changelog/logdna-agent-34-ga)
 - [Mezmo Agent v3.3 (GA)](https://docs.mezmo.com/log-analysis-changelog/logdna-agent-34-ga)
 - [Mezmo Agent v3.3 (Beta)](https://docs.mezmo.com/log-analysis-changelog/logdna-agent-33-beta)
@@ -51,7 +52,7 @@ GitHub Repository
 
 For complete information about installing and configuring the older Mezmo Agent, check out the source code and documentation in our GitHub repository. [https://github.com/logdna/logdna-agent](https://github.com/logdna/logdna-agent)
 
-{% callout type="error" title="Changes to Log Ingestion for Agent <2.2.1 (version 1)" %}
+{% callout type="error" title="Changes to Log Ingestion for Agent &lt;2.2.1 (version 1)" %}
 The certificates in versions &lt;2.2.1 have expired, and it is not possible to update the certificate model used in these versions. Mezmo recommends that you to use latest version of version 2, or agent versions above 2.2 on version 1. You can find find more information[ in this blog post](https://www.mezmo.com/blog/announcing-mezmo-agent-3-6-ga-windows-support-and-updated-agent-deprecation-schedule).
 {% /callout %}
 

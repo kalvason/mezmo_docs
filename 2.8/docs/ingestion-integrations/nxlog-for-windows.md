@@ -10,6 +10,7 @@ keywords:
 tags: 
 ---
 
+
 NXLog is the workhorse of Windows logging plugins. You can use our configuration file for NXLog to set up the ingestion of Windows events logs to Mezmo.
 
 ## Set Up NXLog Log Ingestion
@@ -18,7 +19,7 @@ Follow the instructions in the Mezmo Web App to set up NXLog log ingestion using
 
 1. Log in to the [Mezmo Web App](http://app.mezmo.com).
 2. In the bottom section of the left-hand navigation, click **Help**.
-3. Select **Add Log Sources**. 
+3. Select **Add Log Sources**.
 4. Under **Via platform**, click **NXLog**.
 5. Follow the instructions to set up NXLog log ingestion.
 
@@ -43,82 +44,93 @@ CacheDir  %ROOT%\\data
 Pidfile   %ROOT%\\data\\nxlog.pid
 SpoolDir  %ROOT%\\data
 
-<Extension _syslog>
-    Module      xm_syslog
-</Extension>
+&lt;Extension _syslog&gt;
+Module      xm_syslog
+&lt;/Extension&gt;
 
-<Extension _exec>
-    Module      xm_exec
-</Extension>
+&lt;Extension _exec&gt;
+Module      xm_exec
+&lt;/Extension&gt;
 
-<Extension json>
-    Module	xm_json
-</Extension>
+&lt;Extension json&gt;
+Module	xm_json
+&lt;/Extension&gt;
 
-<Input internal>
-    Module im_internal
-    Exec $Message = to_json();
-</Input>
+&lt;Input internal&gt;
+Module im_internal
+Exec $Message = to_json();
+&lt;/Input&gt;
 
 #######################################################################
-##### This is just explicit version of internal input above ###########
-#######################################################################
-# <Input nxlog>
-#     Module im_file
-#     File '%LOGFILE%'
-#     <Exec>
-#         $Message = $raw_event;
-#         if $Message == '' drop();
-#         $SourceName = substr(file_name(), size('%LOGDIR%') + 1);
-#     </Exec>
-# </Input>
+
+#### This is just explicit version of internal input above ###########
 #######################################################################
 
-# Define Directory for Making Substring Operation
+## &lt;Input nxlog&gt;
+
+##     Module im_file
+
+##     File '%LOGFILE%'
+
+##     &lt;Exec&gt;
+
+##         $Message = $raw_event;
+
+##         if $Message == '' drop();
+
+##         $SourceName = substr(file_name(), size('%LOGDIR%') + 1);
+
+##     &lt;/Exec&gt;
+
+## &lt;/Input&gt;
+#######################################################################
+
+
+## Define Directory for Making Substring Operation
 define LOGFOLDER C:\\ProgramData\\logs
 
-<Input filelog>
-    Module im_file
-    File '%LOGFOLDER%\\*.log'
-    Recursive TRUE
-    <Exec>
-        $Message = $raw_event;
-        if $Message == '' drop();
-        $SourceName = substr(file_name(), size('%LOGFOLDER%') + 2);
-    </Exec>
-</Input>
+&lt;Input filelog&gt;
+Module im_file
+File '%LOGFOLDER%\\*.log'
+Recursive TRUE
+&lt;Exec&gt;
+$Message = $raw_event;
+if $Message == '' drop();
+$SourceName = substr(file_name(), size('%LOGFOLDER%') + 2);
+&lt;/Exec&gt;
+&lt;/Input&gt;
 
-<Input eventlog>
-    Module im_msvistalog
-    <QueryXML>
-        <QueryList>
-            <Query Id='0'>
-                <!--Select Path='Application'>*</Select-->
-                <Select Path='System'>*</Select>
-                <!--Select Path='Security'>*</Select-->
-            </Query>
-        </QueryList>
-    </QueryXML>
-    Exec $Message = to_json();
-</Input>
+&lt;Input eventlog&gt;
+Module im_msvistalog
+&lt;QueryXML&gt;
+&lt;QueryList&gt;
+&lt;Query Id='0'&gt;
+&lt;!--Select Path='Application'&gt;*&lt;/Select--&gt;
+&lt;Select Path='System'&gt;*&lt;/Select&gt;
+&lt;!--Select Path='Security'&gt;*&lt;/Select--&gt;
+&lt;/Query&gt;
+&lt;/QueryList&gt;
+&lt;/QueryXML&gt;
+Exec $Message = to_json();
+&lt;/Input&gt;
 
-<Processor buffer>
-    Module pm_buffer
-    MaxSize 102400
-    Type disk
-</Processor>
+&lt;Processor buffer&gt;
+Module pm_buffer
+MaxSize 102400
+Type disk
+&lt;/Processor&gt;
 
-<Output out>
-    Module om_ssl
-    Host syslog-a.logdna.com
-    Port CUSTOM_PORT
-    CAFile %CERTDIR%\ca.pem
-    Exec to_syslog_ietf();
-</Output>
+&lt;Output out&gt;
+Module om_ssl
+Host syslog-a.logdna.com
+Port CUSTOM_PORT
+CAFile %CERTDIR%\ca.pem
+Exec to_syslog_ietf();
+&lt;/Output&gt;
 
-<Route 1>
-    Path internal, filelog, eventlog => buffer => out
-</Route>
+&lt;Route 1&gt;
+Path internal, filelog, eventlog =&gt; buffer =&gt; out
+&lt;/Route&gt;
 {% /tab %}
 {% /code %}
 
@@ -130,10 +142,10 @@ You can add additional logfiles by creating a new `<Input {name}>` section that 
 
 {% code %}
 {% tab language="none" title="Text" %}
-<Input newlog>
-    Module im_file
-    File '%LOGDIR%\\example.log'
-    Exec $Message = to_json();
-</Input>
+&lt;Input newlog&gt;
+Module im_file
+File '%LOGDIR%\\example.log'
+Exec $Message = to_json();
+&lt;/Input&gt;
 {% /tab %}
 {% /code %}

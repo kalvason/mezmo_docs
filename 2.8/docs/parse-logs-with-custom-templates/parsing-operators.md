@@ -11,6 +11,7 @@ tags:
 ---
 
 
+
 Parsing operators are used to extract and manipulate data.
 
 ## Extract Values by Delimiters
@@ -19,10 +20,14 @@ Extracts values between a single delimiter. It creates tokens that can be select
 
 
 {% table %}
+
+{% table %}
 | Operator Fields | Description | 
 | ---- | ---- | 
 | Delimiter | The delimiter that the logline or string should be split on. | 
 | Preserve Delimiters Between (Start & End) | Preserve any encountered delimiters between start and end keys. | 
+{% /table %}
+
 {% /table %}
 
 ## Extract Values Between Delimiters
@@ -31,10 +36,14 @@ Extracts values between start and end delimiters. It creates tokens that can be 
 
 
 {% table %}
+
+{% table %}
 | Operator Fields | Description | 
 | ---- | ---- | 
 | Start Key | The delimiter that the logline or string should be split on. | 
 | End Key | String delimiter for the end of an extraction. | 
+{% /table %}
+
 {% /table %}
 
 ## Parse JSON
@@ -51,9 +60,13 @@ Combines all of the selected values into a single token separated by a delimiter
 
 
 {% table %}
+
+{% table %}
 | Operator Fields | Description | 
 | ---- | ---- | 
 | Delimiter | The key to add between each token selected. | 
+{% /table %}
+
 {% /table %}
 
 ## Trim Value
@@ -62,10 +75,14 @@ Trims the selected value by specifying start and end indices. Indices are number
 
 
 {% table %}
+
+{% table %}
 | Operator Fields | Description | 
 | ---- | ---- | 
 | Start | Start index for partial selection. | 
 | End | End index for partial selection | 
+{% /table %}
+
 {% /table %}
 
 ## Convert to Number

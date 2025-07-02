@@ -10,7 +10,8 @@ keywords:
 tags: 
 ---
 
-As Mezmo [ingests your logs](/docs/ingestion), it automatically parses information from your log lines, including string components, source information, application information, JSON objects, and user-specified metadata. You can then use [Mezmo search features](/docs/search-and-filter) to analyze data in your logs. This topic describes the various types of information that Mezmo parses, along with notes on how it is parsed. [](/docs/parse-logs-with-custom-templates) contains additional information about using custom parsing templates. 
+
+As Mezmo [ingests your logs](/docs/ingestion), it automatically parses information from your log lines, including string components, source information, application information, JSON objects, and user-specified metadata. You can then use [Mezmo search features](/docs/search-and-filter) to analyze data in your logs. This topic describes the various types of information that Mezmo parses, along with notes on how it is parsed. [](/docs/parse-logs-with-custom-templates) contains additional information about using custom parsing templates.
 
 You can identify parsed lines in Views by selecting a line and viewing the data.
 
@@ -77,7 +78,7 @@ In addition to source information, Mezmo can also parse application information 
 
 ## Automatic and Custom Parsing for Field Search
 
-Mezmo automatically parses certain types of log lines that enable the use of field search for those lines. 
+Mezmo automatically parses certain types of log lines that enable the use of field search for those lines.
 
 ## JSON Parsing
 
@@ -85,7 +86,7 @@ Mezmo automatically parses certain types of log lines that enable the use of fie
 Be aware that the size of sent log data can increase after the JSON string is parsed in Node.js. Measurement is based on how much data is ingested into Mezmo, after it is parsed as JSON, and not how much data is sent in a line.
 {% /callout %}
 
-Messages that end in a curly brace, `}` are parsed even if the JSON doesn't contain the entire message. 
+Messages that end in a curly brace, `}` are parsed even if the JSON doesn't contain the entire message.
 
 If you don't want your JSON to be parsed, add an additional character after the ending curly brace such as a period.
 
@@ -126,9 +127,9 @@ Protected field names cannot be used in your object, and are removed by Mezmo wh
 
 ### Mezmo Reserved Fields
 
-Fields with the annotation _`mezmo_` are reserved for Mezmo-specific data. 
+Fields with the annotation _`mezmo_` are reserved for Mezmo-specific data.
 
-`_mezmo_line_size` 
+`_mezmo_line_size`
 
 Indicates the number of bytes attributed to a log line. You can view a line's size by clicking on it in the Log Viewer. You can also search by line size as described in the topic auto$.
 

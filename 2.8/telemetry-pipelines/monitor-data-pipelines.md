@@ -10,6 +10,7 @@ keywords:
 tags: 
 ---
 
+
 On your Pipelines dashboard, you can monitor the volume of data flowing through your Pipelines, including the aggregated Ingress and Egress metrics for all Pipelines. You can also view volume metrics for each of your Sources and Destinations, and aggregated Ingress and Egress metrics for all Sources and Destination.
 
 ## [Access the Monitoring Dashboard](https://docs.mezmo.com/docs/monitor-log-data-pipelines#access-the-monitoring-dashboard)
@@ -29,7 +30,7 @@ Below the I**ngestion/Egress by Volume** chart are two charts showing the **Top 
 
 ## [Aggregated Egress](https://docs.mezmo.com/docs/monitor-log-data-pipelines#aggregated-egress)
 
-Next to the charts for Top 10 Sources and Destinations is circle graph showing the **Aggregated Egress** for all Pipeline Destinations, with the circle divided in proportion to the egress to each Destination. 
+Next to the charts for Top 10 Sources and Destinations is circle graph showing the **Aggregated Egress** for all Pipeline Destinations, with the circle divided in proportion to the egress to each Destination.
 
 ## [All Pipelines](https://docs.mezmo.com/docs/monitor-log-data-pipelines#all-pipelines)
 

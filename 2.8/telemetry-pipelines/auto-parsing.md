@@ -10,6 +10,7 @@ keywords:
 tags: 
 ---
 
+
 There are two distinct types of telemetry logs: unstructured text lines or structured JSON events. Structured logs contain much more information than textual logs, and many of our processors require JSON events in order to to perform operations on them.
 
 One of the ways you can convert unstructured logs to structured JSON logs is by using the [auto$](/telemetry-pipelines/parse-sequentially-processor). If you know the type of data that is expected in a Source, you can specify the appropriate parsers in the Processor.

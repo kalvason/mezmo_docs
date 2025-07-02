@@ -10,7 +10,8 @@ keywords:
 tags: 
 ---
 
-Mezmo supports these Processors for telemetry data. Click the name of the Processor for detailed configuration information. 
+
+Mezmo supports these Processors for telemetry data. Click the name of the Processor for detailed configuration information.
 
 {% index-list %}
 {% /index-list %}

@@ -10,11 +10,14 @@ keywords:
 tags: 
 ---
 
+
 ## Description
 
 Publish logs to [AWS Kinesis Streams](https://aws.amazon.com/kinesis/data-streams) topics
 
 Configuration Options
+
+{% table %}
 
 {% table %}
 | Option | Description | 
@@ -26,4 +29,6 @@ Configuration Options
 | Stream Name | The name of the Kinesis Firehose stream | 
 | Region | The name of the AWS region that is targeted. | 
 | Partition Key Field | The field in the log whose value is used as Kinesis' partition key. | 
+{% /table %}
+
 {% /table %}

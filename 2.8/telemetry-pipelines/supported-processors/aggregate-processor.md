@@ -10,9 +10,10 @@ keywords:
 tags: 
 ---
 
+
 ## Description
 
-With the Aggregate Processor you can aggregate metrics and events for specified fields, and then evaluate those aggregations using defined conditions to send alerts when those conditions are met. 
+With the Aggregate Processor you can aggregate metrics and events for specified fields, and then evaluate those aggregations using defined conditions to send alerts when those conditions are met.
 
 ## Use
 
@@ -29,30 +30,34 @@ Each Processor input to the Aggregate Processor is a single thread. Inputs from 
 {% /callout %}
 
 {% table widths="94,0" %}
+
+{% table %}
 | Option | Description | Example | 
 | ---- | ---- | ---- | 
-| Group By | Select one or more field names. The processor aggregates the data based on a unique set of field values. \n\nUses the **Name**, **Namespace**, and **Tag** fields for the grouping. | .app or .tags.cluster | 
-| Evaluate | Choose the evaluation method for the fields. Note that these evaluation methods only apply to `metrics`. For `logs`, you will need to create a custom evaluation method. \n\n\n\n- Add\n- Sum\n- Minimum\n- Maximum\n- Average\n- Set intersection\n- Distribution cocantenation\n- Custom |  | 
+| Group By | Select one or more field names. The processor aggregates the data based on a unique set of field values. \n\n\n\nUses the **Name**, **Namespace**, and **Tag** fields for the grouping. | .app or .tags.cluster | 
+| Evaluate | Choose the evaluation method for the fields. Note that these evaluation methods only apply to `metrics`. For `logs`, you will need to create a custom evaluation method. \n\n\n\n\n\n\n\n- Add\n- Sum\n- Minimum\n- Maximum\n- Average\n- Set intersection\n- Distribution cocantenation\n- Custom |  | 
 | Window Type | - Tumbling\n- Sliding | Sliding | 
-|  | Tumbling &#124; Interval in seconds\n\n\n\nRange: 1 minute to 25 hours | 1800 | 
+|  | Tumbling &#124; Interval in seconds\n\n\n\n\n\n\n\nRange: 1 minute to 25 hours | 1800 | 
 |  | Sliding &#124; Interval | 1800 | 
 |  | Sliding &#124; Minimum Duration | 180 | 
 | Condition | The conditions to trigger an Alert based on aggregated/evaluated value. Two types of alerting are supported: |  | 
-|  | **Threshold Alert**\n\n\n\nCompare the aggregated value to a specified threshold value.\n\n\n\nComparison operators:\n\n\n\n`greater`\n\n\n\n`greater_or_equal`\n\n\n\n`less`\n\n\n\n`less_or_equal` | `.value.value <greater_or_ equal_to> 90` | 
-|  | **Change Alert** \n\n\n\nSet conditions based on how much the aggregated value changed compared to the prior evaluation. This change can be based on % change or absolute value change.\n\n\n\nPercent change operators:\n\n\n\n`percent_change_greater`\n\n\n\n`percent_change_greater_or_equal`\n\n\n\n`percent_change_less`\n\n\n\n`percent_change_less_or_equal`\n\n\n\nValue change operators:\n\n\n\n`value_change_greater`\n\n\n\n`value_change_greater_or_equal`\n\n\n\n`value_change_less_or_equal` | `.value.value <percent_change_greater> 50`\n\n\n\n`.value.value <value_change_greater> 200` | 
+|  | **Threshold Alert**\n\n\n\n\n\n\n\nCompare the aggregated value to a specified threshold value.\n\n\n\n\n\n\n\nComparison operators:\n\n\n\n\n\n\n\n`greater`\n\n\n\n\n\n\n\n`greater_or_equal`\n\n\n\n\n\n\n\n`less`\n\n\n\n\n\n\n\n`less_or_equal` | `.value.value <greater_or_ equal_to> 90` | 
+|  | **Change Alert** \n\n\n\n\n\n\n\nSet conditions based on how much the aggregated value changed compared to the prior evaluation. This change can be based on % change or absolute value change.\n\n\n\n\n\n\n\nPercent change operators:\n\n\n\n\n\n\n\n`percent_change_greater`\n\n\n\n\n\n\n\n`percent_change_greater_or_equal`\n\n\n\n\n\n\n\n`percent_change_less`\n\n\n\n\n\n\n\n`percent_change_less_or_equal`\n\n\n\n\n\n\n\nValue change operators:\n\n\n\n\n\n\n\n`value_change_greater`\n\n\n\n\n\n\n\n`value_change_greater_or_equal`\n\n\n\n\n\n\n\n`value_change_less_or_equal` | `.value.value <percent_change_greater> 50`\n\n\n\n\n\n\n\n`.value.value <value_change_greater> 200` | 
+{% /table %}
+
 {% /table %}
 
 ## Custom Option
 
-If the event isn't an OTEL metrics event (for example, the metric value is not in the path .value.value), you can aggregate the value with custom aggregation logic based on Mezmo's JavaScript framework. The topic for the [Script Execution Processor](https://docs.mezmo.com/telemetry-pipelines/js-script-processor#configuration) provides more details about Mezmo’s JavaScript framework. 
+If the event isn't an OTEL metrics event (for example, the metric value is not in the path .value.value), you can aggregate the value with custom aggregation logic based on Mezmo's JavaScript framework. The topic for the [Script Execution Processor](https://docs.mezmo.com/telemetry-pipelines/js-script-processor#configuration) provides more details about Mezmo’s JavaScript framework.
 
 For example, if you are looking to sum the `error_count` property of all log events, you would use this script:
 
 {% code %}
 {% tab language="javascript" %}
 function aggregateEvent(accum, event, metadata, annotations) {
-   accum.error_count = accum.error_count + event.error_count
-   return accum  
+accum.error_count = accum.error_count + event.error_count
+return accum
 }
 {% /tab %}
 {% /code %}
@@ -64,46 +69,50 @@ For example, if you are looking to aggregate a count of events into a **new fiel
 {% code %}
 {% tab language="javascript" %}
 function aggregateEvent(accum, event, metadata, annotations) {
-  // The first time this script is executed will be on the second
-  // event in the window, with `accum` representing the first event.
-  //
-  // Initialize a new field on `accum`, setting it to
-  // 1 to represent the fact that 1 event is already present
-  // in the buffer
-  if (!accum.event_count) {
-    accum.event_count = 1
-  }
+// The first time this script is executed will be on the second
+// event in the window, with `accum` representing the first event.
+//
+// Initialize a new field on `accum`, setting it to
+// 1 to represent the fact that 1 event is already present
+// in the buffer
+if (!accum.event_count) {
+accum.event_count = 1
+}
 
-  // Now that we've accounted for the accum event and initialized
-  // the new field with a value, we can add 1 to the current count.
-  accum.event_count = accum.event_count + 1
-  return accum
+// Now that we've accounted for the accum event and initialized
+// the new field with a value, we can add 1 to the current count.
+accum.event_count = accum.event_count + 1
+return accum
 }
 {% /tab %}
 {% /code %}
 
 ## Metadata Fields
 
-The Aggregate Processor rocessor adds these metadata fields when an event is emitted. 
+The Aggregate Processor rocessor adds these metadata fields when an event is emitted.
 
 {% table widths="" %}
+
+{% table %}
 | Metadata Field |  | 
 | ---- | ---- | 
-| .metadata.aggregate.flush_timestamp | The time when the Processor emitted the aggregation event. This could be due to the following:\n\n\n\n- Window time has been completed\n- Triggered by the condition | 
+| .metadata.aggregate.flush_timestamp | The time when the Processor emitted the aggregation event. This could be due to the following:\n\n\n\n\n\n\n\n- Window time has been completed\n- Triggered by the condition | 
 | .metadata.aggregate.start_timestamp | Aggregation window start time | 
 | .metadata.aggregate.end_timestamp | Aggregation window end time | 
 | .metadata.aggregate.event_count | # of events aggregated | 
 {% /table %}
 
+{% /table %}
+
 ### Detecting Alert vs Aggregation Output
 
- You can use these fields to determine if the event is triggered due to a threshold breach or a normal aggregation event.
+You can use these fields to determine if the event is triggered due to a threshold breach or a normal aggregation event.
 
-An alert is triggered if 
+An alert is triggered if
 
 {% code %}
 {% tab language="none" %}
-.metadata.aggregate.flush_timestamp < .metadata.aggregate.end_timestamp
+.metadata.aggregate.flush_timestamp &lt; .metadata.aggregate.end_timestamp
 {% /tab %}
 {% /code %}
 
@@ -111,6 +120,6 @@ Normal Aggregation Event if
 
 {% code %}
 {% tab language="none" %}
-.metadata.aggregate.flush_timestamp > =  .metadata.aggregate.end_timestamp
+.metadata.aggregate.flush_timestamp &gt; =  .metadata.aggregate.end_timestamp
 {% /tab %}
 {% /code %}

@@ -10,6 +10,7 @@ keywords:
 tags: 
 ---
 
+
 Mezmo provides templates for commonly used queries, so that you can quickly add Views, Boards and Screens for those specific queries.
 
 Browse the [full library](https://app.logdna.com/manage/template-library) of Mezmo Templates , select which templates you want, and then click on **Get Started** to download and import the template.

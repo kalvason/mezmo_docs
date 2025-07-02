@@ -10,11 +10,12 @@ keywords:
 tags: 
 ---
 
+
 The VictorOps alert integration enables users to easily trigger incidents in VictorOps based off of log data in Mezmo.
 
 ## Integrating with VictorOps
 
-1. On the alerts creation page, select the VictorOps logo. 
+1. On the alerts creation page, select the VictorOps logo.
 2. Define the alert properties.
 
 {% image url="https://uploads.developerhub.io/prod/2KW7/q11205ke8dtbj6ca7ac2xis1ahhc0qz251n0r6o9ik4ejzef9y7xacyqe4541gt3.png" mode="responsive" height="645" width="1350" %}

@@ -10,6 +10,7 @@ keywords:
 tags: 
 ---
 
+
 Mezmo is pleased to announce the release of several new features for our log management, processing, and analysis platform.
 
 ## Variable Retention

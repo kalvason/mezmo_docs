@@ -10,6 +10,7 @@ keywords:
 tags: 
 ---
 
+
 You can set up Heroku log ingestion for Mezmo either by installing the Mezmo Heroku Add-on available in [the Heroku Elements Marketplace](https://elements.heroku.com/addons/logdna), or by setting up Heroku Log Drains. You may prefer to use Heroku log drains if you have a mixed distribution of Heroku apps and non-Heroku services. Instructions for both set up configurations are available in the Mezmo Web App.
 
 ## Set Up Heroku Log Ingestion
@@ -18,7 +19,7 @@ Follow the instructions in the Mezmo Web App to set up Heroku log ingestion usin
 
 1. Log in to [the Mezmo Web App](https://app.mezmo.com/account/signin).
 2. In the bottom section of the left-hand navigation, click **Help**.
-3. Select **Add Log Sources**. 
+3. Select **Add Log Sources**.
 4. Under **Via platform**, click **Heroku**.
 5. Follow the instructions to set up Heroku log ingestion using the method you prefer.
 Note that your Mezmo ingestion key is automatically inserted into the configuration code.

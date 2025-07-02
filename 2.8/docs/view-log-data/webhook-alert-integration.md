@@ -10,6 +10,7 @@ keywords:
 tags: 
 ---
 
+
 The Webhook Alert integration enables customers to easily integrate Mezmo alerts with third-party services.
 
 You can configure the webhook's method, headers, and body. Using an extensive set of tokens, you can customize exactly what content you want to extract from your logs and then include it in your third-party service’s notifications.
@@ -132,10 +133,10 @@ This webhook will send a message to your [Microsoft Team chat](https://docs.micr
 {% code %}
 {% tab language="json" %}
 {
-  "name": "Mezmo Alarm Topic",
-  "sentFrom": "{{ name }}",
-  "summary": "{{ matches }} line(s) matched in {{ name }}. Security level: {{ level }}",
-  "text": "[Goto]({{ url }}) Mezmo Alert on {{ name }} with {{ matches }} line(s) matched for query {{ query }}\n\nFirst matched log\nApp: {{ appp }}\nHost: {{ host }}\nLevel: {{ level }}\nTag: {{ tag }}\nLine: {{ line }}\n\nLines\n{{ lines }}"
+"name": "Mezmo Alarm Topic",
+"sentFrom": "{{ name }}",
+"summary": "{{ matches }} line(s) matched in {{ name }}. Security level: {{ level }}",
+"text": "[Goto]({{ url }}) Mezmo Alert on {{ name }} with {{ matches }} line(s) matched for query {{ query }}\n\nFirst matched log\nApp: {{ appp }}\nHost: {{ host }}\nLevel: {{ level }}\nTag: {{ tag }}\nLine: {{ line }}\n\nLines\n{{ lines }}"
 }
 {% /tab %}
 {% /code %}
@@ -147,25 +148,25 @@ This webhook will send a message to a given [Google Chat Space](https://develope
 {% code %}
 {% tab language="json" %}
 {
-  "cards": [
-    {
-      "header": {
-        "title": "Mezmo Alert: {{ name }}",
-        "subtitle": "{{ matches }} matches for {{ query }}"
-      },
-      "sections": [
-      {
-        "widgets": [
-          {
-            "textParagraph":{
-              "text": "<a href=\"{{ url }}\">Goto</a> Mezmo Alert on <b>{{ name }}</b> with <i>{{ matches }}</i> line(s) matched for query <b>{{ query }}</b>\n\n<b>First matched log</b>\nApp: <b>{{ app }}</b>\nHost: <b>{{ host }}</b>\nLevel: <b>{{ level }}</b>\nTag: <b>{{ tag }}</b>\nLine: <b>{{ line }}</b>"
-            }
-          }
-        ]
-      }
-      ]
-    }
-  ]
+"cards": [
+{
+"header": {
+"title": "Mezmo Alert: {{ name }}",
+"subtitle": "{{ matches }} matches for {{ query }}"
+},
+"sections": [
+{
+"widgets": [
+{
+"textParagraph":{
+"text": "&lt;a href=\"{{ url }}\"&gt;Goto&lt;/a&gt; Mezmo Alert on &lt;b&gt;{{ name }}&lt;/b&gt; with &lt;i&gt;{{ matches }}&lt;/i&gt; line(s) matched for query &lt;b&gt;{{ query }}&lt;/b&gt;\n\n&lt;b&gt;First matched log&lt;/b&gt;\nApp: &lt;b&gt;{{ app }}&lt;/b&gt;\nHost: &lt;b&gt;{{ host }}&lt;/b&gt;\nLevel: &lt;b&gt;{{ level }}&lt;/b&gt;\nTag: &lt;b&gt;{{ tag }}&lt;/b&gt;\nLine: &lt;b&gt;{{ line }}&lt;/b&gt;"
+}
+}
+]
+}
+]
+}
+]
 }
 {% /tab %}
 {% /code %}

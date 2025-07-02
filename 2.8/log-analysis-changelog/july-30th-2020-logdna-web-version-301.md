@@ -12,6 +12,7 @@ tags:
 
 
 
+
 ## Bugs
 - Fix a bug in hourly archiving where buckets with prefixes specified lead to double prefixes being appended to the archive path.
 - Fixed a bug where tooltips/fly outs in our app would be obscured by side panels (Navigation/Timeline).

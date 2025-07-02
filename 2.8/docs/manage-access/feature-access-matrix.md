@@ -11,8 +11,11 @@ tags:
 ---
 
 
+
 Learn more about members in [Manage Members](/docs/how-to-manage-users) .
 
+
+{% table %}
 
 {% table %}
 | FEATURES | READ | MEMBER | ADMIN | OWNER | 
@@ -44,5 +47,7 @@ Learn more about members in [Manage Members](/docs/how-to-manage-users) .
 | Create Embedded View |  |  | X | X | 
 | Manage Exclusion Rules |  |  | X | X | 
 | Deactivate Account |  |  |  | X | 
+{% /table %}
+
 {% /table %}
 

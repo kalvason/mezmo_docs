@@ -12,6 +12,7 @@ tags:
 
 
 
+
 ## Bugs:
 - Updated `syslog-ng` to have the correct logging directive in in-app docs
 - Fixed a bug where muting an alert on a cloned alert would mute both the cloned and original alert.

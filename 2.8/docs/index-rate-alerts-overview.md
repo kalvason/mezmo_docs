@@ -10,6 +10,7 @@ keywords:
 tags: 
 ---
 
+
 Configuring alerts based on the index rate or retention and storage rate of your log data helps you track unusual behavior in your systems. For example, if there's a sudden spike in volume, Mezmo's Index Rate Alert feature tells you which applications or sources produced the data spike. It also shows any recently added sources. Index rate alerts can also help managers who are responsible for budgets to analyze and predict storage costs.
 
 ## Index Rates Alert Dashboard

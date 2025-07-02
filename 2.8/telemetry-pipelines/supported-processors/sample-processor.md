@@ -10,6 +10,7 @@ keywords:
 tags: 
 ---
 
+
 ## [Description](https://docs.mezmo.com/docs/sample-pipeline-processor#description)
 
 The Sample processor filters incoming events at a specified rate. This reduces the total number of events that are used in a subsequent processor, or sent to a destination.
@@ -27,8 +28,12 @@ Data can be excluded from the sampling algorithm and always forwarded through th
 ### [Options](https://docs.mezmo.com/docs/sample-pipeline-processor#options)
 
 {% table %}
+
+{% table %}
 | Option | Description | Example | 
 | ---- | ---- | ---- | 
 | Rate | The rate at which events will be forwarded, expressed as 1/n. | `rate = 10` means 1 out of every 10 events will be forwarded and the rest will be dropped | 
 | Always Include | Define a Field and conditions for log data to always be forwarded regardless of the Rate. |  | 
+{% /table %}
+
 {% /table %}

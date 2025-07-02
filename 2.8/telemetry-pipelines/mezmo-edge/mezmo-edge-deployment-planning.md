@@ -10,6 +10,7 @@ keywords:
 tags: 
 ---
 
+
 Mezmo Telemetry Pipeline is built as a cloud-native SaaS application. For cases where processing data within your environment is a requirement, we created Mezmo Edge.
 
 Mezmo Edge lets you run a telemetry data pipeline with the same functionality available in Mezmo Cloud, but locally hosted within your own environment. All of the metrics and management of the pipelines on your Edge instance are still handled by the Cloud infrastructure.
@@ -31,11 +32,13 @@ Mezmo Edge uses a hybrid cloud deployment model. When the Edge satellite nodes a
 
 ## Resource Requirements
 
-These numbers are intended for general guidance. Resource requirements depend on many factors. Use the deployment considerations in combination with the sizing guidance to estimate actual sizing. 
+These numbers are intended for general guidance. Resource requirements depend on many factors. Use the deployment considerations in combination with the sizing guidance to estimate actual sizing.
 
 ### Sizing
 
 These numbers are effective averages to use in approximation. Your individual event sizes may. Estimations in events per second (EPS) are conservative.
+
+{% table %}
 
 {% table %}
 | Event Type | Typical Use Case | Typical Event Size | Expected Trhoughput | Event Throughput | 
@@ -43,6 +46,8 @@ These numbers are effective averages to use in approximation. Your individual ev
 | Unstructured Log | Parsing, processing, and routing to an external destination | 256 bytes | ~10 MiB/s/vCPU | ~40k EPS/vCPU | 
 | Structured Log | Processing and routing to an external destination | 1 kilobyte | ~25 MiB/s/vCPU | ~25k EPS/vCPU | 
 | Metric | Aggregation and routing to an external destination | 256 bytes | ~25 MiB/s/vCPU | ~100k EPS/vCPU | 
+{% /table %}
+
 {% /table %}
 
 [**Reference**](https://vector.dev/docs/setup/going-to-prod/sizing/#estimations)
@@ -57,11 +62,15 @@ These numbers are effective averages to use in approximation. Your individual ev
 Recommendations are divided based on small, medium, and large size deployments. For most use cases, a medium size deployment is sufficient.
 
 {% table %}
+
+{% table %}
 | Deployment Size | Typical Use Case | Expected Event Throughput | Guidance Specifications | 
 | ---- | ---- | ---- | ---- | 
-| Small | Parsing and routing to an external destination | 40-80k EPS\n\n\n&lt;1 TB/day | 2 vCPUs\n\n\n\n4GB of memory | 
-| Medium | Parsing common unstructured log types, moderate processing, sending to multiple external destinations | 100k-200k EPS\n\n\n1 - 5 TB/day | 4 vCPUs\n\n\n\n8GB of memory | 
-| Large | PII redaction, parsing with regex, processing, and sending to multiple external destinations | 200k-400k EPS\n\n\n5 TB/day + | 8 vCPUs\n\n\n\n16GB of memory | 
+| Small | Parsing and routing to an external destination | 40-80k EPS\n\n\n\n\n&lt;1 TB/day | 2 vCPUs\n\n\n\n\n\n\n\n4GB of memory | 
+| Medium | Parsing common unstructured log types, moderate processing, sending to multiple external destinations | 100k-200k EPS\n\n\n\n\n1 - 5 TB/day | 4 vCPUs\n\n\n\n\n\n\n\n8GB of memory | 
+| Large | PII redaction, parsing with regex, processing, and sending to multiple external destinations | 200k-400k EPS\n\n\n\n\n5 TB/day + | 8 vCPUs\n\n\n\n\n\n\n\n16GB of memory | 
+{% /table %}
+
 {% /table %}
 
 ### Disk Space
@@ -100,7 +109,7 @@ Normal recommendations are to allow for vertical scaling of your Edge instance. 
 
 ### Horizontal Scaling
 
-There is an option to turn on horizontal pod scaling within the helm configuration. The standard Kubernetes autoscaling will divide up the workload across the pods, typically allocating in a round robin fashion, depending on how you’ve configured your cluster. However, note that as you add pods and split the workload, certain features like Reduce, Aggregate, and Dedupe may be affected due to the splitting of the event stream across the nodes. 
+There is an option to turn on horizontal pod scaling within the helm configuration. The standard Kubernetes autoscaling will divide up the workload across the pods, typically allocating in a round robin fashion, depending on how you’ve configured your cluster. However, note that as you add pods and split the workload, certain features like Reduce, Aggregate, and Dedupe may be affected due to the splitting of the event stream across the nodes.
 
 ## Durability
 

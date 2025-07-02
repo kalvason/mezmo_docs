@@ -10,6 +10,7 @@ keywords:
 tags: 
 ---
 
+
 The OpsGenie alert integration interacts with the [OpsGenie Alert API ](https://docs.opsgenie.com/docs/alert-api)and enables users to create alerts in OpsGenie based off of log data in Mezmo.
 
 {% image url="https://uploads.developerhub.io/prod/2KW7/f8892pu2738xjvwp5kkc7bokckpzg0qb05fcyvold9yulpf1hxhux0riy2itqytz.png" mode="responsive" height="1800" width="2880" %}

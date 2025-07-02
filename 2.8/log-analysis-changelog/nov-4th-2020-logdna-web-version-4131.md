@@ -12,6 +12,7 @@ tags:
 
 
 
+
 ## Bugs
 * Fixed a bug that would occasionally hide date markers in Timeline.
 * Fixed a bug where the top of the log viewer would be cut off.

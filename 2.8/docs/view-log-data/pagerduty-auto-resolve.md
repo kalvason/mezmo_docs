@@ -12,6 +12,7 @@ tags:
 
 
 
+
 ## About auto-resolving PagerDuty incidents
 
 With auto-resolution, you can configure settings to automatically resolve PagerDuty incidents based on the number of log lines that show up in the associated view during the specified time frame, rather than manually resolving incidents in the PagerDuty application. When a PagerDuty alert channel has auto-resolution settings configured and the conditions are met to auto-resolve the incidents, all incidents that were triggered from the associated PagerDuty alert channel will be resolved.

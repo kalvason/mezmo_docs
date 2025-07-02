@@ -10,6 +10,7 @@ keywords:
 tags: 
 ---
 
+
 ## Description
 
 This source enables you to ingest data from your Azure Event Hub instance into Mezmo Pipeline.
@@ -35,6 +36,8 @@ Your Event Hub must have active data flowing to check if the configuration is su
 ### Configuration Options
 
 {% table %}
+
+{% table %}
 | Option | Description | 
 | ---- | ---- | 
 | Title | Provide a title for your source | 
@@ -44,4 +47,6 @@ Your Event Hub must have active data flowing to check if the configuration is su
 | Topics | The list of Event Hub names to read events from | 
 | Consumer Group | The consumer group name that this consumer belongs to | 
 | Decoding | Choose between bytes and json | 
+{% /table %}
+
 {% /table %}

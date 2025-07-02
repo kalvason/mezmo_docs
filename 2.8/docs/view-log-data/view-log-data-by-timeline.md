@@ -10,6 +10,7 @@ keywords:
 tags: 
 ---
 
+
 The Mezmo Timeline is a tool for seeing patterns and trends in log lines over time. By default, it shows the most recent 60 minutes of log lines.
 
 Use the timeline to:
@@ -29,7 +30,7 @@ To change the time scale, click the downward arrow beside the Time scale, then s
 
 ## Scope In
 
-To zoom in or **Scope** to a block of time, place your cursor in the timeline, click to select, and then drag up or down the timeline to select a time frame. The Log Viewer and time scale update to show the time you selected. 
+To zoom in or **Scope** to a block of time, place your cursor in the timeline, click to select, and then drag up or down the timeline to select a time frame. The Log Viewer and time scale update to show the time you selected.
 
 You can continue to scope until you get to the time you want to view. Each bar represents 15 minutes.
 
@@ -41,7 +42,7 @@ You can not use the Time scale selector to zoom in further than your current tim
 
 Once you have scoped in on the time scale, you can investigate and compare times before and after. For example, the original time you zoomed in on was 10 minutes. Then you selected 30 minutes in the time scale drop down. You will see log lines for:
 
-- 10 minutes before the original selection 
+- 10 minutes before the original selection
 - The original 10 minutes
 - 10 minutes after the original selection
 

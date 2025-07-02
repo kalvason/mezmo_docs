@@ -10,6 +10,7 @@ keywords:
 tags: 
 ---
 
+
 ## Resolving Failed Payments
 
 For self service accounts on paid plans where a credit card on file is no longer valid, Mezmo follows this procedure.

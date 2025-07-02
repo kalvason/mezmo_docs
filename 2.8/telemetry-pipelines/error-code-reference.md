@@ -10,9 +10,12 @@ keywords:
 tags: 
 ---
 
-This topic describes the Error Codes and their associated messages for the Mezmo Telemetry Pipeline. 
+
+This topic describes the Error Codes and their associated messages for the Mezmo Telemetry Pipeline.
 
 {% table widths="138,304" %}
+
+{% table %}
 | **Processor Errors** |  |  | 
 | ---- | ---- | ---- | 
 | **Component** | **Error Code** | **Error Message** | 
@@ -45,4 +48,6 @@ This topic describes the Error Codes and their associated messages for the Mezmo
 |  | ``HTTP 413/REQUEST``ENTITY`` TOO LARGE`` | The payload exceeds 2MB | 
 |  | `ERR_PLAN_EXCEEDED_PIPELINE_LIMIT` | You have exceeded the number of pipelines you are permitted to create for the plan you are on. | 
 |  | `ERR_PLAN_EXCEEDED_NODE_LIMIT` | You have exceeded the number of nodes added to a pipeline for the plan you are on. | 
+{% /table %}
+
 {% /table %}

@@ -10,6 +10,7 @@ keywords:
 tags: 
 ---
 
+
 ## [Description](https://docs.mezmo.com/docs/syslog-over-http-pipeline-source#description)
 
 You can send Syslog events and data to Mezmo Pipelines through an HTTP endpoint.
@@ -33,23 +34,27 @@ This example of an rsyslog configuration illustrates using a defined template to
 module(load="omhttp")
 template(name="tpl1" type="string" string="{\"type\":\"syslog\", \"host\":\"%HOSTNAME%\"}")
 action(
-    type="omhttp"
-    server="pipeline.app.mezmo.com"
-    serverport="443"
-     httpheaders=[
-        "Authorization: <TOKEN>"
-    ]
-    template="tpl1"
-    action.resumeRetryCount="100"
-    batch="on"
-    batch.format="jsonarray"
-    batch.maxsize="10"
+type="omhttp"
+server="pipeline.app.mezmo.com"
+serverport="443"
+httpheaders=[
+"Authorization: &lt;TOKEN&gt;"
+]
+template="tpl1"
+action.resumeRetryCount="100"
+batch="on"
+batch.format="jsonarray"
+batch.maxsize="10"
 )
 {% /tab %}
 {% /code %}
 
 {% table %}
+
+{% table %}
 | Option | Description | 
 | ---- | ---- | 
 | Decoding Method | The decoding method to use to convert frames to data events. | 
+{% /table %}
+
 {% /table %}

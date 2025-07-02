@@ -13,6 +13,7 @@ tags:
 
 
 
+
 The Mezmo integration for GitHub Events lets you collect information associated with GitHub events, like the repository where an event occurred or the user who triggered the event. The Mezmo integration for GitHub events monitors these GitHub Event types by default:
 
 - PushEvent

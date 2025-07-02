@@ -10,6 +10,7 @@ keywords:
 tags: 
 ---
 
+
 A breakdown is a view of your main graph. It shows the distribution of values for the aggregated plots in your graph. For example, you can create a breakdown for a graph on the request field to see the distribution of request values for the HTTP response codes you plotted in Add a Plot to a Graph. You can add different types of breakdowns depending on the kind of information you want to see, in this case you'll create a histogram breakdown.
 
 ## Create a Histogram Breakdown
@@ -20,7 +21,7 @@ A breakdown is a view of your main graph. It shows the distribution of values fo
 4. Set field name to **Response**.
 5. Click the **Add Breakdown** button.
 
-The histogram shows a breakdown of the three plotted queries and which code returns the most HTTP responses. 
+The histogram shows a breakdown of the three plotted queries and which code returns the most HTTP responses.
 
 In this example, the response code 404 returns the most.
 

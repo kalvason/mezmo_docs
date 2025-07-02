@@ -12,6 +12,7 @@ tags:
 
 
 
+
 ## Added
 * Button to click to jump to the selected log line (ctrl/cmd + click)
 

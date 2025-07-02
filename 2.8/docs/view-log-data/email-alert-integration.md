@@ -10,7 +10,8 @@ keywords:
 tags: 
 ---
 
-Email alert integration allows a user to trigger alerts and send emails based off of log lines. 
+
+Email alert integration allows a user to trigger alerts and send emails based off of log lines.
 
 Email integration has options for test, presence and absence alerting. The user can select a preferred timezone to receive email alerts and can also provide multiple email recipients.
 

@@ -14,6 +14,7 @@ tags:
 
 
 
+
 {% callout type="info" title="Note" %}
 This page was modified on March 8th to remove two items from the **Fixed Issues** section. Those two fixes have not yet been released. They are:
 - Usage Quotas: we fixed the alert recipients dropdown for both email and Slack, which was displaying in too large a format across the UI. [LOG-9010]

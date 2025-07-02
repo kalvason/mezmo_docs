@@ -10,6 +10,7 @@ keywords:
 tags: 
 ---
 
+
 The Heroku Template is a collection of Views, Boards, and Screens that enable you to set alerts on your app crashing, view HTTP 500 trends, graph 95th percentile of response times and more. The Heroku Template leverages both the [Heroku platform error codes](https://devcenter.heroku.com/articles/error-codes) as well as router and [system logs](https://devcenter.heroku.com/articles/logging#types-of-logs) emitted by default.
 
 Browse the[ full library of Mezmo Templates](https://app.mezmo.com/manage/template-library).

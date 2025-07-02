@@ -11,6 +11,7 @@ tags:
 ---
 
 
+
 ## Summary
 
 This hotfix (patch release versions 2.2.2 and 3.0.2) includes code to resolve known issues with the LogDNA Agent for Kubernetes and OpenShift.

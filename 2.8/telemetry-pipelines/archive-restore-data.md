@@ -10,6 +10,7 @@ keywords:
 tags: 
 ---
 
+
 Mezmo offers several Pipeline components and features to help you archive and restore telemetry data for later analysis.
 
 ## Archive Destination
@@ -23,29 +24,37 @@ The Mezmo [Pipeline Data Restoration Source](/telemetry-pipelines/pipeline-data-
 ## Restore Telemetry Data to a Pipeline or Log Analysis
 
 1. In the Mezmo Web app, go to **Archiving &gt; Pipeline Restoration**.
-2. Enter a **Name** for the Restoration Task. 
-3. Enter the **Time range** for the data you want to restore. 
-4. Select the **Archive** you want to restore the data from. 
-5. Select the **Destination** where you want to restore the data. 
+2. Enter a **Name** for the Restoration Task.
+3. Enter the **Time range** for the data you want to restore.
+4. Select the **Archive** you want to restore the data from.
+5. Select the **Destination** where you want to restore the data.
 
 ### Archive Options
 
 {% table widths="" %}
+
+{% table %}
 | Option | Description | 
 | ---- | ---- | 
 | **Pipeline Archive** | When you select this option, the menu will populate with a list of the [auto$](/telemetry-pipelines/mezmo-archive-destination)s in any of your Pipelines, and connection will be based on the configuration of the selected Destination. | 
 | **Log Analysis Archive** | When you select this option, the task will connect to the  [Archives you have set up in Mezmo Log Analysis](/docs/archiving). | 
 {% /table %}
 
+{% /table %}
+
 ### Destination Options
 
-Restoration data sent to log analysis must conform to the[ required schema](https://docs.mezmo.com/telemetry-pipelines/required-schema-for-mezmo-log-analysis-destination). 
+Restoration data sent to log analysis must conform to the[ required schema](https://docs.mezmo.com/telemetry-pipelines/required-schema-for-mezmo-log-analysis-destination).
 
 {% table widths="" %}
+
+{% table %}
 | Option | Description | 
 | ---- | ---- | 
 | **Send to Pipeline** | When you select this option, the menu will populate with a list of the [auto$](/telemetry-pipelines/pipeline-data-restoration-source) Sources in your Pipelines. | 
 | **Send to Log Analysis** | When you select this option, the task will create a [log restoration task](/docs/data-restoration) and restore logs to a [Mezmo Log Analysis Destination](/telemetry-pipelines/mezmo-destination). | 
+{% /table %}
+
 {% /table %}
 
 ####

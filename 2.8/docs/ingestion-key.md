@@ -10,6 +10,7 @@ keywords:
 tags: 
 ---
 
+
 You use the personalized, private service and ingestion keys associated with your account to connect Mezmo to third-party applications and services. They enable programs such as log collectors to authenticate with Mezmo without requiring you to share your account details, and let you manage your log data with the Mezmo REST API.
 
 {% callout type="error" title="Keep Your Keys Secret" %}

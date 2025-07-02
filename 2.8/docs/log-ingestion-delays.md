@@ -13,6 +13,7 @@ tags:
 
 
 
+
 Periodically there will be delays in processing new log data due to the volume of incoming logs. This topic describes the two types of delays you may experience during log ingestion: **Live Tail Latency** and Indexing **Latency** .
 
 ## Live Tail Latency

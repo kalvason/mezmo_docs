@@ -10,6 +10,7 @@ keywords:
 tags: 
 ---
 
+
 Mezmo Log Management enables enterprises to ingest all of their log data to a single platform, optimize it through a [Telemetry Pipeline](/telemetry-pipelines/getting-started-with-mezmo-telemetry-pipeline), and route it to the appropriate teams so that they can take meaningful action in real time.
 
 - Mezmo makes it easy to centralize log data with support for a broad range of [ingestion options](https://docs.mezmo.com/docs/ingestion)

@@ -5,10 +5,11 @@ listed: true
 slug: details-about-exclusion-rule-named--mezmo-created--exclude-agent
 description: 
 index_title: Details About Exclusion Rule Named: MEZMO CREATED: Exclude Agent-Generated Errors
-hidden: 1
+hidden: 
 keywords: 
 tags: 
 ---
+
 
 Starting in January 2023, an exclusion rule was added to some accounts. Its purpose is to mitigate the impact of a bug in older versions of the Mezmo agent.
 

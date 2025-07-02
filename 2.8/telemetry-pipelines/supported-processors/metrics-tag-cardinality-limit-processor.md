@@ -10,6 +10,7 @@ keywords:
 tags: 
 ---
 
+
 ## Description
 
 The Tag Cardinality Limit processor limits the number of unique tag values for a specified metric measurement within defined constraints.
@@ -18,7 +19,7 @@ The Tag Cardinality Limit processor limits the number of unique tag values for a
 
 Metrics often have associated tag information included along with the metric value. These tags can provide useful information for searching, defining views, and organizing metric values. However, too many unique tag values can result in poor performance and instability.
 
-**High cardinality metrics** refers to the case where metrics have a large number of non-unique tag values. Limiting the tag cardinality ensures that metrics storage and processing systems downstream are only retaining the most significant metrics. 
+**High cardinality metrics** refers to the case where metrics have a large number of non-unique tag values. Limiting the tag cardinality ensures that metrics storage and processing systems downstream are only retaining the most significant metrics.
 
 ### Exact Matches v. Probabilistic
 
@@ -38,7 +39,7 @@ The calculated error rate for probabilistic matching false positives is less tha
 
 This processor uses the same settings across all tag values defined by the user. If different settings are needed for different tags, use multiple processors in series with one for each configuration.
 
-The tags you specify are the only tags that are excluded. All other tags are are subject to the cardinality limits defined by the **Value Limit** in your configuration. 
+The tags you specify are the only tags that are excluded. All other tags are are subject to the cardinality limits defined by the **Value Limit** in your configuration.
 
 There are two **Drop** actions for handling the tag cardinality:
 
@@ -50,10 +51,12 @@ There are two **Drop** actions for handling the tag cardinality:
 {% /callout %}
 
 {% callout type="info" title="Tag List and Predictive Model Duration" %}
-Mezmo automatically builds the tag list after the pipeline is deployed and retains that list for you in the case of exact match. 
+Mezmo automatically builds the tag list after the pipeline is deployed and retains that list for you in the case of exact match.
 
 In the case of probabilistic match, Mezmo will build the predictive model for the tags and maintain it going forward.
 {% /callout %}
+
+{% table %}
 
 {% table %}
 | Option | Description | Example | 
@@ -62,6 +65,8 @@ In the case of probabilistic match, Mezmo will build the predictive model for th
 | Action | Either drop the tag or drop the entire metric | Drop tag | 
 | Value Limit | The maximum number of unique values you want to allow through | 500 | 
 | Mode | Select either the exact or probabilistic mode | Exact | 
+{% /table %}
+
 {% /table %}
 
 ## Examples
@@ -78,61 +83,65 @@ Once we deploy the pipeline, we will send the example values through. This begin
 Note that you could entirely drop the `containerId` tag if desired using the [auto$](/telemetry-pipelines/drop-fields-processor).
 {% /callout %}
 
+
 #### Before
 
 {% code %}
 {% tab language="json" %}
 {
-  "kind":"absolute",
-  "name":"memory_usage_k8s_compapp",
-  "namespace":"k8s_prod_set1",
-  "tags": {
-    "environment":"prod",
-    "pod":"pod01",
-    "source":"prometheus_collector",
-    "containerId": "80f1bc1e7feb"
-  },
-  "value":{
-    "type":"counter",
-    "value": 520032
-  }
+"kind":"absolute",
+"name":"memory_usage_k8s_compapp",
+"namespace":"k8s_prod_set1",
+"tags": {
+"environment":"prod",
+"pod":"pod01",
+"source":"prometheus_collector",
+"containerId": "80f1bc1e7feb"
+},
+"value":{
+"type":"counter",
+"value": 520032
+}
 }
 {
-  "kind":"absolute",
-  "name":"memory_usage_k8s_compapp",
-  "namespace":"k8s_prod_set1",
-  "tags": {
-    "environment":"prod",
-    "pod":"pod01",
-    "source":"prometheus_collector"
-    "containerId": "acdea168264a"
-  },
-  "value":{
-    "type":"counter",
-    "value": 564321
-  }
+"kind":"absolute",
+"name":"memory_usage_k8s_compapp",
+"namespace":"k8s_prod_set1",
+"tags": {
+"environment":"prod",
+"pod":"pod01",
+"source":"prometheus_collector"
+"containerId": "acdea168264a"
+},
+"value":{
+"type":"counter",
+"value": 564321
+}
 }
 {
-  "kind":"absolute",
-  "name":"memory_usage_k8s_compapp",
-  "namespace":"k8s_prod_set1",
-  "tags": {
-    "environment":"prod",
-    "pod":"pod01",
-    "source":"prometheus_collector",
-    "containerId": "0cbfc6c17009"
-  },
-  "value":{
-    "type":"counter",
-    "value": 547679
-  }
+"kind":"absolute",
+"name":"memory_usage_k8s_compapp",
+"namespace":"k8s_prod_set1",
+"tags": {
+"environment":"prod",
+"pod":"pod01",
+"source":"prometheus_collector",
+"containerId": "0cbfc6c17009"
+},
+"value":{
+"type":"counter",
+"value": 547679
+}
 }
 {% /tab %}
 {% /code %}
 
+
 #### Options
 
 We're going to set the limit for all of the tags. For the purpose of this example, we will artificially limit the `containerId` to two values. The remainder of the tags will be limited, but will not be affected by their settings.
+
+{% table %}
 
 {% table %}
 | Option | Value | 
@@ -146,6 +155,9 @@ We're going to set the limit for all of the tags. For the purpose of this exampl
 | Mode | Exact | 
 {% /table %}
 
+{% /table %}
+
+
 #### After
 
 The only change here is that the tag `containerId` has now been removed after filling the exact match requirements with the first two names.
@@ -153,48 +165,48 @@ The only change here is that the tag `containerId` has now been removed after fi
 {% code %}
 {% tab language="json" %}
 {
-  "kind":"absolute",
-  "name":"memory_usage_k8s_compapp",
-  "namespace":"k8s_prod_set1",
-  "tags": {
-    "environment":"prod",
-    "pod":"pod01",
-    "source":"prometheus_collector",
-    "containerId": "80f1bc1e7feb"
-  },
-  "value":{
-    "type":"counter",
-    "value": 520032
-  }
+"kind":"absolute",
+"name":"memory_usage_k8s_compapp",
+"namespace":"k8s_prod_set1",
+"tags": {
+"environment":"prod",
+"pod":"pod01",
+"source":"prometheus_collector",
+"containerId": "80f1bc1e7feb"
+},
+"value":{
+"type":"counter",
+"value": 520032
+}
 }
 {
-  "kind":"absolute",
-  "name":"memory_usage_k8s_compapp",
-  "namespace":"k8s_prod_set1",
-  "tags": {
-    "environment":"prod",
-    "pod":"pod01",
-    "source":"prometheus_collector"
-    "containerId": "acdea168264a"
-  },
-  "value":{
-    "type":"counter",
-    "value": 564321
-  }
+"kind":"absolute",
+"name":"memory_usage_k8s_compapp",
+"namespace":"k8s_prod_set1",
+"tags": {
+"environment":"prod",
+"pod":"pod01",
+"source":"prometheus_collector"
+"containerId": "acdea168264a"
+},
+"value":{
+"type":"counter",
+"value": 564321
+}
 }
 {
-  "kind":"absolute",
-  "name":"memory_usage_k8s_compapp",
-  "namespace":"k8s_prod_set1",
-  "tags": {
-    "environment":"prod",
-    "pod":"pod01",
-    "source":"prometheus_collector"
-  },
-  "value":{
-    "type":"counter",
-    "value": 547679
-  }
+"kind":"absolute",
+"name":"memory_usage_k8s_compapp",
+"namespace":"k8s_prod_set1",
+"tags": {
+"environment":"prod",
+"pod":"pod01",
+"source":"prometheus_collector"
+},
+"value":{
+"type":"counter",
+"value": 547679
+}
 }
 {% /tab %}
 {% /code %}

@@ -12,6 +12,7 @@ tags:
 
 
 
+
 ## Added
 Assigned 'message' with 'Message' for Nxlog
 Support for Cloudfront log type

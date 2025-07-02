@@ -10,6 +10,7 @@ keywords:
 tags: 
 ---
 
+
 ## [Description](https://docs.mezmo.com/docs/encrypt-field-pipeline-processor#description)
 
 You can use the Encrypt processor to apply an encryption algorithm and key to a specified field.
@@ -23,6 +24,8 @@ The Encrypt processor is useful when you need to send sensitive log data to stor
 There are four options you need to set for this processor.
 
 {% table %}
+
+{% table %}
 | **Option** | **Description** | **Example** | 
 | ---- | ---- | ---- | 
 | **Field** | The field you want to apply encryption to. | `.foo` | 
@@ -31,9 +34,11 @@ There are four options you need to set for this processor.
 | **Initialization vector (IV) field** | This field is added by the pipeline to the JSON and is used by the algorithm as the initialization key. | .`encrypt_iv` | 
 {% /table %}
 
+{% /table %}
+
 ## Interactive Demo
 
-Check out an interactive demo of the Encrypt Processor as a component in [a Compliance group](/practioner-guide-data-optimization/pipeline-module--security-and-compliance), as well as instructions for building a version of the Pipette with your own sample data. 
+Check out an interactive demo of the Encrypt Processor as a component in [a Compliance group](/practioner-guide-data-optimization/pipeline-module--security-and-compliance), as well as instructions for building a version of the Pipette with your own sample data.
 
 ## Example
 
@@ -42,10 +47,12 @@ Check out an interactive demo of the Encrypt Processor as a component in [a Comp
 {% code %}
 {% tab language="json" %}
 {
-  "foo": "bar"
+"foo": "bar"
 }
 {% /tab %}
 {% /code %}
+
+{% table %}
 
 {% table %}
 | **Option** | **Value** | 
@@ -56,13 +63,15 @@ Check out an interactive demo of the Encrypt Processor as a component in [a Comp
 | Initialization vector (IV) field | .encrypt_iv | 
 {% /table %}
 
+{% /table %}
+
 ### After
 
 {% code %}
 {% tab language="json" %}
 {
-  "encrypt_iv": "FmXUb0OPOWm1A2kw6diKYw==",
-  "foo": "vFza"
+"encrypt_iv": "FmXUb0OPOWm1A2kw6diKYw==",
+"foo": "vFza"
 }
 {% /tab %}
 {% /code %}

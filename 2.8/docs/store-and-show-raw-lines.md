@@ -10,6 +10,7 @@ keywords:
 tags: 
 ---
 
+
 Mezmo [automatically parses log lines](/docs/log-parsing) received from [various sources](/docs/ingestion-integrations) to surface the content of log lines, so your account isn’t charged for retaining the entirety of bulky log line formats. However, there may be situations where you want to receive the raw line in its entirety, including the original format. In those situations, you can enable saving and viewing raw lines for your account.
 
 {% callout type="info" title="Owners and Admins Only" %}

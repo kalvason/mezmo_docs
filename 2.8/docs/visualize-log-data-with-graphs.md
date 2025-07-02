@@ -10,6 +10,7 @@ keywords:
 tags: 
 ---
 
+
 Boards are collections of Graphs that enable you to visualize log data over time. Topics in this section will introduce you to basic concepts for Boards and Graphs, and show you how to [auto$](/docs/create-a-graph) of HTTP response codes, [add Plots to compare data](/docs/add-a-plot-to-a-graph), and [add a Breakdown](/docs/add-a-breakdown-to-a-graph) to show which apps are sending the response codes.
 
 Boards
@@ -26,13 +27,13 @@ You can filter your board by entering an query into **Filter this board**. Filte
 
 ### Date and Time
 
-Set the date and time on a board by selecting the calendar. You can also set a duration by selecting from preset duration time. 
+Set the date and time on a board by selecting the calendar. You can also set a duration by selecting from preset duration time.
 
-You can also add live data to your board, by toggling **Live**. 
+You can also add live data to your board, by toggling **Live**.
 
 ## Graphs
 
-Graphs are used to aggregate metrics about your log lines over time. Graphs are displayed as a line graph. 
+Graphs are used to aggregate metrics about your log lines over time. Graphs are displayed as a line graph.
 
 ### Graph Functions
 
@@ -43,7 +44,7 @@ Graphs are used to aggregate metrics about your log lines over time. Graphs are 
 
 ### Operation
 
-A metric is a function that changes a graphed dataset. They are also known as operations. When graphing data, the metric default is Counts. You can change the metric on your graphs. 
+A metric is a function that changes a graphed dataset. They are also known as operations. When graphing data, the metric default is Counts. You can change the metric on your graphs.
 
 Only number fields can use all metrics. Metrics only work with data that includes the selected plots and matches the dataset filter.
 
@@ -67,13 +68,13 @@ Can show data from available fields. They show the distribution of the plots aga
 
 ### Pie
 
-A pie breakdown can show data from a plotted data or added fields. 
+A pie breakdown can show data from a plotted data or added fields.
 
 ## Feature Notes
 
-- For STRING fields, you can only graph count. 
-- For NUMBER fields, you can choose field values and operations. 
-- When creating a Graph, they use Live data. Toggle live to turn on and off. 
+- For STRING fields, you can only graph count.
+- For NUMBER fields, you can choose field values and operations.
+- When creating a Graph, they use Live data. Toggle live to turn on and off.
 - Change the [Board](/docs/using-templates) date to change the graph date.
 - Choose **All Lines** to graph or plot all lines in your application.
 

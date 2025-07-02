@@ -12,6 +12,7 @@ tags:
 
 
 
+
 ## Bugs
 - Fixed a bug that prevented meta values passed as string from being ingested properly
 - Fixed a bug where having multiple JSON objects passed in a log line would fail to parse properly.

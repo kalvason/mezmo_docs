@@ -10,9 +10,10 @@ keywords:
 tags: 
 ---
 
+
 ## [Description](https://docs.mezmo.com/docs/decrypt-field-pipeline-processor#description)
 
-This processor decrypts a single encrypted string using a defined secret as well as a specified Initialization Vector (IV) field. 
+This processor decrypts a single encrypted string using a defined secret as well as a specified Initialization Vector (IV) field.
 
 ## [Use](https://docs.mezmo.com/docs/decrypt-field-pipeline-processor#use)
 
@@ -23,12 +24,16 @@ Typically you would use the Decrypt processor to remove the encryption applied b
 The Decrypt processor uses the same configuration options as the Encrypt processor.
 
 {% table %}
+
+{% table %}
 | **Option** | **Description** | **Example** | 
 | ---- | ---- | ---- | 
 | **Field** | The field you want to decrypt. | `.foo` | 
 | **Encryption algorithm** | The encryption algorithm to apply. These options also determine how many characters to use for the encryption key and initialization vector. | `AES-256-CFB (key=32 characters, iv=16characters)` | 
 | **Encryption key** | The key used by the algorithm to encrypt the field. | `6B58703273357638792F423F4528482B` | 
 | **Initialization vector (IV) field** | This value is used by the algorithm as the initialization key. | .`encrypt_iv` | 
+{% /table %}
+
 {% /table %}
 
 ## [Example](https://docs.mezmo.com/docs/decrypt-field-pipeline-processor#example)
@@ -38,13 +43,15 @@ The Decrypt processor uses the same configuration options as the Encrypt process
 {% code %}
 {% tab language="json" title="" %}
 {
-  "encrypt_iv": "FmXUb0OPOWm1A2kw6diKYw==",
-  "foo": "vFza"
+"encrypt_iv": "FmXUb0OPOWm1A2kw6diKYw==",
+"foo": "vFza"
 }
 {% /tab %}
 {% /code %}
 
 ### Decryption Options
+
+{% table %}
 
 {% table %}
 | Option | Value | 
@@ -55,13 +62,15 @@ The Decrypt processor uses the same configuration options as the Encrypt process
 | Initialization vector (IV) field | `.encrypt_iv` | 
 {% /table %}
 
+{% /table %}
+
 ### After
 
 {% code %}
 {% tab language="json" %}
 {
-  "encrypt_iv": "FmXUb0OPOWm1A2kw6diKYw==",
-  "foo": "bar"
+"encrypt_iv": "FmXUb0OPOWm1A2kw6diKYw==",
+"foo": "bar"
 }
 {% /tab %}
 {% /code %}

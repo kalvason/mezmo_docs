@@ -10,14 +10,15 @@ keywords:
 tags: 
 ---
 
+
 Mezmo provides advanced capabilities for searching the contents of your logs. In this topic you'll find detailed information about search operators with examples of search queries, using Time Search, and how to work with special characters in your search queries.
 
 ## Access Search
 
 1. Log in to [app.mezmo.com](app.mezmo.com).
-2. In the **Search** box at the bottom of the log viewer, enter your query. 
-3. Select the **Timeframe** that you want to search. 
-4. Select if you want to search **Live** log data, or historical. 
+2. In the **Search** box at the bottom of the log viewer, enter your query.
+3. Select the **Timeframe** that you want to search.
+4. Select if you want to search **Live** log data, or historical.
 5. In  the **Viewer Tools** menu, enter any text you want highlighted in the search results.
 
 {% image url="https://uploads.developerhub.io/prod/2KW7/q5q8p8eyjd4bq756unsdf9u3rpt97p9tgcjgkxj5cc8gh4i4nrf86pvt3au7ivl1.png" caption="Search bar in the Mezmo Web App" mode="responsive" height="88" width="1678" %}
@@ -88,6 +89,7 @@ healthcheck AND -successful
 {% /code %}
 
 This example query will look for the word `healthcheck` AND log lines that **do not** contain the word `successful`.
+
 
 #### Explicit AND
 

@@ -10,6 +10,7 @@ keywords:
 tags: 
 ---
 
+
 Mezmo Telemetry Pipeline is built as a cloud-native SaaS application. For cases where processing data within your environment is a requirement, we created Mezmo Edge.
 
 Mezmo Edge lets you run a telemetry data pipeline with the same functionality available in Mezmo Cloud, but locally hosted within your own environment. All of the metrics and management of the pipelines on your Edge instance are still handled by the Cloud infrastructure.
@@ -35,12 +36,14 @@ These numbers are intended for general guidance. Resource requirements depend on
 
 ### Sizing
 
-These numbers are effective averages to use in approximation. Your individual event sizes may. Estimations in events per second (EPS) are conservative. These specifications are based on the guidelines published in[ the Vector documentation.](https://vector.dev/docs/setup/going-to-prod/sizing/#estimations) 
+These numbers are effective averages to use in approximation. Your individual event sizes may. Estimations in events per second (EPS) are conservative. These specifications are based on the guidelines published in[ the Vector documentation.](https://vector.dev/docs/setup/going-to-prod/sizing/#estimations)
 
 Assumptions
 
 1. Each vCPU is a standard ARM processor without hyperthreading
 2. Throughputs are purposefully conservative
+
+{% table %}
 
 {% table %}
 | Event Type | Typical Use Case | Typical Event Size | Expected Trhoughput | Event Throughput | 
@@ -50,16 +53,22 @@ Assumptions
 | Metric | Aggregation and routing to an external destination | 256 bytes | ~25 MiB/s/vCPU | ~100k EPS/vCPU | 
 {% /table %}
 
+{% /table %}
+
 ## Recommendations
 
 Recommendations are divided based on small, medium, and large size deployments. For most use cases, a medium size deployment is sufficient.
 
 {% table %}
+
+{% table %}
 | Deployment Size | Typical Use Case | Expected Event Throughput | Guidance Specifications | 
 | ---- | ---- | ---- | ---- | 
-| Small | Parsing and routing to an external destination | 40-80k EPS\n\n\n&lt;1 TB/day | 2 vCPUs\n\n\n\n4GB of memory | 
-| Medium | Parsing common unstructured log types, moderate processing, sending to multiple external destinations | 100k-200k EPS\n\n\n1 - 5 TB/day | 4 vCPUs\n\n\n\n8GB of memory | 
-| Large | PII redaction, parsing with regex, processing, and sending to multiple external destinations | 200k-400k EPS\n\n\n5 TB/day + | 8 vCPUs\n\n\n\n16GB of memory | 
+| Small | Parsing and routing to an external destination | 40-80k EPS\n\n\n\n\n&lt;1 TB/day | 2 vCPUs\n\n\n\n\n\n\n\n4GB of memory | 
+| Medium | Parsing common unstructured log types, moderate processing, sending to multiple external destinations | 100k-200k EPS\n\n\n\n\n1 - 5 TB/day | 4 vCPUs\n\n\n\n\n\n\n\n8GB of memory | 
+| Large | PII redaction, parsing with regex, processing, and sending to multiple external destinations | 200k-400k EPS\n\n\n\n\n5 TB/day + | 8 vCPUs\n\n\n\n\n\n\n\n16GB of memory | 
+{% /table %}
+
 {% /table %}
 
 ### Disk Space

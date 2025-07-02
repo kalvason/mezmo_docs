@@ -12,6 +12,7 @@ tags:
 
 
 
+
 ## Bugs
 * Fixed a bug where the custom parsing editor would not show test log lines.
 * Fixed a bug where collapsing the sidebar would not resize the top nav bar appropriately

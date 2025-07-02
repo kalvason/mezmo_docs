@@ -10,11 +10,14 @@ keywords:
 tags: 
 ---
 
+
 **Estimated Reading Time**: 3 minutes
 
-This topic summarizes the results of an initial round of analysis for data reduction techniques applied to sample data collected from Priority 1 sources. All sample data was generated from internal Mezmo sources, except as noted. 
+This topic summarizes the results of an initial round of analysis for data reduction techniques applied to sample data collected from Priority 1 sources. All sample data was generated from internal Mezmo sources, except as noted.
 
 ## Priority 1 Telemetry Data Sources
+
+{% table %}
 
 {% table %}
 | Sample | Input Size | Number of Lines | Avg Reduction | 
@@ -25,6 +28,8 @@ This topic summarizes the results of an initial round of analysis for data reduc
 | Kubernetes Logs | 1.7 MB | 14832 | 77% | 
 | AWS Network Firewall | 502.9 MB | 942248 | 95% | 
 | Prometheus Metrics | 3.65 MB | 4883405 | 96% | 
+{% /table %}
+
 {% /table %}
 
 ## Overall Findings
@@ -47,12 +52,12 @@ This technique can be taken to extremes, meaning 99% of the data can be thrown o
 
 **Grouping logs based on similar information is also highly effective at reducing total size, but has the benefit of retaining specific data fields that are valuable.**
 
-This must be targeted based on the fields, so there is some moderate complexity in configuring the processors. 
+This must be targeted based on the fields, so there is some moderate complexity in configuring the processors.
 
 Downstream tools must also be able to handle the higher complexity of the message structure resulting from how the logs are merged together.
 
 **The technique of trimming excess data from the event was only applicable to Java logs in our sample set and resulted in the lowest reduction.**
 
-This technique is typically used when payloads are very large, which was not the case in our samples. It also requires complex processor configuration, and so, while not a usual technique, can provide benefits in very specific cases. 
+This technique is typically used when payloads are very large, which was not the case in our samples. It also requires complex processor configuration, and so, while not a usual technique, can provide benefits in very specific cases.
 
 For metrics, aggregation of incremental values and sampling of gauge values was successful in reducing volume at the cost of granularity of the data. This technique is easy to implement and can also be easily tuned.

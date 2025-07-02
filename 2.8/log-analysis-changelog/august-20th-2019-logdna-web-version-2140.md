@@ -12,6 +12,7 @@ tags:
 
 
 
+
 ##  Bugs
 
 Users can bypass paywall by navigating to “Manage Billing”, we fixed this bug.

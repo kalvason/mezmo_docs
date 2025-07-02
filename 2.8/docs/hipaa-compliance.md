@@ -10,6 +10,7 @@ keywords:
 tags: 
 ---
 
+
 The Health Insurance Portability and Accountability Act (HIPAA) was created to improve the way organizations handle healthcare data. Not only does it aim to improve the portability of health information, but also requires organizations to protect and secure it. Any entities handling healthcare data are required to comply with HIPAA, even those handling data on behalf of another entity.
 
 If you are a healthcare provider, or an entity providing services to healthcare organizations, you may have compliance obligations under HIPAA. We created this guide to help you understand your potential obligations under HIPAA, and how they may affect your logging strategy.
@@ -85,17 +86,20 @@ We recommend retaining audit logs for at least six years. Most Mezmo plans retai
 
 Logs may not contain PHI, but they do contain sensitive information about HIPAA-regulated systems and applications. Restricting access to your logs and logging infrastructure is an important step in preventing an attacker from finding vulnerabilities in your infrastructure.
 
+
 #### Use Encryption
 
 When sending logs to Mezmo’s cloud ingestion servers, use HTTPS or syslog with TLS to encrypt your logs in transit. Otherwise your logs will be sent in plain text, making them trivial to intercept by a malicious third party.
 
 Encryption is enabled by default in the Mezmo agent and in our official code libraries. Mezmo also encrypts your logs when storing them, and only allows access to the web application over secure HTTPS. If you are [archiving your logs](https://docs.mezmo.com/docs/archiving), be sure to encrypt your storage bucket before enabling the archiving process.
 
+
 #### Apply the Principle of Least Privilege
 
 The principle of least privilege is a general-purpose principle where users are given the fewest permissions necessary to perform a task. For example, if an engineer needs to access logs from a specific system, that engineer should be given read-only access to only that system’s logs. This is referred to as “access control” under § 164.312(a)(1), which requires protected systems to “allow access to only those persons or software programs that have been granted access rights as specified in § 164.308(a)(4).”
 
 Mezmo lets you set granular permissions using [role based access control (RBAC)](https://docs.mezmo.com/docs/rbac). You can restrict each user’s ability to view, create, or modify Mezmo resources, as well as restrict their access to logs based on source or content.
+
 
 #### Lock Down Your Logging Infrastructure
 
@@ -106,6 +110,7 @@ Sending logs to Mezmo requires you to expose certain ports (e.g. 6514 for Syslog
 Under HIPAA, it’s not enough to simply send your logs to Mezmo and store them in an archive for six years. These logs must be constantly monitored and analyzed for signs of any unusual activities, changes in system and application behavior, or potential security incidents.
 
 Section 164.308(a)(1)(ii)(D) requires regular reviews of “information system activity, such as audit logs, access reports, and security incident tracking reports.” We recommend designating an employee to check logs on a daily basis, as well as using automated analysis tools such as [views and alerts](/docs/add-alerts-to-views). For example, you can use Mezmo to automatically notify your security team if it detects too many failed logins over a short period of time.
+
 
 #### Auditing Your Logging Systems
 

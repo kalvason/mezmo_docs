@@ -10,11 +10,12 @@ keywords:
 tags: 
 ---
 
+
 In November of 2024, Mezmo Log Analysis customers were given access to a Pipeline designed specifically to provide them with an optimized log data management experience. This topic provides an overview of the new features available to customers through this Pipeline, as well as an overview of the Processors in this Pipeline and their configuration.
 
 ## Access the Pipeline
 
-1. Log in to the Mezmo Web App. 
+1. Log in to the Mezmo Web App.
 2. Click the Pipeline icon at the top of the left navigation column.
 
 {% callout type="error" title="Do Not Edit the Pipeline" %}
@@ -29,6 +30,8 @@ The Primary Ingestion Pipeline processes data in four steps, with each step desi
 {% /image %}
 
 {% table widths="" %}
+
+{% table %}
 | Component | Description | Configuration | 
 | ---- | ---- | ---- | 
 | 1. Mezmo Log Analysis Data Source |  |  | 
@@ -39,9 +42,11 @@ The Primary Ingestion Pipeline processes data in four steps, with each step desi
 | 6. Blackhole Destination | The [auto$](/telemetry-pipelines/blackhole-destination) Destination drops all data sent to it. |  | 
 {% /table %}
 
+{% /table %}
+
 Learn More About Mezmo Telemetry Pipelines
 
-Check out these links to learn more about Mezmo Telemetry Pipelines, and how you can optimize your telemetry data to reduce costs, gain insights, and quickly respond to anomalies and incidents. 
+Check out these links to learn more about Mezmo Telemetry Pipelines, and how you can optimize your telemetry data to reduce costs, gain insights, and quickly respond to anomalies and incidents.
 
 - [auto$](/telemetry-pipelines/getting-started-with-mezmo-telemetry-pipeline)
 - [auto$](/telemetry-pipelines/about-mezmo-flow)

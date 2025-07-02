@@ -10,6 +10,7 @@ keywords:
 tags: 
 ---
 
+
 Searches that return no results are usually caused by searches that are too vague.
 
 For example, searching for `the` or another common word would result in an excessive number of results, and not all of them will be displayed. For this reason, Mezmo doesn’t support single-character searches.

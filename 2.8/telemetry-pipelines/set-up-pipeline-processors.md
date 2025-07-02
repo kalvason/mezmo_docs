@@ -10,6 +10,7 @@ keywords:
 tags: 
 ---
 
+
 One of the most important functions of a telemetry pipeline is the ability to process log data to reduce its size, re-format and standardize it, or extract information from it for use in analytical operations. Mezmo Telemetry Pipelines include processors for an extensive set of use cases, that can be used independently for basic processing, or chained together for more complex operations. In this section you'll find a complete listing of Mezmo Pipeline Processors, including their common use cases and configuration.
 
 1. Log into [the Mezmo Web App](https://app.mezmo.com/).
@@ -24,7 +25,7 @@ The topic [auto$](/telemetry-pipelines/supported-processors) provides a full lis
 
 ## Processor Module Tutorials
 
-These tutorials provide an overview of typical Processor configurations for specific use cases. They include a schematic of the "Pipette" and configuration instructions for each module, an interactive demo, and step-by-step instructions for how to create your own version using [auto$](/telemetry-pipelines/demo-logs-source) and a [auto$](/telemetry-pipelines/blackhole-destination) Destination, and then connecting your own data sources and destinations. 
+These tutorials provide an overview of typical Processor configurations for specific use cases. They include a schematic of the "Pipette" and configuration instructions for each module, an interactive demo, and step-by-step instructions for how to create your own version using [auto$](/telemetry-pipelines/demo-logs-source) and a [auto$](/telemetry-pipelines/blackhole-destination) Destination, and then connecting your own data sources and destinations.
 
 - [auto$](/practioner-guide-data-optimization/pipeline-example--convert-200-events-to-metrics)
 - [auto$](/practioner-guide-data-optimization/pipeline-module--route)

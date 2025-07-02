@@ -10,9 +10,10 @@ keywords:
 tags: 
 ---
 
+
 ## [Description](https://docs.mezmo.com/docs/http-pipeline-source#description)
 
-You can configure any source to send data via a RESTful POST to the Memzo Pipeline. 
+You can configure any source to send data via a RESTful POST to the Memzo Pipeline.
 
 {% callout type="success" title="Parsing Data after Ingestion" %}
 When using the HTTP source, your content must be both encoded appropriately and packaged in way that enables it to be parsed after ingestion. You must also use a [auto$](/telemetry-pipelines/parse-processor) explicitly after ingestion in order to make use of any structured data. Structured formats, such as JSON, do not require additional parsing unless you want to further parse a specific value within the JSON.
@@ -20,7 +21,7 @@ When using the HTTP source, your content must be both encoded appropriately and 
 
 You would typically use an HTTP request as a source when the specific source type you wish to send from is not supported.  For example, you may have a not well known open source application that you wish to process. As long as you're able to use a RESTful POST transport to send the data to an endpoint, you can send the data into the pipeline.
 
-**All data sent to an HTTP endpoint must be parsed within the pipeline to extract the fields and act on it.** Once the data is parsed, you can use it for any subsequent desired use case, such as [remove](/telemetry-pipelines/drop-fields-processor) or [encrypt](/telemetry-pipelines/encrypt-fields-processor) any sensitive data before sending them to other tools for application performance monitoring, log analysis, or security information and event monitoring. 
+**All data sent to an HTTP endpoint must be parsed within the pipeline to extract the fields and act on it.** Once the data is parsed, you can use it for any subsequent desired use case, such as [remove](/telemetry-pipelines/drop-fields-processor) or [encrypt](/telemetry-pipelines/encrypt-fields-processor) any sensitive data before sending them to other tools for application performance monitoring, log analysis, or security information and event monitoring.
 
 {% callout type="info" title="Use Buffering for Log Requests" %}
 If you use an individual request per log, you will quickly exceed your network capacity, so we recommend using a buffering solution.
@@ -33,12 +34,16 @@ In the HTTP source configuration, use the pipeline data endpoint and configure t
 ### [Mezmo Configuration Options](https://docs.mezmo.com/docs/http-pipeline-source#mezmo-configuration-options)
 
 {% table %}
+
+{% table %}
 | Setting | Description | 
 | ---- | ---- | 
 | **Title** | A name for your source. | 
 | **Description** | A short description of the source. | 
-| **Decoding Method** | The decoding method to use to convert frames to data events\n\n\n\n**Note**: We recommend using Auto for convenience and to prevent potential errors in type mismatch | 
-| **Access Key Management** | 1. Click **Create new key** to generate an access key.\n2. Enter a **Title** for the key.\n3. Click **Create**.\n\n\nMake sure to copy the Access Key and note the Ingestion URL, which should resemble `https://pipeline.mezmo.com/v1/<YOUR ROUTE ID>` .\n\n\n\nYou can include your Access key in any of the following headers for authentication:\n\n\n\n1. `Authorization: <YOUR_PIPELINE_INGEST_KEY>` \n2. `apikey: <YOUR_PIPELINE_INGEST_KEY>` | 
+| **Decoding Method** | The decoding method to use to convert frames to data events\n\n\n\n\n\n\n\n**Note**: We recommend using Auto for convenience and to prevent potential errors in type mismatch | 
+| **Access Key Management** | 1. Click **Create new key** to generate an access key.\n2. Enter a **Title** for the key.\n3. Click **Create**.\n\n\n\n\nMake sure to copy the Access Key and note the Ingestion URL, which should resemble `https://pipeline.mezmo.com/v1/<YOUR ROUTE ID>` .\n\n\n\n\n\n\n\nYou can include your Access key in any of the following headers for authentication:\n\n\n\n\n\n\n\n1. `Authorization: <YOUR_PIPELINE_INGEST_KEY>` \n2. `apikey: <YOUR_PIPELINE_INGEST_KEY>` | 
+{% /table %}
+
 {% /table %}
 
 ### Parsing and Subsequent Processing
@@ -79,7 +84,7 @@ Let's set up an HTTP source and use `curl` to send in a sample payload with a se
 
 {% code %}
 {% tab language="none" %}
-curl -X POST -d 'msg=Hello_world' -H 'Authorization: <YOUR_PIPELINE_INGEST_KEY>' -d https://pipeline.mezmo.com/v1/<YOUR ROUTE ID>
+curl -X POST -d 'msg=Hello_world' -H 'Authorization: &lt;YOUR_PIPELINE_INGEST_KEY&gt;' -d https://pipeline.mezmo.com/v1/&lt;YOUR ROUTE ID&gt;
 {% /tab %}
 {% /code %}
 
@@ -94,59 +99,59 @@ Here's a payload representing an example of what the inbound HTTP payload looks 
 {% code %}
 {% tab language="json" %}
 {
-  "message": {
-    "availability_zone": "us-east-1b",
-    "event": {
-      "dest_ip": "10.1.3.81",
-      "dest_port": 17778,
-      "event_type": "netflow",
-      "flow_id": 694693483348034,
-      "netflow": {
-        "age": 0,
-        "bytes": 44,
-        "end": "2023-06-13T22:31:41.163906+0000",
-        "max_ttl": 242,
-        "min_ttl": 242,
-        "pkts": 1,
-        "start": "2023-06-13T22:31:41.163906+0000"
-      },
-      "proto": "TCP",
-      "src_ip": "205.210.31.133",
-      "src_port": 50813,
-      "tcp": {
-        "syn": true,
-        "tcp_flags": "02"
-      },
-      "timestamp": "2023-06-13T22:32:49.446239+0000"
-    },
-    "event_timestamp": "1686695569",
-    "firewall_name": "AWS-Network-Firewall-Multi-AZ-firewall"
-  },
-  "metadata": {
-    "headers": {
-      "accept": "*/*",
-      "accept-encoding": "gzip, deflate",
-      "connection": "keep-alive",
-      "content-length": "603586",
-      "host": "pipeline",
-      "user-agent": "python-requests/2.28.2",
-      "x-consumer-id": "68b52623-9642-4322-9e27-8218d8c7bb37",
-      "x-consumer-username": "p_1f799b82-53e2-11ee-a88d-26dab184329f",
-      "x-credential-identifier": "7c419a2c-ccf7-480b-9a9e-3fd94e3f6b28",
-      "x-forwarded-for": "76.253.171.67",
-      "x-forwarded-host": "pipeline.mezmo.it",
-      "x-forwarded-path": "/v1/1f799b82-53e2-11ee-a88d-26dab184329f",
-      "x-forwarded-port": "443",
-      "x-forwarded-proto": "https",
-      "x-kafka-key": "76.253.171.67",
-      "x-pipeline-capture-metadata": "true",
-      "x-pipeline-source-type": "http",
-      "x-real-ip": "76.253.171.67"
-    },
-    "query": {
-      "test": "parameter"
-    }
-  }
+"message": {
+"availability_zone": "us-east-1b",
+"event": {
+"dest_ip": "10.1.3.81",
+"dest_port": 17778,
+"event_type": "netflow",
+"flow_id": 694693483348034,
+"netflow": {
+"age": 0,
+"bytes": 44,
+"end": "2023-06-13T22:31:41.163906+0000",
+"max_ttl": 242,
+"min_ttl": 242,
+"pkts": 1,
+"start": "2023-06-13T22:31:41.163906+0000"
+},
+"proto": "TCP",
+"src_ip": "205.210.31.133",
+"src_port": 50813,
+"tcp": {
+"syn": true,
+"tcp_flags": "02"
+},
+"timestamp": "2023-06-13T22:32:49.446239+0000"
+},
+"event_timestamp": "1686695569",
+"firewall_name": "AWS-Network-Firewall-Multi-AZ-firewall"
+},
+"metadata": {
+"headers": {
+"accept": "*/*",
+"accept-encoding": "gzip, deflate",
+"connection": "keep-alive",
+"content-length": "603586",
+"host": "pipeline",
+"user-agent": "python-requests/2.28.2",
+"x-consumer-id": "68b52623-9642-4322-9e27-8218d8c7bb37",
+"x-consumer-username": "p_1f799b82-53e2-11ee-a88d-26dab184329f",
+"x-credential-identifier": "7c419a2c-ccf7-480b-9a9e-3fd94e3f6b28",
+"x-forwarded-for": "76.253.171.67",
+"x-forwarded-host": "pipeline.mezmo.it",
+"x-forwarded-path": "/v1/1f799b82-53e2-11ee-a88d-26dab184329f",
+"x-forwarded-port": "443",
+"x-forwarded-proto": "https",
+"x-kafka-key": "76.253.171.67",
+"x-pipeline-capture-metadata": "true",
+"x-pipeline-source-type": "http",
+"x-real-ip": "76.253.171.67"
+},
+"query": {
+"test": "parameter"
+}
+}
 }
 {% /tab %}
 {% /code %}

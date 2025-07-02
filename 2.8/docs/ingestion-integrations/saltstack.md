@@ -10,6 +10,7 @@ keywords:
 tags: 
 ---
 
+
 The Mezmo Salt deployment integration listens for your Salt state events and sends the event information to Mezmo.
 
 ## Set Up SaltStack Log Ingestion
@@ -18,7 +19,7 @@ Follow the instructions in the Mezmo Web App to set up SaltStack log ingestion u
 
 1. Log in to [the Mezmo Web App](https://app.mezmo.com/account/signin).
 2. In the bottom section of the left-hand navigation, click **Help**.
-3. Select **Add Log Sources**. 
+3. Select **Add Log Sources**.
 4. Under **Via platform**, click **SaltStack**.
 5. Follow the instructions to set up SaltStack log ingestion.
 Note that your Mezmo ingestion key is automatically inserted into the configuration code.

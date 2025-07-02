@@ -10,6 +10,7 @@ keywords:
 tags: 
 ---
 
+
 ## [Description](https://docs.mezmo.com/docs/remove-fields-pipeline-processor#description)
 
 The Remove Fields processor drops JSON fields from each record in the data stream.
@@ -23,9 +24,13 @@ This processor is useful when there are specific fields that you want to remove 
 There is one option to configure for this processor.
 
 {% table %}
+
+{% table %}
 | Option | Description | Example | 
 | ---- | ---- | ---- | 
 | Fields | The field or fields to drop from each record in the data stream. | `.baz` | 
+{% /table %}
+
 {% /table %}
 
 ## [Example](https://docs.mezmo.com/docs/remove-fields-pipeline-processor#example)
@@ -35,8 +40,8 @@ There is one option to configure for this processor.
 {% code %}
 {% tab language="json" %}
 {
-  "foo": "bar",
-  "baz": 1
+"foo": "bar",
+"baz": 1
 }
 {% /tab %}
 {% /code %}
@@ -44,9 +49,13 @@ There is one option to configure for this processor.
 ### Remove Fields Options
 
 {% table %}
+
+{% table %}
 | Option | Value | 
 | ---- | ---- | 
 | Fields | `.baz` | 
+{% /table %}
+
 {% /table %}
 
 ### After
@@ -54,7 +63,7 @@ There is one option to configure for this processor.
 {% code %}
 {% tab language="json" %}
 {
-  "foo": "bar"
+"foo": "bar"
 }
 {% /tab %}
 {% /code %}

@@ -10,6 +10,7 @@ keywords:
 tags: 
 ---
 
+
 ## Description
 
 You can send syslog events and data to Mezmo Edge Pipelines directly through a specified port on the Edge instance.

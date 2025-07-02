@@ -10,6 +10,7 @@ keywords:
 tags: 
 ---
 
+
 ## Description
 
 You can send your traces to a Mezmo Pipeline via any OTLP compliant sender.
@@ -25,10 +26,14 @@ The OTLP Traces source provides a unique endpoint URL that uses **Bearer Token**
 ### Configuration Options
 
 {% table widths="239,0" %}
+
+{% table %}
 | Option |  | Description | 
 | ---- | ---- | ---- | 
 | `url / endpoint` |  | unique URL for your OTLP source | 
 | `token` |  | token used for authorization for your OTLP source | 
+{% /table %}
+
 {% /table %}
 
 ### OpenTelemetry Collector Configuration
@@ -38,10 +43,10 @@ To configure an OTel collector to export to Mezmo, you can add the following to 
 {% code %}
 {% tab language="yaml" %}
 exporters:
-  otlphttp/mezmo-traces:
-    endpoint: "https://pipeline.mezmo.com/v1/<YOUR ROUTE ID>"
-    headers:
-      Authorization: "<YOUR_PIPELINE_INGEST_KEY>"
+otlphttp/mezmo-traces:
+endpoint: "https://pipeline.mezmo.com/v1/&lt;YOUR ROUTE ID&gt;"
+headers:
+Authorization: "&lt;YOUR_PIPELINE_INGEST_KEY&gt;"
 {% /tab %}
 {% /code %}
 
@@ -56,65 +61,65 @@ Once trace data ingested into a Mezmo pipeline each span will be converted into 
 {% code %}
 {% tab language="json" %}
 {
-  "message": { // Moved from resource_spans.[].scope_spans.[].spans.[]
-    "name": "string",
-    "hostname": "string", // optional, scrapped from spans.[].attributes "host.name"
-    "trace_id": "HEX string", // spans.[].trace_id converted from [u8; 16] to HEX string
-    "trace_state": "string",
-    "span_id": "HEX string", // spans.[].span_id converted from [u8; 8] to HEX string,
-    "parent_span_id": "HEX string", // spans.[].span_id converted from [u8; 8] to HEX string,
-    "start_timestamp": "unix timestamp", // spans.[].start_time_unix_nano
-    "end_timestamp": "unix timestamp", // spans.[].end_time_unix_nano
-    "kind": "number",
-    "events": [
-      {
-      	"name": "string",
-        "timestamp": "unix timestamp", // events.[].time_unix_nano
-        "attributes": {
-        	"key": "value"
-        },
-        "dropped_attributes_count": "number",
-      }
-    ],
-    "dropped_events_count": "number",
-    "links": [
-      {
-      	"trace_id": "HEX string", // links.[].trace_id converted from [u8; 16] to HEX string,
-        "span_id": "HEX string", // links.[].span_id converted from [u8; 8] to HEX string,
-        "trace_state": "string",
-        "attributes": {
-        	"key": "value"
-        },
-        "dropped_attributes_count": "number",
-      }
-    ],
-    "dropped_links_count": "number"
-  },
-  "metadata": {
-    "level": "string", // It always equals "trace"
-    "span_uniq_id": "HEX string", // It is a unique id which groups traces event by a span within one otel source request
-    "resource": { // Moved from resource_spans.[].resource
-    	"attributes": {
-    	"key": "value"
-    	},
-    	"dropped_attributes_count": "number",
-    	"schema_url": "string"
-    }
-    "scope": { // Moved from resource_spans.[].scope_spans.[].scope
-    	"name": "string",
-			"version": "string",
-			"attributes": {
-    		"key": "value"
-    	},
-			"schema_url": "string"
-  	}
-    "attributes": { // Moved from resource_spans.[].scope_spans.[].spans.[].attributes
-    	"key": "value"
-    },
-		"headers": { // Moved from an otel request headers
-    	"key": "value"
-    }
-  }
+"message": { // Moved from resource_spans.[].scope_spans.[].spans.[]
+"name": "string",
+"hostname": "string", // optional, scrapped from spans.[].attributes "host.name"
+"trace_id": "HEX string", // spans.[].trace_id converted from [u8; 16] to HEX string
+"trace_state": "string",
+"span_id": "HEX string", // spans.[].span_id converted from [u8; 8] to HEX string,
+"parent_span_id": "HEX string", // spans.[].span_id converted from [u8; 8] to HEX string,
+"start_timestamp": "unix timestamp", // spans.[].start_time_unix_nano
+"end_timestamp": "unix timestamp", // spans.[].end_time_unix_nano
+"kind": "number",
+"events": [
+{
+"name": "string",
+"timestamp": "unix timestamp", // events.[].time_unix_nano
+"attributes": {
+"key": "value"
+},
+"dropped_attributes_count": "number",
+}
+],
+"dropped_events_count": "number",
+"links": [
+{
+"trace_id": "HEX string", // links.[].trace_id converted from [u8; 16] to HEX string,
+"span_id": "HEX string", // links.[].span_id converted from [u8; 8] to HEX string,
+"trace_state": "string",
+"attributes": {
+"key": "value"
+},
+"dropped_attributes_count": "number",
+}
+],
+"dropped_links_count": "number"
+},
+"metadata": {
+"level": "string", // It always equals "trace"
+"span_uniq_id": "HEX string", // It is a unique id which groups traces event by a span within one otel source request
+"resource": { // Moved from resource_spans.[].resource
+"attributes": {
+"key": "value"
+},
+"dropped_attributes_count": "number",
+"schema_url": "string"
+}
+"scope": { // Moved from resource_spans.[].scope_spans.[].scope
+"name": "string",
+"version": "string",
+"attributes": {
+"key": "value"
+},
+"schema_url": "string"
+}
+"attributes": { // Moved from resource_spans.[].scope_spans.[].spans.[].attributes
+"key": "value"
+},
+"headers": { // Moved from an otel request headers
+"key": "value"
+}
+}
 }
 {% /tab %}
 {% /code %}

@@ -10,6 +10,7 @@ keywords:
 tags: 
 ---
 
+
 Members are users who have signed up for your Organization. [Members](https://docs.mezmo.com/docs/how-to-manage-users) can be assigned roles that give them certain privileges. Members can also be assigned to [groups](https://docs.mezmo.com/docs/groups) to give them access to certain logs.
 
 ## Roles

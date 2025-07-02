@@ -12,6 +12,7 @@ tags:
 
 
 
+
 ## Bugs
 * Fixed a bug where the "Manage Team" link within the team join notification email would lead to the incorrect URL
 * Fixed a bug where verification email codes would not be successfully emailed to invited team members

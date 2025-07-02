@@ -10,6 +10,7 @@ keywords:
 tags: 
 ---
 
+
 ## Description
 
 You can use this Destination to send alert messages to a selected service, such as Slack, PagerDuty, or a Webhook. This is helpful if there are particular events or metrics that process through your Pipeline that should trigger further action for you or your team.
@@ -17,6 +18,8 @@ You can use this Destination to send alert messages to a selected service, such 
 ## Configuration
 
 ### Configuration Options
+
+{% table %}
 
 {% table %}
 | Option | Description | 
@@ -28,19 +31,27 @@ You can use this Destination to send alert messages to a selected service, such 
 | Threshold | The number of events allowed over the given time window set by **Window Seconds** (default: 1). | 
 {% /table %}
 
+{% /table %}
+
 ## When Service is Set to Slack or Webhook
 
-**Prerequisite for Slack**: Setup an [incoming webhook](https://api.slack.com/messaging/webhooks) within your Slack organization and use the webhook URL as the URI config above. 
+**Prerequisite for Slack**: Setup an [incoming webhook](https://api.slack.com/messaging/webhooks) within your Slack organization and use the webhook URL as the URI config above.
 
 {% table widths="170" %}
+
+{% table %}
 | Option | Description | 
 | ---- | ---- | 
 | Message Text | The text to send to the Service. Note: This currently does not support message templates. | 
 {% /table %}
 
+{% /table %}
+
 ## When Service is Set to PagerDuty
 
 {% table widths="170" %}
+
+{% table %}
 | Option | Description | 
 | ---- | ---- | 
 | Summary | A brief text summary of the event, used to generate the summaries/titles of any associated alerts. The maximum permitted length of this property is 1024 characters. Note: This currently does not support message templates. | 
@@ -48,4 +59,6 @@ You can use this Destination to send alert messages to a selected service, such 
 | Source | The unique location of the affected system, preferably a hostname or FQDN. | 
 | Routing Key | This is the 32 character Integration Key for an integration on a service or on a global ruleset. | 
 | Event Action | The event action associated with the alert (trigger, acknowledge, resolve). | 
+{% /table %}
+
 {% /table %}

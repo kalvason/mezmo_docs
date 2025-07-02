@@ -10,6 +10,7 @@ keywords:
 tags: 
 ---
 
+
 ## Description
 
 You can configure any source to send data via a RESTful POST to a Mezmo Edge Pipeline.
@@ -31,6 +32,8 @@ The default Edge port range is 8000-8010, unless you modified it during set up.
 ### Configuration Options
 
 {% table %}
+
+{% table %}
 | **Setting** | **Description** | 
 | ---- | ---- | 
 | **Title** | A name for your source. | 
@@ -38,13 +41,15 @@ The default Edge port range is 8000-8010, unless you modified it during set up.
 | **Port** | The port number to listen on within the Edge instance. | 
 {% /table %}
 
-## Exposing for External Ingress 
+{% /table %}
+
+## Exposing for External Ingress
 
 {% callout type="warning" title="Prod Deployments" %}
 It is highly recommended that a scalable load balancer be used like [Nginx](https://nginx.org).  The following is a simple example using the default LoadBalancer for your system which ignores TLS and the like.
 {% /callout %}
 
-A simple, non-prod method of exposing the HTTP Source to external ingress is to use the system default LoadBalancer.   
+A simple, non-prod method of exposing the HTTP Source to external ingress is to use the system default LoadBalancer.
 
 To do this we will create a load balancer service which exposes the port configured by the HTTP Source.
 
@@ -55,18 +60,18 @@ Sample Config: edge-load-balancer.yaml
 apiVersion: v1
 kind: Service
 metadata:
-  name: edge-load-balancer
+name: edge-load-balancer
 spec:
-  ports:
-  - name: http-source-1a
-    port: <<HTTP_SOURCE_PORT>>
-    protocol: TCP
-    targetPort: <<HTTP_SOURCE_PORT>>
-  selector:
-    app.kubernetes.io/instance: <<EDGE_INSTANCE>>
-    app.kubernetes.io/name: <<EDGE_NAME>>
-  sessionAffinity: None
-  type: LoadBalancer
+ports:
+- name: http-source-1a
+port: &lt;&lt;HTTP_SOURCE_PORT&gt;&gt;
+protocol: TCP
+targetPort: &lt;&lt;HTTP_SOURCE_PORT&gt;&gt;
+selector:
+app.kubernetes.io/instance: &lt;&lt;EDGE_INSTANCE&gt;&gt;
+app.kubernetes.io/name: &lt;&lt;EDGE_NAME&gt;&gt;
+sessionAffinity: None
+type: LoadBalancer
 {% /tab %}
 {% /code %}
 
@@ -74,11 +79,11 @@ Replace `HTTP_SOURCE_PORT` with your configured port and `EDGE_INSTANCE` + `EDGE
 
 {% code %}
 {% tab language="bash" %}
-kubectl get service EDGE_SERVICE_NAME -o yaml > tmp.yaml
+kubectl get service EDGE_SERVICE_NAME -o yaml &gt; tmp.yaml
 {% /tab %}
 {% /code %}
 
- Finally, apply to your cluster with the following command
+Finally, apply to your cluster with the following command
 
 {% code %}
 {% tab language="bash" %}

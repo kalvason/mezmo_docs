@@ -10,9 +10,12 @@ keywords:
 tags: 
 ---
 
-This alert is triggered when there is a 60% increase in data volume compared to a prior window. 
+
+This alert is triggered when there is a 60% increase in data volume compared to a prior window.
 
 ## General Configuration
+
+{% table %}
 
 {% table %}
 | Field | Value | 
@@ -21,7 +24,11 @@ This alert is triggered when there is a 60% increase in data volume compared to 
 | Description | Triggers when a source volume increases by 60% compared to prior window. | 
 {% /table %}
 
+{% /table %}
+
 ## Evaluation and Condition Configuration
+
+{% table %}
 
 {% table %}
 | Field | Value | 
@@ -37,6 +44,8 @@ This alert is triggered when there is a 60% increase in data volume compared to 
 | Event Timestamp | `.timestamp` | 
 {% /table %}
 
+{% /table %}
+
 ## Custom Script
 
 {% code %}
@@ -49,18 +58,18 @@ This alert is triggered when there is a 60% increase in data volume compared to 
 // be triggered.
 
 function alertAggregation(accum, event, metadata) {
-  let new_accum = accum
-  if (!new_accum.message.log_volume) {
-    const accum_str = JSON.stringify(accum)
-    const accum_length = accum_str.length
-    new_accum = {message: {log_volume: accum_length}}
-  }
-  
-  const event_str = JSON.stringify(event)
-  const event_length = event_str.length
-  new_accum.message.log_volume = new_accum.message.log_volume + event_length
-  
-  return new_accum
+let new_accum = accum
+if (!new_accum.message.log_volume) {
+const accum_str = JSON.stringify(accum)
+const accum_length = accum_str.length
+new_accum = {message: {log_volume: accum_length}}
+}
+
+const event_str = JSON.stringify(event)
+const event_length = event_str.length
+new_accum.message.log_volume = new_accum.message.log_volume + event_length
+
+return new_accum
 }
 {% /tab %}
 {% /code %}

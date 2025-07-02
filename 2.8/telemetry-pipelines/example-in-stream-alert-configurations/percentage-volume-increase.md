@@ -10,9 +10,12 @@ keywords:
 tags: 
 ---
 
-This is an example of an alert that is triggered when there is an increase in the volume of data beyond a set percentage. 
+
+This is an example of an alert that is triggered when there is an increase in the volume of data beyond a set percentage.
 
 ## General Configuration
+
+{% table %}
 
 {% table %}
 | Field | Value | 
@@ -21,7 +24,11 @@ This is an example of an alert that is triggered when there is an increase in th
 | Description | Alert when volume increases by 40% compared to the prior period | 
 {% /table %}
 
+{% /table %}
+
 ## Evaluation and Condition Configuration
+
+{% table %}
 
 {% table %}
 | Field | Value | 
@@ -35,7 +42,11 @@ This is an example of an alert that is triggered when there is an increase in th
 | Alert Conditions | `if (.value.value` `percent_change_``greater_or_equal 40)` | 
 {% /table %}
 
+{% /table %}
+
 ## Payload Configuration
+
+{% table %}
 
 {% table %}
 | Field | Value | 
@@ -43,4 +54,6 @@ This is an example of an alert that is triggered when there is an increase in th
 | Severity | Warning | 
 | Message Style | Static | 
 | Subject | Volume Surge at [name of Source] | 
+{% /table %}
+
 {% /table %}

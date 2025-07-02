@@ -10,18 +10,19 @@ keywords:
 tags: 
 ---
 
+
 {% callout type="info" title="Beta" %}
 This feature is in Beta development. For access to this feature, contact your Mezmo Account Manager, or reach out to our Solutions Engineering team for more information.
 {% /callout %}
 
 Responsive Pipelines enable you to pre-configure a Pipeline to change behavior automatically in the case of an incident. This makes it easier to balance the need for high-fidelity data required during incident response, with the need to reduce data load for cost reduction.
 
-Responsive Pipelines adjust their behavior in response to specific triggers, such as the detection of a new critical incident. State change can be triggered through API calls from external incident response systems, such as PagerDuty, or you can activate it manually in the Pipeline in the [Mezmo Web App](app.mezmo.com). 
+Responsive Pipelines adjust their behavior in response to specific triggers, such as the detection of a new critical incident. State change can be triggered through API calls from external incident response systems, such as PagerDuty, or you can activate it manually in the Pipeline in the [Mezmo Web App](app.mezmo.com).
 
 {% image url="https://uploads.developerhub.io/prod/2KW7/h4jmec50zi3hfvmvok9dxlnap2l9iwwmehqyheahz3trg08amqkp7kscqqzvod18.png" mode="responsive" height="477" width="1219" %}
 {% /image %}
 
-This screenshot shows a Pipeline that, in **Monitoring** mode, drops `Status 200` events, and converts other HTTP Status events to metrics. In **Incident** Mode, the Route Processor sends the full data stream to Mezmo Log Analysis. 
+This screenshot shows a Pipeline that, in **Monitoring** mode, drops `Status 200` events, and converts other HTTP Status events to metrics. In **Incident** Mode, the Route Processor sends the full data stream to Mezmo Log Analysis.
 
 ## Beta Limitations
 
@@ -32,15 +33,15 @@ The Beta release of Responsive Pipelines has these limitations:
 
 ## How it Works
 
-Mezmo Responsive Pipelines introduces a state variable `operational_state` that is associated with each Pipeline. The value for this state is either `normal`or `incident`, and the Processors in the Pipeline can change their functioning based on the value. For example, the **Sample** Processor can be disabled if `operational_state=incident` so that during the incident, you can have high fidelity data for further analysis. 
+Mezmo Responsive Pipelines introduces a state variable `operational_state` that is associated with each Pipeline. The value for this state is either `normal`or `incident`, and the Processors in the Pipeline can change their functioning based on the value. For example, the **Sample** Processor can be disabled if `operational_state=incident` so that during the incident, you can have high fidelity data for further analysis.
 
 ## Set the Pipeline Operational State
 
-You can change  the operational state of a Pipeline manually through the Mezmo Web App,  or through the Telemetry Pipelines API. 
+You can change  the operational state of a Pipeline manually through the Mezmo Web App,  or through the Telemetry Pipelines API.
 
 ### Mezmo Web App
 
-You can change the operational state of a Pipeline in the Mezmo Web App by selecting the state in the upper-left corner of the Pipeline Map. The state of the Pipeline is also shown in the Pipeline name, with an orange flag indicating the **Incident** state. 
+You can change the operational state of a Pipeline in the Mezmo Web App by selecting the state in the upper-left corner of the Pipeline Map. The state of the Pipeline is also shown in the Pipeline name, with an orange flag indicating the **Incident** state.
 
 {% image url="https://uploads.developerhub.io/prod/2KW7/pt5iwjtqwchdc01qpcxnbq117svndul3xe9yk91voub7983l9p0zz7zegmikmbm1.png" caption="Changing the operational state of a Pipeline in the Mezmo Web App" mode="300" height="495" width="300" %}
 {% /image %}
@@ -75,10 +76,10 @@ You can these use the value of `op_state` to set the routing conditions for the 
 {% tab language="none" %}
 Route Processor Configuration
 
-<Normal State>
+&lt;Normal State&gt;
 if (metadata._op_state equal 'normal' OR is_null(metadata._op_state))
 
-<Incident State>
+&lt;Incident State&gt;
 if (metadata._op_state equal 'incident')
 {% /tab %}
 {% /code %}
@@ -94,7 +95,7 @@ Get the `state_id`:
 
 {% code %}
 {% tab language="none" %}
-curl -s --request GET --url https://api.mezmo.com/v3/pipeline/state-variable -H 'Authorization: Token <<PIPELINE_SERVICE_TOKEN>>' -H 'Content-Type: application/json' --data '{"pipeline_id": "<<PIPELINE_ID>>"}' | jq '.data[0].state'
+curl -s --request GET --url https://api.mezmo.com/v3/pipeline/state-variable -H 'Authorization: Token &lt;&lt;PIPELINE_SERVICE_TOKEN&gt;&gt;' -H 'Content-Type: application/json' --data '{"pipeline_id": "&lt;&lt;PIPELINE_ID&gt;&gt;"}' | jq '.data[0].state'
 {% /tab %}
 {% /code %}
 
@@ -102,7 +103,7 @@ Set the state:
 
 {% code %}
 {% tab language="none" %}
-curl -i --request PUT --url https://api.mezmo.com/v3/pipeline/state-variable/<<STATEID>> -H 'Authorization: Token <<PIPELINE SERVICE_TOKEN>>' -H 'Content-Type: application/json' --data '{"pipeline_id": "<<PIPELINE_ID>>", "state": {"operational_state": "incident"}}'
+curl -i --request PUT --url https://api.mezmo.com/v3/pipeline/state-variable/&lt;&lt;STATEID&gt;&gt; -H 'Authorization: Token &lt;&lt;PIPELINE SERVICE_TOKEN&gt;&gt;' -H 'Content-Type: application/json' --data '{"pipeline_id": "&lt;&lt;PIPELINE_ID&gt;&gt;", "state": {"operational_state": "incident"}}'
 {% /tab %}
 {% /code %}
 
@@ -111,8 +112,8 @@ curl -i --request PUT --url https://api.mezmo.com/v3/pipeline/state-variable/<<S
 This interactive demo illustrates a telemetry pipeline that is configured to respond to a Datadog data volume spike incident. You will need to have pop-ups enabled to view the demo. You can also [view the demo without pop-ups](https://www.mezmo.com/demos/responsive-pipeline-volume-spike) at mezmo.com
 
 {% html %}
-<!-- To open the pop-up on clicking a button, add the following data-navattic attributes to an existing button on your page -->
-<button data-navattic-open="https://capture.navattic.com/clzsclm8e000009laaj3zeyyn" data-navattic-title="Responsive Pipeline: Volume Spike Protection">
-  View the demo in a pop-up
-</button>
+&lt;!-- To open the pop-up on clicking a button, add the following data-navattic attributes to an existing button on your page --&gt;
+&lt;button data-navattic-open="https://capture.navattic.com/clzsclm8e000009laaj3zeyyn" data-navattic-title="Responsive Pipeline: Volume Spike Protection"&gt;
+View the demo in a pop-up
+&lt;/button&gt;
 {% /html %}

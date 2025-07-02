@@ -10,7 +10,8 @@ keywords:
 tags: 
 ---
 
-Mezmo Telemetry Pipeline enables organizations to take a new approach towards managing telemetry data. 
+
+Mezmo Telemetry Pipeline enables organizations to take a new approach towards managing telemetry data.
 
 - Incorporate data from your existing Log Analysis environment, or from entirely new data streams like [auto$](/telemetry-pipelines/kinesis-firehose-source), and the [auto$](/telemetry-pipelines/mezmo-agent-source) to capture a diverse range of telemetry data, with new sources being added regularly
 - You can use Processors to [encrypt](/telemetry-pipelines/encrypt-fields-processor), [filter](/telemetry-pipelines/filter-by-field-processor), [route](/telemetry-pipelines/route-processor), and automate other transformations of your data to to make sure that it is tailored to your specific needs for storage and analysis

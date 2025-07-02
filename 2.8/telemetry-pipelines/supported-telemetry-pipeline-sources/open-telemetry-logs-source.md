@@ -10,6 +10,7 @@ keywords:
 tags: 
 ---
 
+
 ## Description
 
 You can send your logs to a Mezmo Pipeline via any OTLP compliant sender.
@@ -25,10 +26,14 @@ The OTLP Logs source provides a unique endpoint URL that uses **Bearer Token** a
 ### Configuration Options
 
 {% table %}
+
+{% table %}
 | Option | Description | 
 | ---- | ---- | 
 | url / endpoint | unique URL for your OTLP source | 
 | token | token used for authorization for your OTLP source | 
+{% /table %}
+
 {% /table %}
 
 ### OpenTelemetry Collector Configuration
@@ -38,10 +43,10 @@ To configure an OTel collector to export to Mezmo, you can add the following to 
 {% code %}
 {% tab language="yaml" %}
 exporters:
-  otlphttp//mezmo-logs:
-    endpoint: "https://pipeline.mezmo.com/v1/<YOUR ROUTE ID>"
-    headers:
-      Authorization: "<YOUR_PIPELINE_INGEST_KEY>"
+otlphttp//mezmo-logs:
+endpoint: "https://pipeline.mezmo.com/v1/&lt;YOUR ROUTE ID&gt;"
+headers:
+Authorization: "&lt;YOUR_PIPELINE_INGEST_KEY&gt;"
 {% /tab %}
 {% /code %}
 

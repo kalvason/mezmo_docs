@@ -10,20 +10,21 @@ keywords:
 tags: 
 ---
 
+
 Visualizing log data provides insights into application availability, performance, resource usage, and errors at a glance. It allows teams to generate statistics, identify trends, and detect patterns in operational behavior. The result is a better overall view of your infrastructure.
 
 This article will cover some real scenarios and how to use graphs to understand trends and troubleshoot.
 
 ## Detecting Errors
 
-If errors are not detected, they can have serious consequences. Logs help us understand the cause and impact of errors, including when they happened, what happened, and what needs to be done to fix them. This information is useful for understanding and fixing errors. 
+If errors are not detected, they can have serious consequences. Logs help us understand the cause and impact of errors, including when they happened, what happened, and what needs to be done to fix them. This information is useful for understanding and fixing errors.
 
 This graph shows log lines that contain the word `error` over time.
 
 {% image url="https://uploads.developerhub.io/prod/2KW7/j50l6us0vo67kleq1c1eusul7a8kz2ko0zw0yullvwgas95ajw4h08wlovxou5q5.png" caption="The graph shows the count of logs that contain the word error over a certain period of time." mode="responsive" height="376" width="858" %}
 {% /image %}
 
-You can see a few errors followed by periods of stability. A significant spike occurs shortly after 12pm, which is roughly when the application restarted. We can view the individual log events by clicking on the spike and selecting **Show Logs**. You'll be taken to the Log Viewer. There you'll see all log lines from that date and time. 
+You can see a few errors followed by periods of stability. A significant spike occurs shortly after 12pm, which is roughly when the application restarted. We can view the individual log events by clicking on the spike and selecting **Show Logs**. You'll be taken to the Log Viewer. There you'll see all log lines from that date and time.
 
 To investigate further, select and individual log line and click **View in Context,** to see the log lines surrounding the error. In this example, someone or something repeatedly tried to log into the PostgreSQL database as an administrator with the wrong credentials.  PostgreSQL to logged an error each time the user was denied.
 

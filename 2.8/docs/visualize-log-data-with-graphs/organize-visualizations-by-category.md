@@ -10,7 +10,8 @@ keywords:
 tags: 
 ---
 
-You can organize Boards, Views, and Screens by Categories. There are two ways to create Categories. 
+
+You can organize Boards, Views, and Screens by Categories. There are two ways to create Categories.
 
 - When you create the Board, Screen, or View and give it a name and category.
 - By going to the Categories screen and adding a new Category.
@@ -20,7 +21,7 @@ You can organize Boards, Views, and Screens by Categories. There are two ways to
 
 ## Manage Categories
 
-- Manage all of your categories under Settings &gt; Categories. 
+- Manage all of your categories under Settings &gt; Categories.
 - New categories will be empty. Drag Views, Boards, or Screens to Categories to organize information.
 
 ## Feature Notes

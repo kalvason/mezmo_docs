@@ -10,6 +10,7 @@ keywords:
 tags: 
 ---
 
+
 ## [Description](https://docs.mezmo.com/docs/kafka-pipeline-destination#description)
 
 You can send Mezmo Pipeline data to Azure Event Hub - utilizing their Kafka endpoint.
@@ -19,6 +20,8 @@ You can send Mezmo Pipeline data to Azure Event Hub - utilizing their Kafka endp
 One of the ways to send data to Azure Event Hubs is via their [Kafka endpoint](https://learn.microsoft.com/en-us/azure/event-hubs/azure-event-hubs-kafka-overview).  To configure your pipeline, please adjust your Kafka destination using the following options.
 
 {% table widths="150,0" %}
+
+{% table %}
 | Option | Description | Value | 
 | ---- | ---- | ---- | 
 | End-to-End Acknowledgement | Enable this option to receive verification that log data is being received by Kafka. |  | 
@@ -35,4 +38,6 @@ One of the ways to send data to Azure Event Hubs is via their [Kafka endpoint](h
 | SASL | The SASL/SCRAM mechanism | `PLAIN` | 
 | Username | The SASL/SCRAM Username | `$$ConnectionString` | 
 | Password | The SASL/SCRAM Password | Set to the [AEH connection string](https://learn.microsoft.com/en-us/azure/event-hubs/event-hubs-get-connection-string) | 
+{% /table %}
+
 {% /table %}

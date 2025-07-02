@@ -10,6 +10,7 @@ keywords:
 tags: 
 ---
 
+
 ## [Description](https://docs.mezmo.com/docs/filter-by-field-pipeline-processor#description)
 
 The Filter by Field processor allows events to pass based on the presence of a specific key-value pair. Events that return `true` for the comparison operands are forwarded.
@@ -23,11 +24,15 @@ You can use this processor to drop events that may not be meaningful, or to redu
 The Filter processor uses conditional statements to set the filter criteria. The format of this conditional statement is: `Field (comparison operator) Value`. You can add conditions including `AND` and `OR`, as well as nested expressions. A Filter Processor can contain multiple conditional statements.
 
 {% table %}
+
+{% table %}
 | Option | Description | Example | 
 | ---- | ---- | ---- | 
 | **Field** | The field you want to apply the filter to. | .`foo` | 
 | **Operator** | The type of operator to use for the filter. | `greater` | 
 | **Value** | The value for the operator to use. | `10` | 
+{% /table %}
+
 {% /table %}
 
 {% callout type="info" title="Values are Case Insensitive by Default" %}
@@ -39,6 +44,8 @@ The filter terms you enter for **Value** are treated as case-insensitive by defa
 ### Contents Operators
 
 {% table %}
+
+{% table %}
 | **Operator** | **Description** | **Example** | 
 | ---- | ---- | ---- | 
 | **Not Contains** | Accepts string values. Will drop the record if it does not contain the value in the string. |  | 
@@ -47,7 +54,11 @@ The filter terms you enter for **Value** are treated as case-insensitive by defa
 | **Not Exists** | Drops the record if the field does not exist |  | 
 {% /table %}
 
+{% /table %}
+
 ### String Operators
+
+{% table %}
 
 {% table %}
 | **Operator** | **Description** | **Example** | 
@@ -56,7 +67,11 @@ The filter terms you enter for **Value** are treated as case-insensitive by defa
 | **Starts With** | The contents of a given field starts with. | `foo` | 
 {% /table %}
 
+{% /table %}
+
 ### Comparison Operators
+
+{% table %}
 
 {% table %}
 | **Operator** | **Description** | Example | 
@@ -69,9 +84,13 @@ The filter terms you enter for **Value** are treated as case-insensitive by defa
 | **Not Equal** | Accepts both numeric and  string values.  Does a string comparison on non string fields. | `bar` | 
 {% /table %}
 
+{% /table %}
+
 ### Type Operators
 
 {% table widths="0,477" %}
+
+{% table %}
 | Operator | Description | Example | 
 | ---- | ---- | ---- | 
 | **Is Array** | Drops the record if the field is not an array. | `[ "foo", "bar" ]` | 
@@ -83,9 +102,12 @@ The filter terms you enter for **Value** are treated as case-insensitive by defa
 | **Is String** | Drops the record if the field is not a string. | `"This is foo bar"` | 
 {% /table %}
 
+{% /table %}
+
 ## Examples
 
 ### Filter Greater
+
 
 #### Before
 
@@ -98,7 +120,10 @@ The filter terms you enter for **Value** are treated as case-insensitive by defa
 {% /tab %}
 {% /code %}
 
+
 #### Filter Options
+
+{% table %}
 
 {% table %}
 | Option | Value | 
@@ -107,6 +132,9 @@ The filter terms you enter for **Value** are treated as case-insensitive by defa
 | **Operator** | `greater` | 
 | **Value** | `10` | 
 {% /table %}
+
+{% /table %}
+
 
 #### After
 
@@ -117,6 +145,7 @@ The filter terms you enter for **Value** are treated as case-insensitive by defa
 {% /code %}
 
 ### Filter Equals
+
 
 #### Before
 
@@ -129,7 +158,10 @@ The filter terms you enter for **Value** are treated as case-insensitive by defa
 {% /tab %}
 {% /code %}
 
+
 #### Filter Options
+
+{% table %}
 
 {% table %}
 | Option | Value | 
@@ -138,6 +170,9 @@ The filter terms you enter for **Value** are treated as case-insensitive by defa
 | **Operator** | `equal` | 
 | **Value** | `10` | 
 {% /table %}
+
+{% /table %}
+
 
 #### After
 
@@ -150,6 +185,7 @@ The filter terms you enter for **Value** are treated as case-insensitive by defa
 
 ### Filter Contains
 
+
 #### Before
 
 {% code %}
@@ -161,7 +197,10 @@ The filter terms you enter for **Value** are treated as case-insensitive by defa
 {% /tab %}
 {% /code %}
 
+
 #### Filter Options
+
+{% table %}
 
 {% table %}
 | Option | Value | 
@@ -171,6 +210,9 @@ The filter terms you enter for **Value** are treated as case-insensitive by defa
 | **Value** | `10` | 
 | **Case Sensitive** | `On` | 
 {% /table %}
+
+{% /table %}
+
 
 #### After
 
@@ -182,6 +224,7 @@ The filter terms you enter for **Value** are treated as case-insensitive by defa
 {% /code %}
 
 ### Filter is Empty
+
 
 #### Before
 
@@ -197,7 +240,10 @@ The filter terms you enter for **Value** are treated as case-insensitive by defa
 {% /tab %}
 {% /code %}
 
+
 #### Filter Options
+
+{% table %}
 
 {% table %}
 | Option | Value | 
@@ -205,6 +251,9 @@ The filter terms you enter for **Value** are treated as case-insensitive by defa
 | **Field** | `.foo` | 
 | **Operator** | `is_empty` | 
 {% /table %}
+
+{% /table %}
+
 
 #### After
 
@@ -221,6 +270,7 @@ The filter terms you enter for **Value** are treated as case-insensitive by defa
 In some cases, log data streams include extraneous data such as Debug level information. These would normally not be needed in the production monitoring stream and can be discarded.
 
 This example uses the `log level` field as a filtering operator to drop anything with a `DEBUG` value.
+
 
 #### Before
 
@@ -250,7 +300,10 @@ This example uses the `log level` field as a filtering operator to drop anything
 {% /tab %}
 {% /code %}
 
+
 #### Filter Options
+
+{% table %}
 
 {% table %}
 | Option | Value | 
@@ -259,6 +312,9 @@ This example uses the `log level` field as a filtering operator to drop anything
 | **Operator** | `not_equal` | 
 | **Value** | `debug` | 
 {% /table %}
+
+{% /table %}
+
 
 #### After
 

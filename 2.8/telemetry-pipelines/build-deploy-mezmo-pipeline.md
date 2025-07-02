@@ -10,6 +10,7 @@ keywords:
 tags: 
 ---
 
+
 Building a Pipeline involves three basic steps:
 
 1. Set up a [Pipeline Source](/telemetry-pipelines/set-up-pipeline-sources).
@@ -45,9 +46,9 @@ After a Pipeline is deployed, you can continue to [edit it](/telemetry-pipelines
 
 ## Pipeline Demos and Tutorials
 
-These topics provide an overview of the demo Pipelines that are included in the Mezmo Web App, as well as tutorials for for typical Processor configuration use cases. The tutorials include an overview of the "Pipette" and the Processor configurations, an interactive demo that shows how the data is transformed as it moves along the Processor chain, and step-by-step instructions to build a version of the Pipette using [auto$](/telemetry-pipelines/demo-logs-source) and the [auto$](/telemetry-pipelines/blackhole-destination) Destination, as well as how to connect your own Source and Destination. 
+These topics provide an overview of the demo Pipelines that are included in the Mezmo Web App, as well as tutorials for for typical Processor configuration use cases. The tutorials include an overview of the "Pipette" and the Processor configurations, an interactive demo that shows how the data is transformed as it moves along the Processor chain, and step-by-step instructions to build a version of the Pipette using [auto$](/telemetry-pipelines/demo-logs-source) and the [auto$](/telemetry-pipelines/blackhole-destination) Destination, as well as how to connect your own Source and Destination.
 
 - [auto$](/telemetry-pipelines/pipeline-architecture-for-kubernetes-data-optimizationzlz)
-- [auto$](/practioner-guide-data-optimization/pipeline-module--route) 
+- [auto$](/practioner-guide-data-optimization/pipeline-module--route)
 - [auto$](/practioner-guide-data-optimization/pipeline-module--security-and-compliance)
 - [auto$](/practioner-guide-data-optimization/pipeline-example--convert-200-events-to-metrics)

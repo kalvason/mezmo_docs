@@ -10,6 +10,7 @@ keywords:
 tags: 
 ---
 
+
 Mezmo Telemetry Pipelines provides support for ingesting pipeline log data from a number of popular sources, as described in the topics in this section. If you have an interest in using a pipeline source not listed here, contact your Account Manager.
 
 1. Log into [the Mezmo Web App](https://app.mezmo.com/).
@@ -19,7 +20,7 @@ Mezmo Telemetry Pipelines provides support for ingesting pipeline log data from 
 5. In the **Sources** column of the pipeline schematic, click **Add**.
 6. Select the Pipeline Source you want to use, and enter the configuration information.
 
-The topic [auto$](/telemetry-pipelines/supported-telemetry-pipeline-sources) provides a full list of available sources and their configuration instructions. 
+The topic [auto$](/telemetry-pipelines/supported-telemetry-pipeline-sources) provides a full list of available sources and their configuration instructions.
 
 ## Video Overview
 

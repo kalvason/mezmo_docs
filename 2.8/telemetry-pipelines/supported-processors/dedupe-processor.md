@@ -10,6 +10,7 @@ keywords:
 tags: 
 ---
 
+
 ## [Description](https://docs.mezmo.com/docs/dedupe-pipeline-processor#description)
 
 The Dedupe processor removes duplicate values from log data.
@@ -23,11 +24,15 @@ This processor is most useful for reducing “chatter” in logs. The overlap of
 There are three options to configure for this processor.
 
 {% table widths="0,579" %}
+
+{% table %}
 | **Option** | **Description** | **Example** | 
 | ---- | ---- | ---- | 
 | **Number of Events** | The number of events to compare across. Limited to 5000. | `5000` | 
-| **Comparison Type** | **Match** will remove duplicate records based on the specified fields. \n\n\n\n**Ignore** will remove duplicate records based on all fields except those specified. | `Match` | 
+| **Comparison Type** | **Match** will remove duplicate records based on the specified fields. \n\n\n\n\n\n\n\n**Ignore** will remove duplicate records based on all fields except those specified. | `Match` | 
 | **Fields** | The field or fields to apply the Dedupe processing to. | `.foo` | 
+{% /table %}
+
 {% /table %}
 
 ## [Example - Match](https://docs.mezmo.com/docs/dedupe-pipeline-processor#example---match)
@@ -47,11 +52,15 @@ There are three options to configure for this processor.
 ### Dedupe Options
 
 {% table %}
+
+{% table %}
 | Option | Value | 
 | ---- | ---- | 
 | Number of Events | `5` | 
 | Comparison Type | `Match` | 
 | Fields | `.foo` | 
+{% /table %}
+
 {% /table %}
 
 ### After
@@ -81,11 +90,15 @@ JSON
 ### Dedupe Options
 
 {% table %}
+
+{% table %}
 | Option | Value | 
 | ---- | ---- | 
 | Number of Events | `5` | 
 | Comparison Type | `Ignore` | 
 | Fields | `.baz` | 
+{% /table %}
+
 {% /table %}
 
 ### After

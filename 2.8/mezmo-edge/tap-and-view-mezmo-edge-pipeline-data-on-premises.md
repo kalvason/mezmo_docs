@@ -11,6 +11,7 @@ tags:
 ---
 
 
+
 The SaaS version of Mezmo Telemetry Pipelines includes a  [Data Tap feature](/telemetry-pipelines/view-pipeline-data)  feature that enables you to view the flow of data  through your Pipeline, and to confirm that the Processors are transforming and formatting the data as expected. This functionality is also available tapping remotely deployed Mezmo Edge instances. However, some organizations prefer to disable remote tapping to avoid the possibility  of sensitive data leaving their network. In this case, you  can leverage similar functionality in the  `vector tap` CLI, or GraphQL , to view the data for your local Edge Instance, without having to send any data to the Mezmo Web App.
 
 ## Set Up Vector Tap with Mezmo Edge
@@ -32,7 +33,7 @@ kubectl get pods -l app.kubernetes.io/name=edge
 
 {% code %}
 {% tab language="none" %}
-kubectl exec -it <pod name> -- bash
+kubectl exec -it &lt;pod name&gt; -- bash
 {% /tab %}
 {% /code %}
 
@@ -54,7 +55,7 @@ kubectl get svc -l app.kubernetes.io/name=edge
 
 {% code %}
 {% tab language="none" %}
-kubectl port-forward <service name> 8686
+kubectl port-forward &lt;service name&gt; 8686
 {% /tab %}
 {% /code %}
 
@@ -80,7 +81,7 @@ To view the data stream for a specific Pipeline component, you need to provide t
 
 {% code %}
 {% tab language="none" %}
-vector tap <component id>
+vector tap &lt;component id&gt;
 {% /tab %}
 {% /code %}
 
@@ -163,6 +164,7 @@ You can find a list of all component types that you can tap in the **Component T
 ### View Data for a Component with Multiple Outputs
 
 
+
 #### View the Data for All Outputs
 
 To view the data through the various transformations of a component with multiple outputs, like the [auto$](/telemetry-pipelines/route-processor), use the `route` command with the UUID of the component.
@@ -184,6 +186,7 @@ This will display the data for each output of the component:
 {"message":{"asdf":"asdf","timestamp":"2024-02-27T21:12:00.422454671Z"},"metadata":{"headers":{"accept":"*/*","content-length":"16","content-type":"application/x-www-form-urlencoded","host":"localhost:8010","user-agent":"curl/7.74.0"},"query":null},"timestamp":"2024-02-27T21:12:00.422454671Z"}
 {% /tab %}
 {% /code %}
+
 
 
 
@@ -249,24 +252,26 @@ This code sample shows the component ID within the `outputsPatterns` field:
 {% code %}
 {% tab language="none" %}
 subscription {
-      events: outputEventsByComponentIdPatterns(
-        outputsPatterns: ["*http*9c0b419c-bee9-11ee-b560-520afa0d7a83*"],
-        inputsPatterns: [],
-        limit: 100) {
-        ... on Log {
-          type: __typename
-          timestamp
-          metadata: userMetadata
-          message: json(field: ".message")
-        }
-      }
-    }
+events: outputEventsByComponentIdPatterns(
+outputsPatterns: ["*http*9c0b419c-bee9-11ee-b560-520afa0d7a83*"],
+inputsPatterns: [],
+limit: 100) {
+... on Log {
+type: __typename
+timestamp
+metadata: userMetadata
+message: json(field: ".message")
+}
+}
+}
 {% /tab %}
 {% /code %}
 
 
 ## Component Types Available for Inspection
 
+
+{% table %}
 
 {% table %}
 | Source Type | Processor Type | Destination Type | 
@@ -304,6 +309,8 @@ subscription {
 |  |  | vector | 
 {% /table %}
 
+{% /table %}
+
 ## Disabling Tap from the Edge Helm Configuration
 
 To disable tap from the Edge itself, simply edit the `statefulset` and set two environment variables to `https://localhost`.  This will cause the vector pod to emit error logs when it cannot fetch tasks, but otherwise functionality of the Edge instance is not affected other than to prevent data egress to the SaaS Control Plane from within an environment.
@@ -311,7 +318,8 @@ To disable tap from the Edge itself, simply edit the `statefulset` and set two e
 
 {% code %}
 {% tab language="none" %}
-# edit the statefulset
+
+## edit the statefulset
 kubectl edit sts/edge
 {% /tab %}
 {% /code %}

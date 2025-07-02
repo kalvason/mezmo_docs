@@ -10,6 +10,7 @@ keywords:
 tags: 
 ---
 
+
 This article provides information aboutthe supported platforms for our [Mezmo Agents](/docs/introducing-the-agent).
 
 ## What is End of Life (EOL)?
@@ -25,7 +26,7 @@ When a platform reaches its End of Life (EOL), Mezmo will no longer be providing
 - Kubernetes ([Kubernetes EOL Lifecycle](https://endoflife.date/kubernetes))
 - Windows ([Windows EOL Lifecycle](https://learn.microsoft.com/en-us/lifecycle/products/windows-10-enterprise-and-education))
 - OpenShift ([OpenShift EOL Lifecycle](https://access.redhat.com/support/policy/updates/openshift))
-- Linux architectures available: AMD64 and ARM64 
+- Linux architectures available: AMD64 and ARM64
 
 Installation instructions for the specified platform/OS are available on our [Github](https://github.com/logdna/logdna-agent-v2/tree/master?tab=readme-ov-file#managing-deployments).
 

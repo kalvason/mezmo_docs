@@ -10,13 +10,14 @@ keywords:
 tags: 
 ---
 
+
 ## Set Up Flynn Log Ingestion
 
 Follow the instructions in the Mezmo Web App to set up Flynn log ingestion using your Mezmo ingestion key.
 
 1. Log in to [the Mezmo Web App](http://app.mezmo.com).
 2. In the bottom section of the left-hand navigation, click **Help**.
-3. Select **Add Log Sources**. 
+3. Select **Add Log Sources**.
 4. Under **Via platform**, click **Flynn**.
 5. Follow the instructions to set up Flynn log ingestion.
 Note that your ingestion key is automatically inserted into the configuration code.

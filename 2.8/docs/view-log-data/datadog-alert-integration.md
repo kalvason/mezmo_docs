@@ -10,6 +10,7 @@ keywords:
 tags: 
 ---
 
+
 Mezmo's Datadog integration interacts with the [Datadog Metrics API](https://docs.datadoghq.com/api/?lang=bash#post-timeseries-points).
 
 Provide your Datadog API key and input criteria on the number of matches and time span before sending an alert to your Datadog instance:

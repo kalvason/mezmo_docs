@@ -10,7 +10,8 @@ keywords:
 tags: 
 ---
 
-These topics will show you how to configure Mezmo Telemetry Pipeline Processors for specific Sources, Destinations, and data engineering needs. 
+
+These topics will show you how to configure Mezmo Telemetry Pipeline Processors for specific Sources, Destinations, and data engineering needs.
 
 {% index-list %}
 {% /index-list %}

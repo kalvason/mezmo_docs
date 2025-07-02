@@ -10,9 +10,12 @@ keywords:
 tags: 
 ---
 
-This is an example of an alert that is triggered when a high rate of errors is detected. This example assumes there is a [auto$](/telemetry-pipelines/filter-processor) or [auto$](/telemetry-pipelines/route-processor) that allows only Metric events, specifically `HTTP Status-5xx` errors. Check out the [auto$](/practioner-guide-data-optimization/pipeline-module--route) topic for an example with `HTTP Status-200` messages. 
+
+This is an example of an alert that is triggered when a high rate of errors is detected. This example assumes there is a [auto$](/telemetry-pipelines/filter-processor) or [auto$](/telemetry-pipelines/route-processor) that allows only Metric events, specifically `HTTP Status-5xx` errors. Check out the [auto$](/practioner-guide-data-optimization/pipeline-module--route) topic for an example with `HTTP Status-200` messages.
 
 ## General Configuration
+
+{% table %}
 
 {% table %}
 | Field | Value | 
@@ -21,7 +24,11 @@ This is an example of an alert that is triggered when a high rate of errors is d
 | Description | Detects high number of 5xx errors per application | 
 {% /table %}
 
+{% /table %}
+
 ## Evaluation and Condition Configuration
+
+{% table %}
 
 {% table %}
 | Field | Value | 
@@ -35,7 +42,11 @@ This is an example of an alert that is triggered when a high rate of errors is d
 | Conditional Statement | `if (.value.value greater_or_equal` 60)`` | 
 {% /table %}
 
+{% /table %}
+
 ## Payload Configuration
+
+{% table %}
 
 {% table %}
 | Field | Value | 
@@ -43,4 +54,6 @@ This is an example of an alert that is triggered when a high rate of errors is d
 | Severity | Error | 
 | Message Style | Static | 
 | Subject | High number of 5xx errors | 
+{% /table %}
+
 {% /table %}

@@ -10,13 +10,14 @@ keywords:
 tags: 
 ---
 
+
 ## Description
 
-With this Destination, you can set up Archive locations for your telemetry data in S3 and Azure Cloud Storage, and then restore the data from those locations to a Pipeline using the [auto$](/telemetry-pipelines/archive-restore-data) feature. 
+With this Destination, you can set up Archive locations for your telemetry data in S3 and Azure Cloud Storage, and then restore the data from those locations to a Pipeline using the [auto$](/telemetry-pipelines/archive-restore-data) feature.
 
 ## Archiving Format and Frequency
 
-If your data is being sent to the archive storage location  on  May 13, 2024, for example, the folder structure for your data files would follow this format: 
+If your data is being sent to the archive storage location  on  May 13, 2024, for example, the folder structure for your data files would follow this format:
 
 `bucket / year=2024 / month=05 / day=13`
 
@@ -29,18 +30,22 @@ Configuration is similar to our S3 and Azure Blob Storage destinations, and appr
 ### Configuration Options
 
 {% table widths="206" %}
+
+{% table %}
 | Option | Description | 
 | ---- | ---- | 
-| Batch Timeout | The maximum amount of time, in seconds, that events will be buffered before being flushed to the destination.\n\n\n\nDefault: 300s | 
+| Batch Timeout | The maximum amount of time, in seconds, that events will be buffered before being flushed to the destination.\n\n\n\n\n\n\n\nDefault: 300s | 
 | Archive Provider | The Cloud provider where you'd like to store your archives. | 
 | **S3 Options** |  | 
 | Access Key ID | The access key ID with permissions to your S3 bucket. | 
 | Secret Access Key | The access key secret with permissions to your S3 bucket. | 
-| Bucket | The bucket name.  \n\n\n\n Do not include a leading s3:// or a trailing / | 
+| Bucket | The bucket name.  \n\n\n\n\n\n\n\n Do not include a leading s3:// or a trailing / | 
 | Region | Region in which your bucket is located. | 
 | **Azure Blob Storage Options** |  | 
 | Container Name | The name of the Azure Blob container. | 
 | Connection String | The access key connection string with rights to this container. | 
+{% /table %}
+
 {% /table %}
 
 {% callout type="info" title="Info" %}

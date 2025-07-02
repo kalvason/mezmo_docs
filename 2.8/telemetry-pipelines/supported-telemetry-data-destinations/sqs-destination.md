@@ -10,11 +10,14 @@ keywords:
 tags: 
 ---
 
+
 ## Description
 
 Publish observability events to [Simple Queue Service](https://aws.amazon.com/sqs/) topics
 
 ## Configuration Options
+
+{% table %}
 
 {% table %}
 | Option | Description | 
@@ -24,4 +27,6 @@ Publish observability events to [Simple Queue Service](https://aws.amazon.com/sq
 | Encoding | The encoding to apply to the data. Either json or text | 
 | Region | The name of the AWS region that is targeted. | 
 | SQS Queue URL | The URL of the SQS queue that the data is publishing to. | 
+{% /table %}
+
 {% /table %}

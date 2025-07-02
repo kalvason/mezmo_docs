@@ -10,6 +10,7 @@ keywords:
 tags: 
 ---
 
+
 ## Description
 
 This is a pull source. You can enable a source within Pipeline to collect events from Kafka compatible brokers.
@@ -19,6 +20,8 @@ This is a pull source. You can enable a source within Pipeline to collect events
 You can configure the source as described in the table below.
 
 ### Configuration Options
+
+{% table %}
 
 {% table %}
 | Option | Description | 
@@ -36,4 +39,6 @@ You can configure the source as described in the table below.
 | SASL | Choose from plain, SCRAM-SHA-512, or SCRAM-SHA-256 | 
 | Username | The SASL/SCRAM username | 
 | Password | The SASL/SCRAM password | 
+{% /table %}
+
 {% /table %}

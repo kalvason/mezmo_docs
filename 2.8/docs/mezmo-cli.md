@@ -13,6 +13,7 @@ tags:
 
 
 
+
 ## GitHub Repository
 
 For complete information about installing and configuring the Mezmo CLI Client, check out the source code and documentation in our GitHub repository.
@@ -21,6 +22,7 @@ For complete information about installing and configuring the Mezmo CLI Client, 
 ## Mezmo CLI FAQs
 
 ### How do I install the Mezmo CLI?
+
 
 
 
@@ -47,6 +49,7 @@ brew install --cask logdna-cli
 
 
 
+
 #### Windows
 
 To install on Windows, use [chocolatey](https://chocolatey.org):
@@ -59,6 +62,7 @@ To install on Windows, use [chocolatey](https://chocolatey.org):
 choco install logdna
 {% /tab %}
 {% /code %}
+
 
 
 
@@ -91,7 +95,7 @@ To register a new Mezmo account, use the command:
 
 {% code %}
 {% tab language="none" %}
-logdna register <email>
+logdna register &lt;email&gt;
 {% /tab %}
 {% /code %}
 

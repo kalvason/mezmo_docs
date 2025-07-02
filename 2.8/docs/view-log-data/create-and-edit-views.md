@@ -10,7 +10,8 @@ keywords:
 tags: 
 ---
 
-Views are saved shortcuts to a specific set of filters and search queries for log lines. You can also [auto$](/docs/add-alerts-to-views) to notify you when specific conditions are met. Mezmo provides alert integrations for several messaging and notification platforms, including [Slack](/docs/slack-alert-integration), [PagerDuty](/docs/pagerduty-alert-integration), and [DataDog](/docs/datadog-alert-integration),  and [auto$](/docs/using-templates) for a variety of log data types. 
+
+Views are saved shortcuts to a specific set of filters and search queries for log lines. You can also [auto$](/docs/add-alerts-to-views) to notify you when specific conditions are met. Mezmo provides alert integrations for several messaging and notification platforms, including [Slack](/docs/slack-alert-integration), [PagerDuty](/docs/pagerduty-alert-integration), and [DataDog](/docs/datadog-alert-integration),  and [auto$](/docs/using-templates) for a variety of log data types.
 
 {% callout type="info" title="Everything View" %}
 The first time you visit Views, you'll see the default **Everything** view, which shows all log lines.

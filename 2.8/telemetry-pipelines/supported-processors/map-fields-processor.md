@@ -10,9 +10,10 @@ keywords:
 tags: 
 ---
 
+
 ## Description
 
-This processor enables you to move or copy fields within an event, including nested fields. 
+This processor enables you to move or copy fields within an event, including nested fields.
 
 ## Use
 
@@ -20,11 +21,13 @@ You would typically use this processor for transformation of the data within an 
 
 ## Configuration
 
-Specify the source and target fields where you want to move data. 
+Specify the source and target fields where you want to move data.
 
 The default behavior is to copy the data to the specified target field from the source, and not overwrite the target field if it exists. If you want to remove the original field, set `Drop Source` as `true.`If you want to update an already-existing target field, set `Overwrite target` to `true`.
 
 {% table widths="0,510" %}
+
+{% table %}
 | Option | Description | Example | 
 | ---- | ---- | ---- | 
 | Source Field | The parsed data field from where the data to move originates. | `.data.host` | 
@@ -33,35 +36,41 @@ The default behavior is to copy the data to the specified target field from the 
 | Overwrite Target | Whether you want to override the target data if the field exists, or skip the map operation (default is to not overwrite) | `True` | 
 {% /table %}
 
+{% /table %}
+
 ## Examples
 
 ### Restructuring
 
 The initial log message from a database included `timestamp` and attribute information in nested objects. Additionally the `timestamp` field was not in a standard format.
 
+
 #### Before
 
 {% code %}
 {% tab language="json" %}
 {
-  "t": {
-    "$date": "2020-05-01T15:16:17.180+00:00"
-  },
-  "s": "I",
-  "c": "NETWORK",
-  "id": 12345,
-  "ctx": "listener",
-  "msg": "Listening on",
-  "attr": {
-    "address": "10.10.0.1"
-  }
+"t": {
+"$date": "2020-05-01T15:16:17.180+00:00"
+},
+"s": "I",
+"c": "NETWORK",
+"id": 12345,
+"ctx": "listener",
+"msg": "Listening on",
+"attr": {
+"address": "10.10.0.1"
+}
 }
 {% /tab %}
 {% /code %}
 
+
 #### Options
 
 In this case you will shift the level of the date and move the address up a level, while also renaming the date field. You will specify to drop the originating value. You could optionally select to overwrite the destination if it exists, but it will not make a difference in this case.
+
+{% table %}
 
 {% table %}
 | Option | Value | 
@@ -69,6 +78,9 @@ In this case you will shift the level of the date and move the address up a leve
 | Move and remove the original value | `.t.$date` to `.timestamp` | 
 | Move and remove the original value | `.attr.address` to `.address` | 
 {% /table %}
+
+{% /table %}
+
 
 #### After
 
@@ -79,15 +91,15 @@ Note that the originating objects still exist in the message. In this case, you 
 {% code %}
 {% tab language="json" %}
 {
-  "t": {},
-  "timestamp": "2020-05-01T15:16:17.180+00:00"
-  "s": "I",
-  "c": "NETWORK",
-  "id": 12345,
-  "ctx": "listener",
-  "msg": "Listening on",
-  "address": "10.10.0.1"
-  "attr": {}
+"t": {},
+"timestamp": "2020-05-01T15:16:17.180+00:00"
+"s": "I",
+"c": "NETWORK",
+"id": 12345,
+"ctx": "listener",
+"msg": "Listening on",
+"address": "10.10.0.1"
+"attr": {}
 }
 {% /tab %}
 {% /code %}

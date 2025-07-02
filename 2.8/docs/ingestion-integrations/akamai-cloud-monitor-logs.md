@@ -10,9 +10,12 @@ keywords:
 tags: 
 ---
 
+
 Follow the [Cloud Monitor Implementation Guide](https://control.akamai.com/dl/customers/ALTA/Cloud-Monitor-Implementation.pdf) to configure Akamai Cloud Monitor to forward logs to Mezmo.  Use the parameters listed here to set the configuration options.
 
 ## Cloud Monitor Data Delivery
+
+{% table %}
 
 {% table %}
 | Genera Configuration Option | Parameter | 
@@ -20,9 +23,13 @@ Follow the [Cloud Monitor Implementation Guide](https://control.akamai.com/dl/cu
 | **Origin Server Hostname** | `logs.logdna.com` | 
 | **HTTP Port** | `443` | 
 | **HTTPS Port** | `443` | 
-| **Content Provider Code** | Select **812828 - Cloud Monitor to LogDNA**\n\n\nIf this option isn't available, contact Akami Support | 
+| **Content Provider Code** | Select **812828 - Cloud Monitor to LogDNA**\n\n\n\n\nIf this option isn't available, contact Akami Support | 
 | **Use SNI TLS Extension** | Yes | 
 {% /table %}
+
+{% /table %}
+
+{% table %}
 
 {% table %}
 | Origin SSL Certificate CN Options | 
@@ -34,29 +41,37 @@ Follow the [Cloud Monitor Implementation Guide](https://control.akamai.com/dl/cu
 | **HTTPS Port** | '443' | 
 {% /table %}
 
+{% /table %}
+
 ## Dynamic Site Accelerator
 
 In your **Dynamic Site Accelerator** configuration, set the **Cloud Monitor Instrumentation** behavior with the these parameters:
+
+{% table %}
 
 {% table %}
 |  |  | 
 | ---- | ---- | 
 | **Cloud Monitor Delivery Hostname** | `logs.logdna.com` | 
 | _Data Sets to Include*_ | Specify the datasets for your logs | 
-| **Delivery URL Path** | `/akamai/ingest/<Ingestion Key>`\n\n\n\nUse your Mezmo **Access Key** for '&lt;Ingestion Key&gt;' | 
+| **Delivery URL Path** | `/akamai/ingest/<Ingestion Key>`\n\n\n\n\n\n\n\nUse your Mezmo **Access Key** for '&lt;Ingestion Key&gt;' | 
+{% /table %}
+
 {% /table %}
 
 {% callout type="info" title="Optional Querystring Parameters" %}
-Use querystring parameters to override **hostname**, **app**, or to add **tags**: 
+Use querystring parameters to override **hostname**, **app**, or to add **tags**:
 
 `/akamai/ingest/<Ingestion Key>?hostname=newHost&app=newTest`;
-  `/akamai/ingest/<Ingestion Key>?tags=akamai,logdna&app=newTest`;
-  `/akamai/ingest/<Ingestion Key>?tags=tag1&hostname=host1`, etc.
+`/akamai/ingest/<Ingestion Key>?tags=akamai,logdna&app=newTest`;
+`/akamai/ingest/<Ingestion Key>?tags=tag1&hostname=host1`, etc.
 {% /callout %}
 
 ## How Akamai Logs are Parsed
 
 You can find information for each of your datasets in these log entries:
+
+{% table %}
 
 {% table %}
 |  |  | 
@@ -70,6 +85,8 @@ You can find information for each of your datasets in these log entries:
 | **Request Header Data** | `reqHdr.*` | 
 | **Response Header Data** | `respHdr.*` | 
 | **Web Application Firewall Data 2.0** | `waf_2.*` | 
+{% /table %}
+
 {% /table %}
 
 The information about each dataset and the definition of each field can be found in _Appendix A: Cloud Monitor Default Connectors_ section of [Cloud Monitor Implementation Guide](https://control.akamai.com/dl/customers/ALTA/Cloud-Monitor-Implementation.pdf).

@@ -10,6 +10,7 @@ keywords:
 tags: 
 ---
 
+
 ## About the Terraform Provider for Mezmo
 
 [Mezmo](https://mezmo.com) is a centralized log management platform. The Terraform provider from Mezmo allows organizations to manage Views and Alerts programmatically via Terraform commands.  With the Terraform provider, which utilizes our [Configuration AP](https://docs.mezmo.com/log-analysis-api/ref#tag-configuration)[I](/log-analysis-api/ref#tag-configuration), automate deployments of Views and Alerts to your Mezmo environment.
@@ -37,68 +38,69 @@ This example code for creating a new View and Alert is in [HCL (Hashicorp Config
 {% code %}
 {% tab language="none" %}
 terraform {
-  required_providers {
-    logdna = {
-      source  = "logdna/logdna"
-      version = "1.0.0"
-    }
-  }
+required_providers {
+logdna = {
+source  = "logdna/logdna"
+version = "1.0.0"
+}
+}
 }
 
-# Configure the LogDNA Provider
+
+## Configure the LogDNA Provider
 provider "logdna" {
-  servicekey = "<your_service_key_goes_here>"
+servicekey = "&lt;your_service_key_goes_here&gt;"
 }
 
 resource "logdna_view" "my_view" {
-  apps       = ["app1", "app2"]
-  categories = ["Demo1", "Demo2"]
-  hosts      = ["host1", "host2"]
-  levels     = ["fatal", "critical"]
-  name       = "Email PagerDuty and Webhook View-specific Alerts"
-  query      = "test"
-  tags       = ["tag1", "tag2"]
+apps       = ["app1", "app2"]
+categories = ["Demo1", "Demo2"]
+hosts      = ["host1", "host2"]
+levels     = ["fatal", "critical"]
+name       = "Email PagerDuty and Webhook View-specific Alerts"
+query      = "test"
+tags       = ["tag1", "tag2"]
 
-  email_channel {
-    emails          = ["test@mezmo.com"]
-    immediate       = "false"
-    operator        = "absence"
-    terminal        = "true"
-    timezone        = "Pacific/Samoa"
-    triggerinterval = "15m"
-    triggerlimit    = 15
-  }
+email_channel {
+emails          = ["test@mezmo.com"]
+immediate       = "false"
+operator        = "absence"
+terminal        = "true"
+timezone        = "Pacific/Samoa"
+triggerinterval = "15m"
+triggerlimit    = 15
+}
 
-  pagerduty_channel {
-    immediate       = "false"
-    key             = "<your_service_key_goes_here>"
-    terminal        = "true"
-    triggerinterval = "15m"
-    triggerlimit    = 15
-  }
+pagerduty_channel {
+immediate       = "false"
+key             = "&lt;your_service_key_goes_here&gt;"
+terminal        = "true"
+triggerinterval = "15m"
+triggerlimit    = 15
+}
 
-  webhook_channel {
-    bodytemplate = jsonencode({
-      hello = "test1"
-      test  = "test2"
-    })
-    headers = {
-      hello = "test3"
-      test  = "test2"
-    }
-    immediate       = "false"
-    method          = "post"
-    terminal        = "true"
-    triggerinterval = "15m"
-    triggerlimit    = 15
-    url             = "https://yourwebhook/endpoint"
-  }
+webhook_channel {
+bodytemplate = jsonencode({
+hello = "test1"
+test  = "test2"
+})
+headers = {
+hello = "test3"
+test  = "test2"
+}
+immediate       = "false"
+method          = "post"
+terminal        = "true"
+triggerinterval = "15m"
+triggerlimit    = 15
+url             = "https://yourwebhook/endpoint"
+}
 }
 {% /tab %}
 {% /code %}
 
 {% callout type="warning" title="Warning" %}
-Note that if you create a new View using Terraform, but then delete the View by using the Mezmo Dashboard UI and _not_ Terraform, then Terraform will not be aware of the deletion and displays an `Error: Resource Not Found` message. 
+Note that if you create a new View using Terraform, but then delete the View by using the Mezmo Dashboard UI and _not_ Terraform, then Terraform will not be aware of the deletion and displays an `Error: Resource Not Found` message.
 For more information about handling "_deletion drift_" refer to our full documentation on the official  &lt;a href="[https://registry.terraform.io/providers/logdna/logdna/latest/docs"](https://registry.terraform.io/providers/logdna/logdna/latest/docs&quot;) target="_blank"&gt;Terraform site&lt;/a&gt;.
 {% /callout %}
 

@@ -10,6 +10,7 @@ keywords:
 tags: 
 ---
 
+
 ## Description
 
 This destination allows you to send log data to Honeycomb.
@@ -21,10 +22,14 @@ You can configure the destination using these options:
 ### Configuration Options
 
 {% table %}
+
+{% table %}
 | Option | Description | 
 | ---- | ---- | 
 | Title | Destination title | 
 | Description | Destination description | 
 | Honeycomb API key | Your Honeycomb API key | 
 | Dataset | The name of the targeted dataset | 
+{% /table %}
+
 {% /table %}

@@ -10,6 +10,7 @@ keywords:
 tags: 
 ---
 
+
 ## Description
 
 This Source takes your data sent to our Log Analysis endpoint `logs.mezmo.com` and redirects it into a Pipeline Source.  This re-routes the data flow from Mezmo Log Management to your Pipeline.

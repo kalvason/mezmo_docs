@@ -12,6 +12,7 @@ tags:
 
 
 
+
 ## Fixed Issues
 
 Clarified search results: we improved the feedback displayed during searches over long time periods. The results message now makes it clear that we do linear searches through the specified timeframe and we provide results incrementally. [LOG-8859]

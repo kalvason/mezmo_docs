@@ -10,6 +10,7 @@ keywords:
 tags: 
 ---
 
+
 The Mezmo NGINX Ingress Controller Template provides you better observability into your infrastructure with NGINX Ingress Controller ([nginxinc/kubernetes-ingress](https://github.com/nginxinc/kubernetes-ingress)) logs. The Template includes pre-configured Views, Boards, Screens, and a [logging format](#nginx-ingress-controller-recommended-log-format-configuration) to get the most out of your logs. After configuring the t emplate, you can set up alerts on excessive HTTP 500's, graph response codes broken down by upstream service name, and more.
 
 ### Views

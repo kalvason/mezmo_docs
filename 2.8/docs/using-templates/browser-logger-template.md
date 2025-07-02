@@ -10,7 +10,8 @@ keywords:
 tags: 
 ---
 
-Use the [Mezmo Browser Logger integration](https://github.com/logdna/logdna-browser) combined with this Template to get trends and break down browser-side errors by error message, OS, browser version and more. The Browser Logger Template consists of a collection of pre-configured Views, Boards, and Screens to help you gain insights from your log data. 
+
+Use the [Mezmo Browser Logger integration](https://github.com/logdna/logdna-browser) combined with this Template to get trends and break down browser-side errors by error message, OS, browser version and more. The Browser Logger Template consists of a collection of pre-configured Views, Boards, and Screens to help you gain insights from your log data.
 
 Browse the[ full library of Mezmo Templates](https://app.mezmo.com/manage/template-library).
 

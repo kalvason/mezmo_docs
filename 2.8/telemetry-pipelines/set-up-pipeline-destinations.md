@@ -10,6 +10,7 @@ keywords:
 tags: 
 ---
 
+
 Mezmo Pipeline provides support for multiple types of log data destinations, including Mezmo Log Analysis, cloud storage and monitoring platforms, and analytical tools. If you have an interest in using a pipeline destination not listed here, contact your Account Manager.
 
 All destinations are buffered, meaning that Mezmo Pipelines will not send a set of events until one of the following two conditions is satisfied:

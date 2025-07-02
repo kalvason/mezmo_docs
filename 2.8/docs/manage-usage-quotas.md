@@ -10,6 +10,7 @@ keywords:
 tags: 
 ---
 
+
 Usage Quotas enables developers and technical teams to see and set alarms for all important logs. This allows account administrators to manage how much data their teams are storing. The goal is to store all critical logs while staying under the monthly storage budget.
 
 These configuration options allows for fine-grained control, providing a range of options such as:

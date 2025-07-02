@@ -12,6 +12,7 @@ tags:
 
 
 
+
 ## Bugs
 * Fixed a bug where the log viewer histogram time range query would be incorrect, leading to truncated histograms.
 * Fixed a bug where custom fields took a day to appear to be available to be graphed on instead of the expected 15 minutes.

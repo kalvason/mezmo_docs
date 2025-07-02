@@ -10,7 +10,8 @@ keywords:
 tags: 
 ---
 
-Mezmo supports these Destinations for telemetry data. 
+
+Mezmo supports these Destinations for telemetry data.
 
 {% index-list %}
 {% /index-list %}

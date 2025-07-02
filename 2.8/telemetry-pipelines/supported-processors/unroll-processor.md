@@ -10,6 +10,7 @@ keywords:
 tags: 
 ---
 
+
 ## [Description](https://docs.mezmo.com/docs/unroll-pipeline-processor#description)
 
 The Unroll processor converts a JSON object array into individual objects.
@@ -23,31 +24,42 @@ This processor is most commonly used for cases when a source sends a set of obje
 There is one option to configure for this processor.
 
 {% table %}
+
+{% table %}
 | Option | Description | Example | 
 | ---- | ---- | ---- | 
 | Field | The field containing the JSON object array to unroll. | .foo | 
 {% /table %}
 
+{% /table %}
+
 ## Example
+
 
 #### Before
 
 {% code %}
 {% tab language="json" %}
 {
-  'foo': ['bat', 'baz', 'qux'], 
-  'bar': 1
+'foo': ['bat', 'baz', 'qux'],
+'bar': 1
 }
 {% /tab %}
 {% /code %}
 
+
 #### Unroll Options
+
+{% table %}
 
 {% table %}
 | Option | Value | 
 | ---- | ---- | 
 | Field | .foo | 
 {% /table %}
+
+{% /table %}
+
 
 #### After
 

@@ -12,6 +12,7 @@ tags:
 
 
 
+
 ## Bugs
 * Fixed display tags in usage emails
 * Fixed a bug where we would flash no lines found before results would load when searching by a time range

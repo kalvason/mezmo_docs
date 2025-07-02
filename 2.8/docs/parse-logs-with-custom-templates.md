@@ -10,6 +10,7 @@ keywords:
 tags: 
 ---
 
+
 {% callout type="info" title="Permission Levels" %}
 You must be an[ admin or owner ](https://docs.mezmo.com/docs/feature-access-matrix)to use this feature.
 {% /callout %}
@@ -20,7 +21,7 @@ Mezmo supports [common log types](https://docs.mezmo.com/docs/ingestion#supporte
 
 ### Multiple Templates
 
-You can have multiple custom parsing templates. Custom Parsing templates are applied to your logs based on the order of active templates. For example if you have two active templates that target the same log line, then the templates are applied in the order on the Manage Parsing page. 
+You can have multiple custom parsing templates. Custom Parsing templates are applied to your logs based on the order of active templates. For example if you have two active templates that target the same log line, then the templates are applied in the order on the Manage Parsing page.
 
 - Template One
 - Template Two

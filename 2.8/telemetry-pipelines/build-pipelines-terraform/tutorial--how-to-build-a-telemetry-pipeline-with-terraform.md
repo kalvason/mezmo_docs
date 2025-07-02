@@ -10,7 +10,8 @@ keywords:
 tags: 
 ---
 
-This video tutorial describes how to build a Mezmo Telemetry Pipeline with Terraform, including setting up access to [Shared Sources](/telemetry-pipelines/shared-sources) with AWS Secrets Manager. 
+
+This video tutorial describes how to build a Mezmo Telemetry Pipeline with Terraform, including setting up access to [Shared Sources](/telemetry-pipelines/shared-sources) with AWS Secrets Manager.
 
 {% video videoId="edacead36a714189b2243126e0bd9443" provider="loom" %}
 {% /video %}

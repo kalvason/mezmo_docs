@@ -10,11 +10,14 @@ keywords:
 tags: 
 ---
 
+
 ## [Description](https://docs.mezmo.com/docs/splunk-http-event-collector-pipeline-destination#description)
 
 You can send Mezmo Pipeline log data to Splunk.
 
 ## [Configuration Options](https://docs.mezmo.com/docs/splunk-http-event-collector-pipeline-destination#configuration-options)
+
+{% table %}
 
 {% table %}
 | Option | Description | 
@@ -27,4 +30,6 @@ You can send Mezmo Pipeline log data to Splunk.
 | Verify TLS Certificate | Enable to verify that the Splunk instance has a valid TLS certificate. This will not establish a secure connection, but can be useful for testing the Splunk destination. | 
 | Host Field | The log data field to use for sending the hostname to Splunk. | 
 | Indexed Fields | The field or fields for Splunk to extract into its index. | 
+{% /table %}
+
 {% /table %}
