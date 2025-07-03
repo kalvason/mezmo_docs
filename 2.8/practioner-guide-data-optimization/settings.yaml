@@ -1,0 +1,8 @@
+published: true
+slug: practioner-guide-data-optimization
+description: "Mezmo's guide to optimizing telemetry data for observability tools, including analysis of data optimization techniques , example telemetry pipeline architectures, data engineering best practices, and a tutorial for building a data optimization pipeline."
+collapsed: false
+collapsedCategories: false
+showLastUpdated: true
+showLastUpdateUser: false
+locale: en_us
