@@ -19,7 +19,7 @@ Mezmo Telemetry Pipelines provide a way for organizations to collect and process
 ## Create an Account and Organization
 
 1. Click **Sign Up** on the [Mezmo website](https://mezmo.com/sign-up/). You will be automatically enrolled into a 30-day free trial.
-2. Your organization is an independent workspace where you can access and configure your logs, add members, change billing plan, and manage other aspects of your account. You can find more information in the topics in the section [auto$](/docs/organization-management-overview) in the Mezmo Log Analysis product guide. 
+2. Your organization is an independent workspace where you can access and configure your logs, add members, change billing plan, and manage other aspects of your account. You can find more information in the [auto$](/docs/organization-management-overview) section of the Mezmo Log Analysis product guide. 
 
 ## [Pipeline Components](https://docs.mezmo.com/docs/getting-started-with-mezmo-telemetry--pipelines#pipeline-components)
 
