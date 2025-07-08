@@ -12,9 +12,9 @@ tags:
 
 ## The Situation
 
-This Pipette depicts the typical configuration of a Data Compliance processor group within a Telemetry Pipeline.  In this situation, the objective is to send financial transaction and account access data to a storage location in case it is needed for later analysis, but to redact or encrypt Personally Identifying Information (PII). 
+This Pipette depicts the typical configuration of a Data Compliance processor group within a Telemetry Pipeline.  In this situation, the objectives are to send financial transaction and account access data to a storage location in case it is needed for later analysis, and to redact or encrypt Personally Identifying Information (PII). 
 
-This gropu uses the [auto$](/telemetry-pipelines/route-processor) to send specific events to the [auto$](/telemetry-pipelines/redact-processor) and the [auto$](/telemetry-pipelines/encrypt-fields-processor) before storage, to obfuscate user IDs and credit card numbers, but to also enable the decryption of credit card numbers in case they are needed for specific analysis. 
+This group uses the [auto$](/telemetry-pipelines/route-processor) to send specific events to the [auto$](/telemetry-pipelines/redact-processor) and the [auto$](/telemetry-pipelines/encrypt-fields-processor), before storage, to obfuscate user IDs and credit card numbers, and to also enable the decryption of credit card numbers in case they are needed for specific analysis. 
 
 ## Interactive Demo
 
