@@ -56,12 +56,11 @@ You can use the [auto$](/telemetry-pipelines/js-script-processor)  to add the op
 This code shows how to get the Pipeline state variable and set it as message metadata for downstream Processors:
 
 {% code %}
-{% tab language="none" %}
-function processEvent(message, metadata) {
-const state = getPipelineStateVariable("operational_state")
-message.op_state = state
-return message
-
+{% tab language="javascript" %}
+function processEvent(message, metadata, timestamp, annotations) {
+  const state = getPipelineStateVariable("operational_state")
+  message.op_state = state
+  return message
 }
 {% /tab %}
 {% /code %}
@@ -93,16 +92,24 @@ You can get and set the value of the Pipeline operational state with the Telemet
 Get the `state_id`:
 
 {% code %}
-{% tab language="none" %}
-curl -s --request GET --url https://api.mezmo.com/v3/pipeline/state-variable -H 'Authorization: Token <<PIPELINE_SERVICE_TOKEN>>' -H 'Content-Type: application/json' --data '{"pipeline_id": "<<PIPELINE_ID>>"}' | jq '.data[0].state'
+{% tab language="bash" %}
+curl -s --request GET \
+  --url 'https://api.mezmo.com/v3/pipeline/state-variable' \
+  -H 'Authorization: Token <<PIPELINE_SERVICE_TOKEN>>' \
+  -H 'Content-Type: application/json' \
+  --data '{"pipeline_id": "<<PIPELINE_ID>>"}' | jq '.data[0].state'
 {% /tab %}
 {% /code %}
 
 Set the state:
 
 {% code %}
-{% tab language="none" %}
-curl -i --request PUT --url https://api.mezmo.com/v3/pipeline/state-variable/<<STATEID>> -H 'Authorization: Token <<PIPELINE SERVICE_TOKEN>>' -H 'Content-Type: application/json' --data '{"pipeline_id": "<<PIPELINE_ID>>", "state": {"operational_state": "incident"}}'
+{% tab language="bash" %}
+curl -i --request PUT \
+  --url 'https://api.mezmo.com/v3/pipeline/state-variable/<<STATEID>>' \
+  -H 'Authorization: Token <<PIPELINE SERVICE_TOKEN>>' \
+  -H 'Content-Type: application/json' \
+  --data '{"pipeline_id": "<<PIPELINE_ID>>", "state": {"operational_state": "incident"}}'
 {% /tab %}
 {% /code %}
 
