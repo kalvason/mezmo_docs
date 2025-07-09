@@ -1,7 +1,7 @@
 ---
 type: page
 title: Set Up and Test an HTTP Endpoint Source
-listed: true
+listed: false
 slug: set-up-and-process-http-endpoint-data
 description: 
 index_title: Set Up and Test an HTTP Endpoint Source
