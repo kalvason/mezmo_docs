@@ -51,12 +51,10 @@ Data archiving and rehydration pipelines are designed to optimize data for stora
 
 ## Responsive Pipelines
 
-[Rsponsive Pipelines](/telemetry-pipelines/configure-responsive-pipelines) are designed to change the pipeline's data processing operations when a defined condition is detected in the data, for example a surge in data from a particular source, or the detection of PII data. This enables you to preserve full-fidelity copies of your data during an incident, for example, and is intended to help you reduce Mean Time to Resolution (MTTR).
+[Responsive Pipelines](/telemetry-pipelines/configure-responsive-pipelines) are designed to change the pipeline's data processing operations when a defined condition is detected in the data, for example a surge in data from a particular source, or the detection of PII data. This enables you to preserve full-fidelity copies of your data during an incident, for example, and is intended to help you reduce Mean Time to Resolution (MTTR).
 
 {% table widths="" %}
 | Example Pipelines | Description | 
 | ---- | ---- | 
 | [auto$](/guide-to-pipeline-architecture/responsive-otel-pipeline-tutorial) | Workshop presented by Mezmo's Braxton Johnston at PlatformCon in July 2025. | 
 {% /table %}
-
-##
