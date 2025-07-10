@@ -55,30 +55,9 @@ Data archiving and rehydration pipelines are designed to optimize data for stora
 Responsive pipelines are designed to change the pipeline's data processing operations when a defined condition is detected in the data, for example a surge in data from a particular source, or the detection of PII data. This enables you to preserve full-fidelity copies of your data during an incident, for example, and is intended to help you reduce Mean Time to Resolution (MTTR). These pipelines use Mezmo's [auto$](/telemetry-pipelines/in-stream-alerts) feature, as well as processors like [Script Execution](/telemetry-pipelines/js-script-processor) and [auto$](/telemetry-pipelines/reduce-processor).
 
 {% table widths="" %}
-| Example Pipelines | Description | 
-| ---- | ---- | 
-|  |  | 
-|  |  | 
+| Description | 
+| ---- | 
+| [auto$](/guide-to-pipeline-architecture/responsive-otel-pipeline-tutorial) | 
 {% /table %}
 
-## Cost Reduction Pipelines
-
-Cost reduction pipelines are designed to reduce the overall volume of your telemetry data that your send to storage or observability tools like Datadog, and thereby reduce your telemetry data management costs. You can use [Mezmo Flow](/telemetry-pipelines/about-mezmo-flow) to understand which elements of your data are important to preserve, and then generate a pipeline that will preserve the important information while filtering out the noise. 
-
-{% table widths="" %}
-| Example Pipelines | Description | 
-| ---- | ---- | 
-|  |  | 
-|  |  | 
-{% /table %}
-
-## Data Standardization Pipelines
-
-Data standardization pipelines can be pipelines that are built for any purpose, but use Mezmo features like [auto$](/telemetry-pipelines/shared-sources) and [Processor Groups](/telemetry-pipelines/create-processor-groups) to standardize the source data and processing components across the teams in your organization. 
-
-{% table widths="" %}
-| Example Pipelines | Description | 
-| ---- | ---- | 
-|  |  | 
-|  |  | 
-{% /table %}
+##
