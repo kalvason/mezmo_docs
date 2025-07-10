@@ -41,7 +41,7 @@ Data optimization pipelines are designed to optimize specific types of data befo
 
 ## Data Archiving and Rehydration Pipelines
 
-Data archiving and rehydration pipelines are designed to optimize data for storage by reducing its volume, but then being able to restore or "rehydrate" it as needed for incident or other investigations. The archiving pipeline will typically include elements of a [auto$](/guide-to-pipeline-architecture/basic-log-volume-reduction-pipeline), as well as processors to [auto$](/guide-to-pipeline-architecture/mask-and-encrypt-data) in situations in which the data potentially includes Personally Identifying Information (PII). The rehydration pipeline will typically include processors like [Filter](/telemetry-pipelines/filter-processor) and [Map Fields](/telemetry-pipelines/map-fields-processor), to make sure the data is in the correct format for your log analysis tool. 
+Data archiving and rehydration pipelines are designed to optimize data for storage by reducing its volume, but then being able to restore or "rehydrate" it as needed for incident or other investigations. The archiving pipeline will typically include elements of a data optimization pipline, as well as processors to [auto$](/guide-to-pipeline-architecture/mask-and-encrypt-data) in situations in which the data potentially includes Personally Identifying Information (PII). The rehydration pipeline will typically include processors like [Filter](/telemetry-pipelines/filter-processor) and [Map Fields](/telemetry-pipelines/map-fields-processor), to make sure the data is in the correct format for your log analysis tool. 
 
 {% table widths="" %}
 | Example Pipelines | Description | 
