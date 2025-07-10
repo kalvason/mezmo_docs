@@ -37,7 +37,6 @@ Data optimization pipelines are designed to optimize specific types of data befo
 | [auto$](/guide-to-pipeline-architecture/basic-data-optimization-pipeline) | A basic pipeline to demonstrate the typical data optimization operations. | 
 | [auto$](/guide-to-pipeline-architecture/kafka-data-optimization-pipeline) | A pipeline designed to optimize Kafka data. | 
 | [auto$](/guide-to-pipeline-architecture/kubernetes-data-optimization-pipeline) | A pipeline designed to optimize Kubernetes data. | 
-| [auto$](/guide-to-pipeline-architecture/nobl9-data-optimization-pipeline) | A pipeline designed to optimize data for observing Service Level Objective (SLO) and Service Level Indicator (SLI) metrics in Nobl9 | 
 {% /table %}
 
 ## Data Archiving and Rehydration Pipelines
@@ -52,12 +51,12 @@ Data archiving and rehydration pipelines are designed to optimize data for stora
 
 ## Responsive Pipelines
 
-Responsive pipelines are designed to change the pipeline's data processing operations when a defined condition is detected in the data, for example a surge in data from a particular source, or the detection of PII data. This enables you to preserve full-fidelity copies of your data during an incident, for example, and is intended to help you reduce Mean Time to Resolution (MTTR). These pipelines use Mezmo's [auto$](/telemetry-pipelines/in-stream-alerts) feature, as well as processors like [Script Execution](/telemetry-pipelines/js-script-processor) and [auto$](/telemetry-pipelines/reduce-processor).
+[Rsponsive Pipelines](/telemetry-pipelines/configure-responsive-pipelines) are designed to change the pipeline's data processing operations when a defined condition is detected in the data, for example a surge in data from a particular source, or the detection of PII data. This enables you to preserve full-fidelity copies of your data during an incident, for example, and is intended to help you reduce Mean Time to Resolution (MTTR).
 
 {% table widths="" %}
-| Description | 
-| ---- | 
-| [auto$](/guide-to-pipeline-architecture/responsive-otel-pipeline-tutorial) | 
+| Example Pipelines | Description | 
+| ---- | ---- | 
+| [auto$](/guide-to-pipeline-architecture/responsive-otel-pipeline-tutorial) | Workshop presented by Mezmo's Braxton Johnston at PlatformCon in July 2025. | 
 {% /table %}
 
 ##
