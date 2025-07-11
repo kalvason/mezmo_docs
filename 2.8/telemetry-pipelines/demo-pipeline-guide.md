@@ -22,11 +22,11 @@ To explore the Demo Pipeline in the Mezmo Web App:
 
 1. Log in to [the Mezmo Web App](https://app.mezmo.com).
 2. Click **Pipelines**.
-3. Under **Deployed**, select **Demo Pipeline**.
+3. Under **Cloud**, select **Demo Pipeline**.
 
 If necessary, you can also click **Re-start Pipeline** to send the demo source data through the Pipaeline. 
 
-{% image url="https://uploads.developerhub.io/prod/2KW7/im66j3opusetyr53m3iuftld60g390jnzf0ftzsh8qjfbfchjurq1wbzs6m1xnwl.png" caption="The Demo Pipeline in the Mezmo Web App" mode="full" height="763" width="1538" %}
+{% image url="https://uploads.developerhub.io/prod/2KW7/im66j3opusetyr53m3iuftld60g390jnzf0ftzsh8qjfbfchjurq1wbzs6m1xnwl.png" caption="The Demo Pipeline in the Mezmo Web App" mode="full" height="763" width="1000" %}
 {% /image %}
 
 ### 1 Sources
@@ -37,19 +37,19 @@ The Demo Pipeline has two Sources, which are both versions of the [auto$](/telem
 
 Use the [Pipeline Tap feature](/telemetry-pipelines/view-pipeline-data) to view the sample Financial  and JSON data. You can also download the sample data to view the full JSON, and build your own sample data. 
 
-{% image url="https://uploads.developerhub.io/prod/2KW7/bc8p4m7x3xf95iqfdfpj3l5mda275qrshabnmgrpqeggawbl30hwpfi02yubzl1o.png" caption="The Pipeline Tap view for the Financial Data Source" mode="600" height="648" width="985" %}
+{% image url="https://uploads.developerhub.io/prod/2KW7/bc8p4m7x3xf95iqfdfpj3l5mda275qrshabnmgrpqeggawbl30hwpfi02yubzl1o.png" caption="The Pipeline Tap view for the Financial Data Source" mode="600" height="648" width="600" %}
 {% /image %}
 
 #### JSON Data
 
-{% image url="https://uploads.developerhub.io/prod/2KW7/elcklviivsaw1vgqdsm8ptf4krnjxtpys5d1hudx3lzas5aq6x2zkzrb3fa87eun.png" caption="The Pipeline Tap view for the JSON Data Source" mode="600" height="647" width="996" %}
+{% image url="https://uploads.developerhub.io/prod/2KW7/elcklviivsaw1vgqdsm8ptf4krnjxtpys5d1hudx3lzas5aq6x2zkzrb3fa87eun.png" caption="The Pipeline Tap view for the JSON Data Source" mode="600" height="647" width="600" %}
 {% /image %}
 
 ### 2 Route Processor
 
 The [auto$](/telemetry-pipelines/route-processor) uses conditional statements to send data to other processors or destinations. In this case, there are four statements:
 
-{% table %}
+{% table widths="" %}
 | Route Name | Purpose | Conditional Statement |  | Routed To | 
 | ---- | ---- | ---- | ---- | ---- | 
 | Purchase Transactions | Selects transaction events | `if (exists(.event) AND .event contains 'transaction')` |  | Allow "Card Denied" Filter | 
@@ -64,7 +64,7 @@ You can test your Route Processor by using a [PIpeline Tap](/telemetry-pipelines
 
 The Route Processor sends matched data to two [Filter Processors](/telemetry-pipelines/filter-processor).
 
-{% table %}
+{% table widths="" %}
 | Filter Processor | Purpose | Conditional Statement | Routed To | 
 | ---- | ---- | ---- | ---- | 
 | Allow "Card Denied" | Filters the Purchase Transactions data to select those with a result of "Card Denied" | `if (.transaction.result_reason __contains 'card_denied')` | Encrypt Card Details Encrypt Field Processor | 
@@ -75,7 +75,7 @@ The Route Processor sends matched data to two [Filter Processors](/telemetry-pip
 
 For security compliance, credit card information should be encrypted before reaching the Long Term Analysis destination. With the [auto$](/telemetry-pipelines/encrypt-fields-processor), you can set encryption for a specific field, along with the encryption algorithm and key, and the Initialization Vector (IV) field.
 
-{% table %}
+{% table widths="" %}
 | **Encrypted Field** | `.transaction.cc.cc_number` | 
 | ---- | ---- | 
 | **Encryption Algorithm** | `AES-256-CFB (key = 32 characters, iv=16 characters` | 
